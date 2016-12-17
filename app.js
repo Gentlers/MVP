@@ -37,7 +37,9 @@ app.use(function(req, res, next) {
 
 // error handlers
 
-mongoose.connect('mongodb://localhost/gentoweb')
+//mongoose.connect('mongodb://localhost/gentoweb')
+mongoose.connect('mongodb://admin:admin@ds153677.mlab.com:53677/heroku_31qdstg5')
+
 var db = mongoose.connection
 db.on('error', console.error.bind(console, 'connection error:'));
 
