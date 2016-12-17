@@ -7,14 +7,14 @@ estilo: [formal, urbano, hipster, casual, tendencia]
 	"nombre": "Abanto's",
 	"descripcion": "Abanto's es una empresa familiar, que se encarga de diseñar los mejores ternos en Perú",
 	"estilo": [1,0,0,1,0],
-	"tipos": ["camisa", "terno", "blazer"]
+	"tipos": ["camisa","terno","blazer"]
 }
 
 {
 	"nombre": "John Holden",
 	"descripcion": "John Holden es una marca posicionada en el mercado buscando vestir al hombre seductor moderno en Perú",
 	"estilo": [1,0,1,1,0],
-	"tipos": ["camisa", "terno", "pantalon", "blazer"]
+	"tipos": ["camisa","terno", "pantalon", "blazer"]
 }
 
 
@@ -30,7 +30,7 @@ estilo: [formal, urbano, hipster, casual, tendencia]
 	"nombre": "Pionier",
 	"descripcion": "Pionier es la marca con mayor confianza en el mercado Peruano",
 	"estilo": [1,1,1,1,1],
-	"tipos": ["camisa", "terno", "pantalon", "polo", "short"]
+	"tipos": ["camisa","terno","pantalon","polo","short"]
 }
 
 
@@ -38,7 +38,7 @@ estilo: [formal, urbano, hipster, casual, tendencia]
 	"nombre": "Marquis",
 	"descripcion": "En Marquis vestimos al hombre moderno, con la mejor seleccion y diseños de prendas",
 	"estilo": [1,0,0,1,1],
-	"tipos": ["camisa", "pantalon", "blazer"]
+	"tipos": ["camisa","pantalon","blazer"]
 }
 
 
@@ -54,7 +54,7 @@ entalle: [Pantalon, Polo, Camisa]
 	"celular": 956269884,
 	"estilo": [1,0,0,1,0],
 	"tallas": [30,"m",43],
-	"entalle": ["Skinny", "Slim", "Slim"]
+	"entalle": ["Skinny","Slim","Slim"]
 }
 
 {
@@ -65,7 +65,7 @@ entalle: [Pantalon, Polo, Camisa]
 	"celular": 941774699,
 	"estilo": [0,1,1,1,0],
 	"tallas": [32,"m",42],
-	"entalle": ["Slim", "Slim", "Slim"]
+	"entalle": ["Slim","Slim","Slim"]
 }
 
 {
@@ -76,7 +76,7 @@ entalle: [Pantalon, Polo, Camisa]
 	"celular": 957633234,
 	"estilo": [0,0,1,1,0],
 	"tallas": [28,"s",40],
-	"entalle": ["Modern", "Modern", "Slim"]
+	"entalle": ["Modern","Modern","Slim"]
 }
 
 {
@@ -87,7 +87,7 @@ entalle: [Pantalon, Polo, Camisa]
 	"celular": 987654321,
 	"estilo": [1,0,0,1,0],
 	"tallas": [28,"s",41],
-	"entalle": ["Skinny", "Slim", "Skinny"]
+	"entalle": ["Skinny","Slim","Skinny"]
 }
 
 {
@@ -98,14 +98,14 @@ entalle: [Pantalon, Polo, Camisa]
 	"celular": 912345678,
 	"estilo": [0,0,0,1,0],
 	"tallas": [32,"m",43],
-	"entalle": ["Modern", "Slim", "Slim"]
+	"entalle": ["Modern","Slim","Slim"]
 }
 
 =====PRENDAS=====
 
 {
 	"nombre": "Pantalón Drill Ejecutivo",
-	"colores": ["negro", "plomo", "beige"],
+	"colores": ["negro","plomo","beige"],
 	"tipo": "pantalon",
 	"descripcion": "Pantalón ideal para vestir casual o vestir formal",
 	"precio": 30,
@@ -114,26 +114,12 @@ entalle: [Pantalon, Polo, Camisa]
 	"medidas": [20,10,30],
 	"entalle": "skinny",
 	"tallas": [20,30,32],
-	"marca": "5854ea6a4c6a392a55d465ba"
+	"marca": "5855235c815b6300047d6a17"
 }
 
 {
 	"nombre": "Pantalón Drill Ejecutivo",
-	"colores": ["negro", "plomo", "beige"],
-	"tipo": "pantalon",
-	"descripcion": "Pantalón ideal para vestir casual o vestir formal",
-	"precio": 30,
-	"pventa": 80,
-	"estilo": [1,1,1,1,0],
-	"medidas": [20,10,30],
-	"entalle": "skinny",
-	"tallas": [20,30,32],
-	"marca": 
-}
-
-{
-	"nombre": "Pantalón Drill Ejecutivo",
-	"colores": ["negro", "plomo", "beige"],
+	"colores": ["negro","plomo","beige"],
 	"tipo": "pantalon",
 	"descripcion": "Pantalón ideal para vestir casual o vestir formal",
 	"precio": 30,
@@ -147,7 +133,7 @@ entalle: [Pantalon, Polo, Camisa]
 
 {
 	"nombre": "Pantalón Drill Ejecutivo",
-	"colores": ["negro", "plomo", "beige"],
+	"colores": ["negro","plomo","beige"],
 	"tipo": "pantalon",
 	"descripcion": "Pantalón ideal para vestir casual o vestir formal",
 	"precio": 30,
@@ -161,7 +147,7 @@ entalle: [Pantalon, Polo, Camisa]
 
 {
 	"nombre": "Pantalón Drill Ejecutivo",
-	"colores": ["negro", "plomo", "beige"],
+	"colores": ["negro","plomo","beige"],
 	"tipo": "pantalon",
 	"descripcion": "Pantalón ideal para vestir casual o vestir formal",
 	"precio": 30,
@@ -175,7 +161,7 @@ entalle: [Pantalon, Polo, Camisa]
 
 {
 	"nombre": "Pantalón Drill Ejecutivo",
-	"colores": ["negro", "plomo", "beige"],
+	"colores": ["negro","plomo","beige"],
 	"tipo": "pantalon",
 	"descripcion": "Pantalón ideal para vestir casual o vestir formal",
 	"precio": 30,
@@ -189,7 +175,7 @@ entalle: [Pantalon, Polo, Camisa]
 
 {
 	"nombre": "Pantalón Drill Ejecutivo",
-	"colores": ["negro", "plomo", "beige"],
+	"colores": ["negro","plomo","beige"],
 	"tipo": "pantalon",
 	"descripcion": "Pantalón ideal para vestir casual o vestir formal",
 	"precio": 30,
@@ -203,7 +189,7 @@ entalle: [Pantalon, Polo, Camisa]
 
 {
 	"nombre": "Pantalón Drill Ejecutivo",
-	"colores": ["negro", "plomo", "beige"],
+	"colores": ["negro","plomo","beige"],
 	"tipo": "pantalon",
 	"descripcion": "Pantalón ideal para vestir casual o vestir formal",
 	"precio": 30,
@@ -217,7 +203,21 @@ entalle: [Pantalon, Polo, Camisa]
 
 {
 	"nombre": "Pantalón Drill Ejecutivo",
-	"colores": ["negro", "plomo", "beige"],
+	"colores": ["negro","plomo","beige"],
+	"tipo": "pantalon",
+	"descripcion": "Pantalón ideal para vestir casual o vestir formal",
+	"precio": 30,
+	"pventa": 80,
+	"estilo": [1,1,1,1,0],
+	"medidas": [20,10,30],
+	"entalle": "skinny",
+	"tallas": [20,30,32],
+	"marca": 
+}
+
+{
+	"nombre": "Pantalón Drill Ejecutivo",
+	"colores": ["negro","plomo","beige"],
 	"tipo": "pantalon",
 	"descripcion": "Pantalón ideal para vestir casual o vestir formal",
 	"precio": 30,
@@ -231,8 +231,8 @@ entalle: [Pantalon, Polo, Camisa]
 
 ===VENTAS===
 {
-	"comentario": "Excelente venta, me quedó todo OK, 100% Recomendado",
+	"comentario": "Excelente venta,me quedó todo OK,100% Recomendado",
 	"puntaje": 5,
-	"user": "5854eae94c6a392a55d465bd",
-	"prenda": "5854ee9aec09972c76efd8be"
+	"user": "585522e1815b6300047d6a10",
+	"prenda": "585523a9815b6300047d6a1a"
 }
