@@ -1,0 +1,3 @@
+NOTAS
+EN BD como manejar prendas de un mismo tipo pero con diferentes modelos (colores, prints, etc)
+Modelar BD por cada prenda, habra un color y una talla, y esta prenda tendra una cantida de stock especifico.
