@@ -13,6 +13,13 @@ router.get('/users', function(req, res, next) {
 	})
 })
 
+//GET Unitario
+router.get('/user/:mail', function(req, res, next) {
+  User.find({_email: req.params.mail}, function(err, user) {
+    res.send(user)
+  })
+})
+
 router.post('/user/', function(req, res, next) {
 	var newuser = new User()
 	newuser.username = req.body.username
