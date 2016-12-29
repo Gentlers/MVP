@@ -118,17 +118,31 @@ entalle: [Pantalon, Polo, Camisa]
 }
 
 {
-	"nombre": "Pantalón Drill Ejecutivo",
-	"colores": ["negro","plomo","beige"],
-	"tipo": "pantalon",
-	"descripcion": "Pantalón ideal para vestir casual o vestir formal",
-	"precio": 30,
-	"pventa": 80,
-	"estilo": [1,1,1,1,0],
+	"nombre": "Camisa a cuadros",
+	"colores": ["negro","azul"],
+	"tipo": "camisa",
+	"descripcion": "Camisa ideal para el dia a dia",
+	"precio": 90,
+	"pventa": 70,
+	"estilo": [1,0,1,1,0],
 	"medidas": [20,10,30],
-	"entalle": "skinny",
-	"tallas": [20,30,32],
-	"marca": 
+	"entalle": "slim",
+	"tallas": ["S","M","L"],
+	"marca": "58552368815b6300047d6a18"
+}
+
+{
+	"nombre": "Pantalon Slim",
+	"colores": ["negro","azul"],
+	"tipo": "pantalon",
+	"descripcion": "Pantalon urbano, ideal para estilos modernos",
+	"precio": 180,
+	"pventa": 150,
+	"estilo": [0,1,1,1,0],
+	"medidas": [20,10,30],
+	"entalle": "Slim",
+	"tallas": [28,30,32],
+	"marca": "58552368815b6300047d6a18"
 }
 
 {
@@ -200,35 +214,89 @@ entalle: [Pantalon, Polo, Camisa]
 	"tallas": [20,30,32],
 	"marca": 
 }
-
+// =================
 {
-	"nombre": "Pantalón Drill Ejecutivo",
-	"colores": ["negro","plomo","beige"],
+	"nombre": "Pantalon Pitillo Ejecutivo",
+	"colores": ["negro","plomo","beige", "azul"],
 	"tipo": "pantalon",
-	"descripcion": "Pantalón ideal para vestir casual o vestir formal",
-	"precio": 30,
-	"pventa": 80,
-	"estilo": [1,1,1,1,0],
+	"descripcion": "Pantalon ideal para oficina o para el dia a dia",
+	"precio": 90,
+	"pventa": 120,
+	"estilo": [0.8,0.2,0.8,0.6,0.2],
 	"medidas": [20,10,30],
 	"entalle": "skinny",
-	"tallas": [20,30,32],
+	"tallas": [28,30,32],
 	"marca": 
 }
 
 {
-	"nombre": "Pantalón Drill Ejecutivo",
-	"colores": ["negro","plomo","beige"],
-	"tipo": "pantalon",
-	"descripcion": "Pantalón ideal para vestir casual o vestir formal",
-	"precio": 30,
-	"pventa": 80,
-	"estilo": [1,1,1,1,0],
+	"nombre": "Polo Cuello V",
+	"colores": ["plomo","blanco", "azul"],
+	"tipo": "polo",
+	"descripcion": "El mejor confort y estilo en una misma prenda",
+	"precio": 20,
+	"pventa": 50,
+	"estilo": [0.4,0.6,0.8,0.6,0.6],
 	"medidas": [20,10,30],
-	"entalle": "skinny",
-	"tallas": [20,30,32],
+	"entalle": "slim",
+	"tallas": ["M","L","XL"],
 	"marca": 
 }
 
+{
+	"nombre": "Polo Con estampado Selvatico",
+	"colores": ["verde","naranja"],
+	"tipo": "polo",
+	"descripcion": "Polo para la selva, ideal para resaltar",
+	"precio": 15,
+	"pventa": 40,
+	"estilo": [0.2,0.8,0.4,0.2,0.2],
+	"medidas": [20,10,30],
+	"entalle": "normal",
+	"tallas": ["M","L","XL"],
+	"marca": 
+}
+
+{
+	"nombre": "Polo Con estampado Selvatico",
+	"colores": ["verde","naranja"],
+	"tipo": "polo",
+	"descripcion": "Polo para la selva, ideal para resaltar",
+	"precio": 15,
+	"pventa": 40,
+	"estilo": [0.2,0.8,0.4,0.2,0.2],
+	"medidas": [20,10,30],
+	"entalle": "normal",
+	"tallas": ["M","L","XL"],
+	"marca": 
+}
+
+{
+	"nombre": "Casaca de Cuero Jean",
+	"colores": ["negro"],
+	"tipo": "casaca",
+	"descripcion": "Casa de cuero pe",
+	"precio": 120,
+	"pventa": 180,
+	"estilo": [0.4,0.8,0.6,0.4,0.4],
+	"medidas": [20,10,30],
+	"entalle": "normal",
+	"tallas": ["M","L","XL"],
+	"marca": 
+}
+{
+	"nombre": "Pantalon mil bolsillos jean",
+	"colores": ["azul","negro"],
+	"tipo": "pantalon",
+	"descripcion": "Pantalon para meter miles de cosas en tus bolsillos",
+	"precio": 50,
+	"pventa": 70,
+	"estilo": [0.2,1,0.6,0.2,0.2],
+	"medidas": [20,10,30],
+	"entalle": "normal",
+	"tallas": ["M","L","XL"],
+	"marca": 
+}
 ===VENTAS===
 {
 	"comentario": "Excelente venta,me quedó todo OK,100% Recomendado",

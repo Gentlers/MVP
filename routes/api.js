@@ -99,6 +99,15 @@ router.post('/prenda/', function(req, res, next) {
 	})
 
 })
+//DELETE
+router.delete('/prenda/:id', function(req, res, next) {
+	Prenda.findById(req.params.id, function(err, prend) {
+		prend.remove(function(err) {
+			if(err) return res.send(500, err.message);
+			res.json({ message: 'Successfully deleted' });
+		});
+	});
+})
 
 // Ventas
 router.get('/ventas', function(req, res, next) {
