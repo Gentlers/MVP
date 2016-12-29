@@ -15,7 +15,7 @@ router.get('/users', function(req, res, next) {
 
 //GET Unitario
 router.get('/user/:mail', function(req, res, next) {
-  User.find({_email: req.params.mail}, function(err, user) {
+  User.find({email: req.params.mail}, function(err, user) {
     res.send(user)
   })
 })
