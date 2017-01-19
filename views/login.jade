@@ -1,0 +1,22 @@
+doctype html
+html(lang='es')
+  head
+    title=title
+    meta(charset='UTF-8')
+    link(href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css', rel='stylesheet')
+    link(rel="stylesheet", href="/css/estilos.css")
+  body
+    .col-md-6.remove-float.center-block.big-top-space
+      form(action='/session', method='POST')
+        div.form-group
+          label(for='email') e-mail
+          input.form-control(type='text', name='email', placeholder='Ingresa tu correo: ', id='email')
+        div.form-group
+          label(for='password') Contraseña
+          input.form-control(type='password', name='password', placeholder='Ahora tu contraseña: ', id='password')
+        .row.top-space
+          .col-xs-12.col-md-6
+            input.btn.btn-info(type='submit', value='Iniciar Sesion')
+          .col-xs-12.col-md-6.text-right
+            a(href='/signup') No tengo cuenta
+

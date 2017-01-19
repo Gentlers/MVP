@@ -5,6 +5,11 @@ var Marca = require('../models').Marca
 var Prenda = require('../models').Prenda
 var Venta = require('../models').Venta
 
+router.post('/test', function(req, res, next) {
+	console.log(req)
+	res.send('Recibido')
+})
+
 // Usuarios
 router.get('/users', function(req, res, next) {
 	console.log('Hola mundo')

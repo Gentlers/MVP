@@ -47,12 +47,12 @@ tallas: [Pantalon, Polo/Camisa, Zapatos]
 entalle: [Pantalon, Polo, Camisa]
 
 {
-	"username": "ediazb",
+	"username": "sujeto16",
 	"password": "123456",
 	"edad": 22,
-	"email": "evertdiazb@gmail.com",
-	"celular": 956269884,
-	"estilo": [1,0,0,1,0],
+	"email": "sujeto@prueba.com",
+	"celular": 956858956,
+	"estilo": [0.6,0.2,0.8,0.6,0.6],
 	"tallas": [30,"m",43],
 	"entalle": ["Skinny","Slim","Slim"]
 }
@@ -226,7 +226,7 @@ entalle: [Pantalon, Polo, Camisa]
 	"medidas": [20,10,30],
 	"entalle": "skinny",
 	"tallas": [28,30,32],
-	"marca": 
+	"marca": "58552349815b6300047d6a15"
 }
 
 {
@@ -240,8 +240,10 @@ entalle: [Pantalon, Polo, Camisa]
 	"medidas": [20,10,30],
 	"entalle": "slim",
 	"tallas": ["M","L","XL"],
-	"marca": 
+	"marca": "58552349815b6300047d6a15"
 }
+
+
 
 {
 	"nombre": "Polo Con estampado Selvatico",
@@ -254,21 +256,7 @@ entalle: [Pantalon, Polo, Camisa]
 	"medidas": [20,10,30],
 	"entalle": "normal",
 	"tallas": ["M","L","XL"],
-	"marca": 
-}
-
-{
-	"nombre": "Polo Con estampado Selvatico",
-	"colores": ["verde","naranja"],
-	"tipo": "polo",
-	"descripcion": "Polo para la selva, ideal para resaltar",
-	"precio": 15,
-	"pventa": 40,
-	"estilo": [0.2,0.8,0.4,0.2,0.2],
-	"medidas": [20,10,30],
-	"entalle": "normal",
-	"tallas": ["M","L","XL"],
-	"marca": 
+	"marca": "58552349815b6300047d6a15"
 }
 
 {
@@ -282,7 +270,7 @@ entalle: [Pantalon, Polo, Camisa]
 	"medidas": [20,10,30],
 	"entalle": "normal",
 	"tallas": ["M","L","XL"],
-	"marca": 
+	"marca": "58552349815b6300047d6a15"
 }
 {
 	"nombre": "Pantalon mil bolsillos jean",
@@ -295,7 +283,7 @@ entalle: [Pantalon, Polo, Camisa]
 	"medidas": [20,10,30],
 	"entalle": "normal",
 	"tallas": ["M","L","XL"],
-	"marca": 
+	"marca": "58552349815b6300047d6a15"
 }
 ===VENTAS===
 {
