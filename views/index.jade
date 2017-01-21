@@ -1,5 +1,239 @@
-extends layout
-
-block content
-  h1= title
-  p Welcome to #{title}
+doctype html
+html(lang='es')
+  head
+    meta(charset='UTF-8')
+    // Import Google Icon Font
+    link(href='http://fonts.googleapis.com/icon?family=Material+Icons', rel='stylesheet')
+    // Compiled and minified CSS
+    link(rel='stylesheet', href='css/materialize.min.css')
+    link(rel='stylesheet', href='css/inicio.css')
+    // Let browser know website is optimized for mobile
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+  body
+    header
+      #header-web-gento.navbar-fixed
+        nav.black
+          .nav-wrapper
+            a.brand-logo(href='#!')
+              img(src='img/inicio/header/logo.png', alt='')
+            a.button-collapse.icono-button(href='#', data-activates='mobile-demo', onclick='buttonChange()')
+              i.material-icons.icono menu
+            ul.right.hide-on-med-and-down
+              li
+                a.active(href='/') INICIO
+              li
+                a(href='/explorar') EXPLORAR
+              li
+                a(href='/registro') REGISTRARSE
+            ul#mobile-demo.side-nav.side-nav-content
+              li
+                a.active(href='/') INICIO
+              li
+                a(href='/explorar') EXPLORAR
+              li
+                a(href='/registro') REGISTRARSE
+    main
+      .slider
+        ul.slides
+          li
+            img(src='img/inicio/slides/02.jpg')
+            // random image
+            .caption.center-align
+              h3.helvetica2 This is our big Tagline!
+              h5.light.grey-text.text-lighten-3 Here's our small slogan.
+              a.waves-effect.black.btn REGISTRATE
+          li
+            img(src='img/inicio/slides/01.jpg')
+            // random image
+            .caption.left-align
+              h3.helvetica2 Left Aligned Caption
+              h5.light.grey-text.text-lighten-3 Here's our small slogan.
+              a.waves-effect.black.btn REGISTRATE
+          li
+            img(src='img/1.jpg')
+            // random image
+            .caption.right-align
+              h3.helvetica2 Right Aligned Caption
+              h5.light.grey-text.text-lighten-3 Here's our small slogan.
+              a.waves-effect.black.btn.helvetica2 REGISTRATE
+      // NOTE: WHY USE GENTO
+      .parallax-container.valign-wrapper
+        .row.valign
+          .col.s12.why-1
+            p.why-text ¿Por qué comprar en Gento?
+          .col.s12
+            .col.l4.m4.s12
+              .col.l12.m12.s6
+                img(src='img/inicio/why/01.png', alt='')
+              .col.l12.m12.s6
+                p ¿No encuentras las prendas correctas?
+            .col.l4.m4.s12
+              .col.l12.m12.s6
+                img(src='img/inicio/why/02.png', alt='')
+              .col.l12.m12.s6
+                p Una simple foto no te dice cómo te quedará
+            .col.l4.m4.s12
+              .col.l12.m12.s6
+                img(src='img/inicio/why/03.png', alt='')
+              .col.l12.m12.s6
+                p ¿Pierdes demasiados tiempo y dinero buscando?
+        .parallax
+          img(src='img/1.jpg')
+      // NOTE: PART HOW TO USE GENTO
+      .row.how
+        .col.l5.m6.s12
+          .how-iphone
+            .slider.slider-how
+              ul.slides
+                li
+                  img(src='http://lorempixel.com/580/250/nature/1')
+                  // random image
+                  .caption.center-align
+                    h3 This is our big Tagline!
+                    h5.light.grey-text.text-lighten-3 Here's our small slogan.
+                li
+                  img(src='http://lorempixel.com/580/250/nature/2')
+                  // random image
+                  .caption.left-align
+                    h3 Left Aligned Caption
+                    h5.light.grey-text.text-lighten-3 Here's our small slogan.
+                li
+                  img(src='http://lorempixel.com/580/250/nature/3')
+                  // random image
+                  .caption.right-align
+                    h3 Right Aligned Caption
+                    h5.light.grey-text.text-lighten-3 Here's our small slogan.
+                li
+                  img(src='http://lorempixel.com/580/250/nature/4')
+                  // random image
+                  .caption.center-align
+                    h3 This is our big Tagline!
+                    h5.light.grey-text.text-lighten-3 Here's our small slogan.
+        .col.l7.m6.s12.how-text
+          .col.s12
+            h3 Es muy facil
+          .col.s12
+            span BUSCAR
+            br
+            p Lorem ipsum dolor sit amet, consectetur adipisonem accusantium assumenda.
+          .col.s12
+            span EXPLORAR
+            br
+            p Lorem ipsum dolor sit amet, consectetur adipisonem accusantium assumenda.
+          .col.s12
+            span DESCUBRIR
+            br
+            p Lorem ipsum dolor sit amet, consectetur adipisonem accusantium assumenda.
+      // SELECCIONES RECIENTES:
+      .row.selections
+        h3
+          p Selecciones recientes
+        .col.l3.m6.s12
+          .card.selections1
+            .card-image.selections2.waves-effect.waves-block.waves-light
+              img.activator.responsive-img(src='img/inicio/select/02.jpg')
+            .card-content
+              span.card-title.card-title-size.activator.grey-text.text-darken-4
+                | Card Title
+                i.material-icons.right more_vert
+              p
+                a(href='#') This is a link
+            .card-reveal
+              span.card-title.grey-text.text-darken-4
+                | Card Title
+                i.material-icons.right close
+              p
+                | Here is some more information about this product that is only revealed once clicked on.
+        .col.l3.m6.s12
+          .card.selections1
+            .card-image.selections2.waves-effect.waves-block.waves-light
+              img.activator.responsive-img(src='img/inicio/select/02.jpg')
+            .card-content
+              span.card-title.card-title-size.activator.grey-text.text-darken-4
+                | Card Title
+                i.material-icons.right more_vert
+              p
+                a(href='#') This is a link
+            .card-reveal
+              span.card-title.grey-text.text-darken-4
+                | Card Title
+                i.material-icons.right close
+              p
+                | Here is some more information about this product that is only revealed once clicked on.
+        .col.l3.m6.s12
+          .card.selections1
+            .card-image.selections2.waves-effect.waves-block.waves-light
+              img.activator.responsive-img(src='img/inicio/select/02.jpg')
+            .card-content
+              span.card-title.card-title-size.activator.grey-text.text-darken-4
+                | Card Title
+                i.material-icons.right more_vert
+              p
+                a(href='#') This is a link
+            .card-reveal
+              span.card-title.grey-text.text-darken-4
+                | Card Title
+                i.material-icons.right close
+              p
+                | Here is some more information about this product that is only revealed once clicked on.
+        .col.l3.m6.s12
+          .card.selections1
+            .card-image.selections2.waves-effect.waves-block.waves-light
+              img.activator.responsive-img(src='img/inicio/select/02.jpg')
+            .card-content
+              span.card-title.card-title-size.activator.grey-text.text-darken-4
+                | Card Title
+                i.material-icons.right more_vert
+              p
+                a(href='#') This is a link
+            .card-reveal
+              span.card-title.grey-text.text-darken-4
+                | Card Title
+                i.material-icons.right close
+              p
+                | Here is some more information about this product that is only revealed once clicked on.
+      .row.partner
+        h3
+          p Partners
+        .col.l3.m3.s6
+          a(href='#one!')
+            img(src='img/inicio/partner/1551.png')
+            p Incubadora de Empresas San Marcos
+        .col.l3.m3.s6
+          a(href='#one!')
+            img(src='img/inicio/partner/1551.png')
+            p Incubadora de Empresas San Marcos
+        .col.l3.m3.s6
+          a(href='#one!')
+            img(src='img/inicio/partner/1551.png')
+            p Incubadora de Empresas San Marcos
+        .col.l3.m3.s6
+          a(href='#one!')
+            img(src='img/inicio/partner/1551.png')
+            p Incubadora de Empresas San Marcos
+    footer.page-footer.black
+      .container
+        .row
+          .col.l6.s12
+            h5.white-text Footer Content
+            p.grey-text.text-lighten-4 You can use rows and columns here to organize your footer content.
+          .col.l4.offset-l2.s12
+            h5.white-text Links
+            ul
+              li
+                a.grey-text.text-lighten-3(href='#!') Link 1
+              li
+                a.grey-text.text-lighten-3(href='#!') Link 2
+              li
+                a.grey-text.text-lighten-3(href='#!') Link 3
+              li
+                a.grey-text.text-lighten-3(href='#!') Link 4
+      .footer-copyright
+        .container
+          | © 2014 Copyright Gento.com
+          a.grey-text.text-lighten-4.right(href='#!') More Links
+    // Import jQuery before materialize.js
+    script(type='text/javascript', src='js/jQuery-3.1.1.js')
+    script(src='js/materialize.min.js')
+    script(src='js/headroom.min.js')
+    script(src='js/inicio.js')

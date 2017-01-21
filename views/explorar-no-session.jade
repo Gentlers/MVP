@@ -1,0 +1,302 @@
+doctype html
+html(lang='es')
+  head
+    meta(charset='UTF-8')
+    // Import Google Icon Font
+    link(href='http://fonts.googleapis.com/icon?family=Material+Icons', rel='stylesheet')
+    // Compiled and minified CSS
+    link(rel='stylesheet', href='css/materialize.min.css')
+    link(rel='stylesheet', href='css/explorar.css')
+    // Let browser know website is optimized for mobile
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+  body
+    header
+      #header-web-gento.navbar-fixed
+        nav.black
+          .nav-wrapper
+            a.brand-logo(href='#!')
+              img(src='img/inicio/header/logo.png', alt='')
+            a.button-collapse.icono-button(href='#', data-activates='mobile-demo', onclick='buttonChange()')
+              i.material-icons.icono menu
+            ul.right.hide-on-med-and-down
+              li
+                a.active(href='/') INICIO
+              li
+                a(href='/explorar') EXPLORAR
+              li
+                a(href='/registro') REGISTRARSE
+            ul#mobile-demo.side-nav.side-nav-content
+              li
+                a.active(href='/') INICIO
+              li
+                a(href='/explorar') EXPLORAR
+              li
+                a(href='/registro') REGISTRARSE
+    main
+      .row
+        .explorar-a.center
+          .explorar-1
+            p REVISA
+            p NUESTRA COLECCIÓN
+            p DE PRENDAS
+            p PARA TI
+          .explorar-2
+            .search-gento.valign-wrapper
+              .col.l11.m10.s10
+                input.input-gento(placeholder='BUSCA LO QUE NECESITAS', id='', type='search')
+              .col.l1.m2.s2.valign
+                a.valign.center(href='#')
+                  i.small.material-icons search
+      // NOTE: EXPLORER CLOTHES
+      .row.explorar-clothes
+        .explorar-b.center
+          .explorar-3
+            p EXPLORAMOS
+            p PRENDAS QUE VAN
+            p  CONTIGO
+        .explorar-prendas
+          .col.l3.m6.s12
+            .card.selections1
+              .card-image.selections2.waves-effect.waves-block.waves-light
+                img.activator.responsive-img(src='img/inicio/select/02.jpg')
+              .card-content
+                span.card-title.card-title-size.activator.grey-text.text-darken-4
+                  | Camisa Abantos
+                  i.material-icons.right more_vert
+                p
+                  a(href='#') S/. 150.00
+              .card-reveal
+                span.card-title.grey-text.text-darken-4
+                  | Camisa Abantos
+                  i.material-icons.right close
+                p
+                  | Here is some more information about this product that is only revealed once clicked on.
+          .col.l3.m6.s12
+            .card.selections1
+              .card-image.selections2.waves-effect.waves-block.waves-light
+                img.activator.responsive-img(src='img/inicio/select/02.jpg')
+              .card-content
+                span.card-title.card-title-size.activator.grey-text.text-darken-4
+                  | Camisa Abantos
+                  i.material-icons.right more_vert
+                p
+                  a(href='#') S/. 150.00
+              .card-reveal
+                span.card-title.grey-text.text-darken-4
+                  | Camisa Abantos
+                  i.material-icons.right close
+                p
+                  | Here is some more information about this product that is only revealed once clicked on.
+          .col.l3.m6.s12
+            .card.selections1
+              .card-image.selections2.waves-effect.waves-block.waves-light
+                img.activator.responsive-img(src='img/inicio/select/02.jpg')
+              .card-content
+                span.card-title.card-title-size.activator.grey-text.text-darken-4
+                  | Camisa Abantos
+                  i.material-icons.right more_vert
+                p
+                  a(href='#') S/. 150.00
+              .card-reveal
+                span.card-title.grey-text.text-darken-4
+                  | Camisa Abantos
+                  i.material-icons.right close
+                p
+                  | Here is some more information about this product that is only revealed once clicked on.
+          .col.l3.m6.s12
+            .card.selections1
+              .card-image.selections2.waves-effect.waves-block.waves-light
+                img.activator.responsive-img(src='img/inicio/select/02.jpg')
+              .card-content
+                span.card-title.card-title-size.activator.grey-text.text-darken-4
+                  | Camisa Abantos
+                  i.material-icons.right more_vert
+                p
+                  a(href='#') S/. 150.00
+              .card-reveal
+                span.card-title.grey-text.text-darken-4
+                  | Camisa Abantos
+                  i.material-icons.right close
+                p
+                  | Here is some more information about this product that is only revealed once clicked on.
+          .col.l3.m6.s12
+            .card.selections1
+              .card-image.selections2.waves-effect.waves-block.waves-light
+                img.activator.responsive-img(src='img/inicio/select/02.jpg')
+              .card-content
+                span.card-title.card-title-size.activator.grey-text.text-darken-4
+                  | Camisa Abantos
+                  i.material-icons.right more_vert
+                p
+                  a(href='#') S/. 150.00
+              .card-reveal
+                span.card-title.grey-text.text-darken-4
+                  | Camisa Abantos
+                  i.material-icons.right close
+                p
+                  | Here is some more information about this product that is only revealed once clicked on.
+          .col.l3.m6.s12
+            .card.selections1
+              .card-image.selections2.waves-effect.waves-block.waves-light
+                img.activator.responsive-img(src='img/inicio/select/02.jpg')
+              .card-content
+                span.card-title.card-title-size.activator.grey-text.text-darken-4
+                  | Camisa Abantos
+                  i.material-icons.right more_vert
+                p
+                  a(href='#') S/. 150.00
+              .card-reveal
+                span.card-title.grey-text.text-darken-4
+                  | Camisa Abantos
+                  i.material-icons.right close
+                p
+                  | Here is some more information about this product that is only revealed once clicked on.
+          .col.l3.m6.s12
+            .card.selections1
+              .card-image.selections2.waves-effect.waves-block.waves-light
+                img.activator.responsive-img(src='img/inicio/select/02.jpg')
+              .card-content
+                span.card-title.card-title-size.activator.grey-text.text-darken-4
+                  | Camisa Abantos
+                  i.material-icons.right more_vert
+                p
+                  a(href='#') S/. 150.00
+              .card-reveal
+                span.card-title.grey-text.text-darken-4
+                  | Camisa Abantos
+                  i.material-icons.right close
+                p
+                  | Here is some more information about this product that is only revealed once clicked on.
+          .col.l3.m6.s12
+            .card.selections1
+              .card-image.selections2.waves-effect.waves-block.waves-light
+                img.activator.responsive-img(src='img/inicio/select/02.jpg')
+              .card-content
+                span.card-title.card-title-size.activator.grey-text.text-darken-4
+                  | Camisa Abantos
+                  i.material-icons.right more_vert
+                p
+                  a(href='#') S/. 150.00
+              .card-reveal
+                span.card-title.grey-text.text-darken-4
+                  | Camisa Abantos
+                  i.material-icons.right close
+                p
+                  | Here is some more information about this product that is only revealed once clicked on.
+          .center
+            a.waves-effect.black.btn.helvetica2 REGISTRATE
+      // NOTE: BEST SELLER
+      .row.bestseller.grey.darken-4
+        p.bestseller-title BEST SELLER
+        div
+          div
+            ul#content-slider.content-slider
+              li.container-best-slide
+                img(src='img/explorar/best/02.png', alt='')
+                .center-best-slide
+                  a.button-best SUN CAMISA
+                  p Up to 70% off
+                  a.waves-effect.white.btn.helvetica2.black-text.text-black COMPRAR
+              li.container-best-slide
+                img(src='img/explorar/best/01.png', alt='')
+                .center-best-slide
+                  a.button-best SUN CAMISA
+                  p Up to 70% off
+                  a.waves-effect.white.btn.helvetica2.black-text.text-black COMPRAR
+              li.container-best-slide
+                img(src='img/explorar/best/02.png', alt='')
+                .center-best-slide
+                  a.button-best SUN CAMISA
+                  p Up to 70% off
+                  a.waves-effect.white.btn.helvetica2.black-text.text-black COMPRAR
+              li.container-best-slide
+                img(src='img/explorar/best/01.png', alt='')
+                .center-best-slide
+                  a.button-best SUN CAMISA
+                  p Up to 70% off
+                  a.waves-effect.white.btn.helvetica2.black-text.text-black COMPRAR
+              li.container-best-slide
+                img(src='img/explorar/best/02.png', alt='')
+                .center-best-slide
+                  a.button-best SUN CAMISA
+                  p Up to 70% off
+                  a.waves-effect.white.btn.helvetica2.black-text.text-black COMPRAR
+      // NOTE: ULTIMAS COMPRAS
+      .row.sell
+        .explorar-d.center
+          .explorar-4
+            p ULTIMAS
+            p  COMPRAS
+        .carousel.carousel-sell.carousel-sell-css.valign-wrapper
+          .carousel-item.item-sell.white-text.valign(href='#one!')
+            .row.carousel-text
+              .col.l4.m4.s12.carousel-item-1
+                img(src='img/explorar/lastsell/02.png', alt='')
+                p
+                  b.helvetica3 CRISTIAN VALLE
+                  br
+                  |                   CLIENTE
+              .col.l8.m8.s12.carousel-item-2
+                p.helvetica3 BLAZER BROWN
+                p.helvetica2
+                  | ENVIADO A: SAN ISIDRO 
+                  br
+                  |                     MARCA: JOHN HOLDEN
+                a.waves-effect.black.btn.helvetica2 PRECIO S/.170
+          .carousel-item.item-sell.white-text.valign(href='#one!')
+            .row.carousel-text
+              .col.l4.m4.s12.carousel-item-1
+                img(src='img/explorar/lastsell/02.png', alt='')
+                p
+                  b.helvetica3 CRISTIAN VALLE
+                  br
+                  |                   CLIENTE
+              .col.l8.m8.s12.carousel-item-2
+                p.helvetica3 BLAZER BROWN
+                p.helvetica2
+                  | ENVIADO A: SAN ISIDRO 
+                  br
+                  |                     MARCA: JOHN HOLDEN
+                a.waves-effect.black.btn.helvetica2 PRECIO S/.170
+          .carousel-item.item-sell.white-text.valign(href='#one!')
+            .row.carousel-text
+              .col.l4.m4.s12.carousel-item-1
+                img(src='img/explorar/lastsell/02.png', alt='')
+                p
+                  b.helvetica3 CRISTIAN VALLE
+                  br
+                  |                   CLIENTE
+              .col.l8.m8.s12.carousel-item-2
+                p.helvetica3 BLAZER BROWN
+                p.helvetica2
+                  | ENVIADO A: SAN ISIDRO 
+                  br
+                  |                     MARCA: JOHN HOLDEN
+                a.waves-effect.black.btn.helvetica2 PRECIO S/.170
+    footer.page-footer.black
+      .container
+        .row
+          .col.l6.s12
+            h5.white-text Footer Content
+            p.grey-text.text-lighten-4 You can use rows and columns here to organize your footer content.
+          .col.l4.offset-l2.s12
+            h5.white-text Links
+            ul
+              li
+                a.grey-text.text-lighten-3(href='#!') Link 1
+              li
+                a.grey-text.text-lighten-3(href='#!') Link 2
+              li
+                a.grey-text.text-lighten-3(href='#!') Link 3
+              li
+                a.grey-text.text-lighten-3(href='#!') Link 4
+      .footer-copyright
+        .container
+          | © 2014 Copyright Gento.com
+          a.grey-text.text-lighten-4.right(href='#!') More Links
+    // Import jQuery before materialize.js
+    script(type='text/javascript', src='js/jQuery-3.1.1.js')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/lightslider/1.1.6/js/lightslider.min.js')
+    script(src='js/materialize.min.js')
+    script(src='js/headroom.min.js')
+    script(src='js/explorar.js')

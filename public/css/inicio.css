@@ -1,0 +1,183 @@
+@font-face {
+  font-family: "helvetica1";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../font/Helvetica1.otf");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000; }
+@font-face {
+  font-family: "helvetica2";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../font/Helvetica2.otf");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000; }
+@font-face {
+  font-family: "helvetica3";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../font/Helvetica3.otf");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000; }
+html {
+  font-family: helvetica1; }
+
+.helvetica2 {
+  font-family: helvetica2; }
+
+.helvetica3 {
+  font-family: helvetica3; }
+
+.nav-wrapper a img {
+  padding-top: 17px;
+  margin-left: 20px; }
+.nav-wrapper li a {
+  font-family: helvetica2; }
+  .nav-wrapper li a:hover {
+    color: #4f82c2; }
+  .nav-wrapper li a:active {
+    color: #4f82c2; }
+
+.side-nav {
+  top: 56px;
+  height: 600px; }
+
+.navbar-fixed {
+  position: fixed;
+  width: 100%;
+  top: 0px;
+  background-color: none; }
+
+#sidenav-overlay {
+  background: none;
+  height: 0vh; }
+
+.drag-target {
+  z-index: -1; }
+
+.side-nav-content {
+  color: white;
+  text-align: center;
+  /*ANIMACION DEL NAVBAR SCROLL */ }
+
+.animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both; }
+
+@-webkit-keyframes headroom--unpinned {
+  from {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0); }
+  to {
+    visibility: hidden;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0); } }
+@keyframes headroom--unpinned {
+  from {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0); }
+  to {
+    visibility: hidden;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0); } }
+.slideUp {
+  -webkit-animation-name: headroom--unpinned;
+  animation-name: headroom--unpinned;
+  animation-duration: 1s; }
+
+@-webkit-keyframes headroom--pinned {
+  from {
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+    visibility: visible; }
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0); } }
+@keyframes headroom--pinned {
+  from {
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+    visibility: visible; }
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0); } }
+.slideDown {
+  -webkit-animation-name: headroom--pinned;
+  animation-name: headroom--pinned; }
+
+.parallax-container {
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white; }
+  .parallax-container .row p {
+    text-align: center;
+    font-family: helvetica2; }
+  .parallax-container .row .why-text {
+    text-align: center;
+    font-family: helvetica3;
+    font-size: 25px; }
+  .parallax-container .row img {
+    display: block;
+    margin: auto;
+    max-width: 70px;
+    height: auto;
+    margin-top: 10px; }
+  .parallax-container .parallax img {
+    width: 1200px;
+    transform: translate3d(-70%, 103px, 0px); }
+
+.how {
+  background: black;
+  height: 640px;
+  padding-top: 15px;
+  color: white; }
+  .how .how-text h3, .how .how-text span {
+    font-family: helvetica3; }
+  .how .how-iphone {
+    background-image: url("../img/inicio/how/is.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 290px;
+    height: 600px;
+    margin-left: auto;
+    margin-right: auto; }
+    .how .how-iphone .slider-how {
+      max-width: 260px;
+      height: 500px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto; }
+      .how .how-iphone .slider-how .slides {
+        background-color: rgba(255, 255, 255, 0); }
+        .how .how-iphone .slider-how .slides li {
+          margin-top: 80px; }
+        .how .how-iphone .slider-how .slides img {
+          height: 440px; }
+
+.selections h3 {
+  text-align: center; }
+.selections .selections1 {
+  max-height: 370px;
+  width: 218px; }
+  .selections .selections1 img {
+    max-height: 300px;
+    width: 218px; }
+
+.card {
+  margin-left: auto;
+  margin-right: auto; }
+  .card .card-content {
+    padding: 10px; }
+    .card .card-content .card-title-size {
+      font-size: 18px;
+      line-height: 30px; }
+
+.partner {
+  margin-left: auto;
+  margin-right: auto; }
+  .partner p {
+    text-align: center; }
+  .partner img {
+    max-width: 100px;
+    display: block;
+    margin: auto; }
+
+/*# sourceMappingURL=inicio.css.map */

@@ -1,0 +1,275 @@
+@font-face {
+  font-family: "helvetica1";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../font/Helvetica1.otf");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000; }
+@font-face {
+  font-family: "helvetica2";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../font/Helvetica2.otf");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000; }
+@font-face {
+  font-family: "helvetica3";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../font/Helvetica3.otf");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000; }
+html {
+  font-family: helvetica1; }
+
+.helvetica2 {
+  font-family: helvetica2; }
+
+.helvetica3 {
+  font-family: helvetica3; }
+
+.nav-wrapper a img {
+  padding-top: 17px;
+  margin-left: 20px; }
+.nav-wrapper li a {
+  font-family: helvetica2; }
+  .nav-wrapper li a:hover {
+    color: #4f82c2; }
+  .nav-wrapper li a:active {
+    color: #4f82c2; }
+
+.side-nav {
+  top: 56px;
+  height: 600px; }
+
+.navbar-fixed {
+  position: fixed;
+  width: 100%;
+  top: 0px;
+  background-color: none; }
+
+#sidenav-overlay {
+  background: none;
+  height: 0vh; }
+
+.drag-target {
+  z-index: -1; }
+
+.side-nav-content {
+  color: white;
+  text-align: center;
+  /*ANIMACION DEL NAVBAR SCROLL */ }
+
+.animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both; }
+
+@-webkit-keyframes headroom--unpinned {
+  from {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0); }
+  to {
+    visibility: hidden;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0); } }
+@keyframes headroom--unpinned {
+  from {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0); }
+  to {
+    visibility: hidden;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0); } }
+.slideUp {
+  -webkit-animation-name: headroom--unpinned;
+  animation-name: headroom--unpinned;
+  animation-duration: 1s; }
+
+@-webkit-keyframes headroom--pinned {
+  from {
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+    visibility: visible; }
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0); } }
+@keyframes headroom--pinned {
+  from {
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+    visibility: visible; }
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0); } }
+.slideDown {
+  -webkit-animation-name: headroom--pinned;
+  animation-name: headroom--pinned; }
+
+/*# sourceMappingURL=registro.css.map */
+.registro-presentation {
+  margin-top: 56px;
+  background: url("../img/registro/presentation/01.png") no-repeat top left;
+  background-size: cover;
+  height: 500px;
+  padding-top: 190px; }
+  .registro-presentation .registro-presentation-a {
+    max-width: 290px;
+    font-family: helvetica3;
+    margin-left: auto;
+    margin-right: auto;
+    color: white; }
+    .registro-presentation .registro-presentation-a p {
+      margin: 0px; }
+    .registro-presentation .registro-presentation-a p:nth-child(1) {
+      font-size: 30px;
+      line-height: 50px; }
+    .registro-presentation .registro-presentation-a p:nth-child(2) {
+      font-size: 37px;
+      line-height: 11px; }
+    .registro-presentation .registro-presentation-a p:nth-child(3) {
+      font-size: 20px;
+      line-height: 40px;
+      letter-spacing: 0.7px; }
+    .registro-presentation .registro-presentation-a p:nth-child(4) {
+      font-size: 50px;
+      line-height: 25px;
+      letter-spacing: 0.8px; }
+
+/* label color */
+.input-field {
+  color: black; }
+  .input-field label {
+    font-size: 1.5rem; }
+  .input-field label.active {
+    font-size: 1.1rem; }
+
+.input-field input[type=text]:focus + label {
+  color: #2a2a2a; }
+
+.input-field input[type=email]:focus + label {
+  color: #2a2a2a; }
+
+.input-field input[type=tel]:focus + label {
+  color: #2a2a2a; }
+
+/* label focus color */
+input:not([type]),
+input[type=text],
+input[type=email],
+input[type=tel] {
+  color: #2a2a2a;
+  text-align: center;
+  font-size: 2rem; }
+
+/* label underline focus color */
+.input-field input[type=text]:focus {
+  border-bottom: 1px solid black;
+  box-shadow: 0 1px 0 0 black; }
+
+.input-field input[type=email]:focus {
+  border-bottom: 1px solid black;
+  box-shadow: 0 1px 0 0 black; }
+
+.input-field input[type=tel]:focus {
+  border-bottom: 1px solid black;
+  box-shadow: 0 1px 0 0 black; }
+
+/* valid color */
+.input-field input[type=text].valid, input[type=email].valid, input[type=tel].valid {
+  border-bottom: 1px solid #000;
+  box-shadow: 0 1px 0 0 #000; }
+
+/* invalid color */
+.input-field input[type=email].invalid, input[type=tel].invalid {
+  border-bottom: 1px solid red;
+  box-shadow: 0 1px 0 0 red; }
+
+.registro-date-know {
+  text-align: center; }
+  .registro-date-know .input-field {
+    text-align: center; }
+
+.collapsible-header i {
+  display: inline;
+  float: inherit;
+  margin: 0px; }
+
+.enter-size-item-1 {
+  font-size: 25px;
+  text-align: center; }
+  .enter-size-item-1 .enter-size-item-1-a div.select-wrapper {
+    width: 290px;
+    margin: auto;
+    font-size: 25px; }
+  .enter-size-item-1 .enter-size-item-1-b p {
+    display: inline-block;
+    margin: 0px 0px;
+    text-align: center; }
+  .enter-size-item-1 .enter-size-item-1-b span {
+    line-height: 40px;
+    font-size: 20px; }
+  .enter-size-item-1 .enter-size-item-1-b img {
+    width: 200px;
+    height: auto; }
+
+/* Radio Buttons
+ * ========================================================================== */
+[type="radio"]:not(:checked) + label,
+[type="radio"]:checked + label {
+  position: relatie;
+  padding-left: 15px;
+  padding-top: 10px;
+  cursor: pointer;
+  display: inline-block;
+  height: 25px;
+  line-height: 25px;
+  font-size: 1rem;
+  transition: 0.28s ease;
+  -khtml-user-select: none;
+  user-select: none; }
+
+[type="radio"] + label:before,
+[type="radio"] + label:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin: 4px;
+  width: 220px;
+  height: 260px;
+  z-index: -1;
+  transition: 0.28s ease; }
+
+/* Unchecked styles */
+[type="radio"]:not(:checked) + label:before,
+[type="radio"]:not(:checked) + label:after,
+[type="radio"]:checked + label:before,
+[type="radio"]:checked + label:after {
+  border-radius: 5px; }
+
+[type="radio"]:not(:checked) + label:before,
+[type="radio"]:not(:checked) + label:after {
+  border: 2px solid black; }
+
+/* Checked styles */
+[type="radio"]:checked + label:before {
+  border: 2px solid transparent; }
+
+[type="radio"]:checked + label:after {
+  border: none; }
+
+[type="radio"]:checked + label:after {
+  background-color: #464646; }
+
+.corousel-slider-styles,
+.carousel.carousel-slider {
+  width: 100%;
+  height: 500px; }
+
+.corousel-image1-styles {
+  background: url("../img/registro/estilos/01.png") no-repeat center;
+  background-size: cover;
+  width: 100%;
+  height: 500px;
+  padding-top: 300px; }
+
+/*# sourceMappingURL=registro.css.map */

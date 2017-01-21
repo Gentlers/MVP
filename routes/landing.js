@@ -11,18 +11,61 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/explorar', function(req, res, next) {
-  Venta.find(function(err, ventas) {
-    User.populate(ventas,  {path: 'user' }, function(err, ventas) {
-      Prenda.populate(ventas, {path:'prenda'}, function(err, ventas) {
-        res.render('explorar', { title: 'Selecciones', sales: ventas})
+  if(!req.session.user_id){
+    res.render('explorar-no-session')
+  }
+  else {
+    // res.render('explorar-session')
+     Venta.find(function(err, ventas) {
+      User.populate(ventas,  {path: 'user' }, function(err, ventas) {
+        Prenda.populate(ventas, {path:'prenda'}, function(err, ventas) {
+          res.send(ventas)
+        })
       })
     })
-  })
+  }
 });
 
 router.get('/registro', no_session_middleware, function(req, res, next) {
   res.render('registro', { title: 'Registro' });
 });
+
+router.post('/registro', function(req, res, next) {
+  var newUser = new User();
+  newUser.username = req.body.nombre
+  newUser.password = req.body.password
+  newUser.edad = Number(req.body.edad)
+  newUser.email = req.body.email
+  newUser.password = req.body.password
+  newUser.celular = Number(req.body.phone)
+  newUser.estilo = []
+  newUser.estilo.push(Number(req.body.estilo_formal))
+  newUser.estilo.push(Number(req.body.estilo_urbano))
+  newUser.estilo.push(Number(req.body.estilo_casual))
+  newUser.estilo.push(Number(req.body.estilo_hipster))
+  newUser.estilo.push(Number(req.body.estilo_tendencia))
+  newUser.tallas = []
+  newUser.tallas.push(req.body.talla_camisa)
+  newUser.tallas.push(req.body.talla_polo)
+  newUser.tallas.push(Number(req.body.talla_pantalon))
+  newUser.tallas.push(Number(req.body.talla_zapato))
+  newUser.entalle = []
+  newUser.entalle.push(req.body.entalle_camisa)
+  newUser.entalle.push(req.body.entalle_polo)
+  newUser.entalle.push(req.body.entalle_pantalon)
+  console.log(newUser)
+  newUser.save(function(err, savedUser) {
+    if(err) {
+      console.log(err)
+      return res.status(500).send()
+    }
+    else{
+      req.session.user_id = savedUser._id
+      res.redirect('/app')
+    }
+  })
+  
+})
 
 router.get('/app', session_middleware, function(req, res, next) {
   res.render('app', { title: 'Dashboard'})

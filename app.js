@@ -5,6 +5,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var cookieSession = require('cookie-session')
+var session = require('express-session')
 var mongoose = require('mongoose');
 
 var landing = require('./routes/landing');
@@ -26,11 +27,20 @@ app.use(cookieParser());
 app.use(require('stylus').middleware(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Middleware para sesiones
-app.use(cookieSession({
-  name: 'session', 
-  keys: ['llave-1','llave-2']
+// Middleware para sesiones sin cookies
+app.use(session({
+  secret: "l12lk3nk123jl",
+  // Es decir que al ingresar dos usuarios en paralelo no se contamine uno con el otro
+  resave: false,
+  // Indica si la sesion debe guardarse a pesar que sea nueva y no modificada (Es decir no inicializada)
+  saveUninitialized: false
 }))
+
+// // Middleware para sesiones con Cookies
+// app.use(cookieSession({
+//   name: 'session', 
+//   keys: ['llave-1','llave-2']
+// }))
 
 app.use('/', landing);
 app.use('/api', api);
