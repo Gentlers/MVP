@@ -19,7 +19,7 @@ router.get('/explorar', function(req, res, next) {
      Venta.find(function(err, ventas) {
       User.populate(ventas,  {path: 'user' }, function(err, ventas) {
         Prenda.populate(ventas, {path:'prenda'}, function(err, ventas) {
-          res.send(ventas)
+          res.render('explorar-session', { data: ventas })
         })
       })
     })
@@ -75,8 +75,8 @@ router.get('/login', no_session_middleware, function(req, res, next) {
   res.render('login', { title: 'Login' })
 })
 
-router.post('logout', no_session_middleware, function(req, res, next) {
-  req.session.destroy()
+router.post('/logout', function(req, res, next) {
+  req.session = null
   res.redirect('/')
 })
 
