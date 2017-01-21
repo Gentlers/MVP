@@ -75,10 +75,10 @@ router.get('/login', no_session_middleware, function(req, res, next) {
   res.render('login', { title: 'Login' })
 })
 
-// router.post('logout', no_session_middleware, function(req, res, next) {
-//   req.session.user_id = null
-//   res.redirect('/')
-// })
+router.post('logout', no_session_middleware, function(req, res, next) {
+  req.session.destroy()
+  res.redirect('/')
+})
 
 router.post('/session', function(req, res) {
   // Puede ponerse un segundo parametro que son los campos que quieren ser devueltos.
