@@ -1,3 +1,4 @@
+var request = require('request');
 var express = require('express');
 var router = express.Router();
 var Venta = require('../models').Venta
@@ -29,6 +30,20 @@ router.get('/explorar', function(req, res, next) {
 router.get('/registro', no_session_middleware, function(req, res, next) {
   res.render('registro', { title: 'Registro' });
 });
+
+router.get('/consumo', function(req, res) {
+  request({
+      uri: 'http://joyeriaquisuruco.herokuapp.com/api/productos'
+    },
+    function(error, response, body) {
+      if (!error && response.statusCode === 200) {
+        console.log(body);
+        res.json(body);
+      } else {
+        res.json(error);
+      }
+    })
+  });
 
 router.post('/registro', function(req, res, next) {
   var newUser = new User();

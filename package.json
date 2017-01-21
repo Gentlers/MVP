@@ -17,6 +17,7 @@
     "mongoose": "^4.7.3",
     "mongoose-deep-populate": "^3.0.0",
     "morgan": "~1.7.0",
+    "request": "^2.79.0",
     "serve-favicon": "~2.3.0",
     "stylus": "0.54.5"
   }
