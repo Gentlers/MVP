@@ -36,28 +36,28 @@ html(lang='es')
       .slider
         ul.slides
           li
-            img(src='img/inicio/slides/02.jpg')
+            img(src='img/inicio/slides/01.jpg')
             // random image
             .caption.center-align
-              h3.helvetica2 This is our big Tagline!
-              h5.light.grey-text.text-lighten-3 Here's our small slogan.
-              a.waves-effect.black.btn REGISTRATE
+              h3.helvetica2 Encuentra ropa solo para ti.
+              h5.light.grey-text.text-lighten-3 Buscaremos las prendas precisas.
+              a.waves-effect.black.btn(href='/registro') REGISTRATE
+          li
+            img(src='img/inicio/slides/02.jpg')
+            // random image
+            .caption.left-align
+              h3.helvetica2 Gento Buscará las prendas por ti.
+              h5.light.grey-text.text-lighten-3 Olvídate de los problemas.
+              a.waves-effect.black.btn(href='/registro') REGISTRATE
           li
             img(src='img/inicio/slides/01.jpg')
             // random image
-            .caption.left-align
-              h3.helvetica2 Left Aligned Caption
-              h5.light.grey-text.text-lighten-3 Here's our small slogan.
-              a.waves-effect.black.btn REGISTRATE
-          li
-            img(src='img/1.jpg')
-            // random image
             .caption.right-align
-              h3.helvetica2 Right Aligned Caption
-              h5.light.grey-text.text-lighten-3 Here's our small slogan.
+              h3.helvetica2 Encuentra ropa solo para ti.
+              h5.light.grey-text.text-lighten-3 Buscaremos las prendas precisas.
               a.waves-effect.black.btn.helvetica2 REGISTRATE
       // NOTE: WHY USE GENTO
-      .parallax-container.valign-wrapper
+      .parallax-container.valign-wrapper.margin-sup.seccion2.gris
         .row.valign
           .col.s12.why-1
             p.why-text ¿Por qué comprar en Gento?
@@ -77,8 +77,8 @@ html(lang='es')
                 img(src='img/inicio/why/03.png', alt='')
               .col.l12.m12.s6
                 p ¿Pierdes demasiados tiempo y dinero buscando?
-        .parallax
-          img(src='img/1.jpg')
+        //- .parallax
+        //-   img(src='img/1.jpg')
       // NOTE: PART HOW TO USE GENTO
       .row.how
         .col.l5.m6.s12
@@ -90,40 +90,33 @@ html(lang='es')
                   // random image
                   .caption.center-align
                     h3 This is our big Tagline!
-                    h5.light.grey-text.text-lighten-3 Here's our small slogan.
+                    h5.light.grey-text.text-lighten-3 Escanea tus tallas y estilo.
                 li
                   img(src='http://lorempixel.com/580/250/nature/2')
                   // random image
                   .caption.left-align
                     h3 Left Aligned Caption
-                    h5.light.grey-text.text-lighten-3 Here's our small slogan.
+                    h5.light.grey-text.text-lighten-3 Recibe recomendaciones.
                 li
                   img(src='http://lorempixel.com/580/250/nature/3')
                   // random image
                   .caption.right-align
                     h3 Right Aligned Caption
-                    h5.light.grey-text.text-lighten-3 Here's our small slogan.
-                li
-                  img(src='http://lorempixel.com/580/250/nature/4')
-                  // random image
-                  .caption.center-align
-                    h3 This is our big Tagline!
-                    h5.light.grey-text.text-lighten-3 Here's our small slogan.
+                    h5.light.grey-text.text-lighten-3 Compra y recibe en tu casa.
         .col.l7.m6.s12.how-text
           .col.s12
             h3 Es muy facil
           .col.s12
-            span BUSCAR
+            span ESCANEAR
             br
-            p Lorem ipsum dolor sit amet, consectetur adipisonem accusantium assumenda.
+            p Gento escaneará tus tallas con una foto y sacará tu estilo con unas simples preguntas.
           .col.s12
             span EXPLORAR
             br
-            p Lorem ipsum dolor sit amet, consectetur adipisonem accusantium assumenda.
+            p Buscará entre todas las tiendas prendas solamente para ti.
           .col.s12
-            span DESCUBRIR
-            br
-            p Lorem ipsum dolor sit amet, consectetur adipisonem accusantium assumenda.
+            span RECIBIR
+            p Ahora solo espera unos dias y tendrás tu selección en la puerta de tu casa.
       // SELECCIONES RECIENTES:
       .row.selections
         h3
@@ -134,104 +127,97 @@ html(lang='es')
               img.activator.responsive-img(src='img/inicio/select/02.jpg')
             .card-content
               span.card-title.card-title-size.activator.grey-text.text-darken-4
-                | Card Title
+                | Prenda de muestra
                 i.material-icons.right more_vert
               p
                 a(href='#') This is a link
             .card-reveal
               span.card-title.grey-text.text-darken-4
-                | Card Title
+                | Prenda de muestra
                 i.material-icons.right close
               p
-                | Here is some more information about this product that is only revealed once clicked on.
+                | Información del producto recientemente elegido y para quien fue elegido..
         .col.l3.m6.s12
           .card.selections1
             .card-image.selections2.waves-effect.waves-block.waves-light
               img.activator.responsive-img(src='img/inicio/select/02.jpg')
             .card-content
               span.card-title.card-title-size.activator.grey-text.text-darken-4
-                | Card Title
+                | Prenda de muestra
                 i.material-icons.right more_vert
               p
                 a(href='#') This is a link
             .card-reveal
               span.card-title.grey-text.text-darken-4
-                | Card Title
+                | Prenda de muestra
                 i.material-icons.right close
               p
-                | Here is some more information about this product that is only revealed once clicked on.
+                | Información del producto recientemente elegido y para quien fue elegido..
         .col.l3.m6.s12
           .card.selections1
             .card-image.selections2.waves-effect.waves-block.waves-light
               img.activator.responsive-img(src='img/inicio/select/02.jpg')
             .card-content
               span.card-title.card-title-size.activator.grey-text.text-darken-4
-                | Card Title
+                | Prenda de muestra
                 i.material-icons.right more_vert
               p
                 a(href='#') This is a link
             .card-reveal
               span.card-title.grey-text.text-darken-4
-                | Card Title
+                | Prenda de muestra
                 i.material-icons.right close
               p
-                | Here is some more information about this product that is only revealed once clicked on.
+                | Información del producto recientemente elegido y para quien fue elegido..
         .col.l3.m6.s12
           .card.selections1
             .card-image.selections2.waves-effect.waves-block.waves-light
               img.activator.responsive-img(src='img/inicio/select/02.jpg')
             .card-content
               span.card-title.card-title-size.activator.grey-text.text-darken-4
-                | Card Title
+                | Prenda de muestra
                 i.material-icons.right more_vert
               p
                 a(href='#') This is a link
             .card-reveal
               span.card-title.grey-text.text-darken-4
-                | Card Title
+                | Prenda de muestra
                 i.material-icons.right close
               p
-                | Here is some more information about this product that is only revealed once clicked on.
+                | Información del producto recientemente elegido y para quien fue elegido..
       .row.partner
         h3
           p Partners
-        .col.l3.m3.s6
+        .col.l4.m4.s12
           a(href='#one!')
             img(src='img/inicio/partner/1551.png')
-            p Incubadora de Empresas San Marcos
-        .col.l3.m3.s6
+            p Incubadora 1551
+        .col.l4.m4.s12
           a(href='#one!')
             img(src='img/inicio/partner/1551.png')
-            p Incubadora de Empresas San Marcos
-        .col.l3.m3.s6
+            p Devs Marketing Digital
+        .col.l4.m4.s12
           a(href='#one!')
             img(src='img/inicio/partner/1551.png')
-            p Incubadora de Empresas San Marcos
-        .col.l3.m3.s6
-          a(href='#one!')
-            img(src='img/inicio/partner/1551.png')
-            p Incubadora de Empresas San Marcos
+            p Starter Agencia de Desarrollo
     footer.page-footer.black
       .container
         .row
           .col.l6.s12
-            h5.white-text Footer Content
+            h5.white-text Síguenos en Redes Sociales
             p.grey-text.text-lighten-4 You can use rows and columns here to organize your footer content.
           .col.l4.offset-l2.s12
             h5.white-text Links
             ul
               li
-                a.grey-text.text-lighten-3(href='#!') Link 1
+                a.grey-text.text-lighten-3(target='blank' href='https://facebook.com.com/gentoapp') Facebook
               li
-                a.grey-text.text-lighten-3(href='#!') Link 2
+                a.grey-text.text-lighten-3(target='blank' href='https://twitter.com.com/gentoapp') Twitter
               li
-                a.grey-text.text-lighten-3(href='#!') Link 3
-              li
-                a.grey-text.text-lighten-3(href='#!') Link 4
+                a.grey-text.text-lighten-3(target='blank' href='https://instagram.com/gentoapp') Instagram
       .footer-copyright
         .container
-          | © 2014 Copyright Gento.com
-          a.grey-text.text-lighten-4.right(href='#!') More Links
+          | © 2017 GENTO
     // Import jQuery before materialize.js
     script(type='text/javascript', src='js/jQuery-3.1.1.js')
     script(src='js/materialize.min.js')

@@ -33,12 +33,12 @@ router.get('/registro', no_session_middleware, function(req, res, next) {
 
 router.get('/consumo', function(req, res) {
   request({
-      uri: 'http://joyeriaquisuruco.herokuapp.com/api/productos'
+      uri: 'https://ancient-hamlet-38493.herokuapp.com/users'
     },
     function(error, response, body) {
       if (!error && response.statusCode === 200) {
         console.log(body);
-        res.json(body);
+        res.render('explorar-session', { prendas: body })
       } else {
         res.json(error);
       }
@@ -76,14 +76,14 @@ router.post('/registro', function(req, res, next) {
     }
     else{
       req.session.user_id = savedUser._id
-      res.redirect('/app')
+      res.redirect('/perfil')
     }
   })
   
 })
 
-router.get('/app', session_middleware, function(req, res, next) {
-  res.render('app', { title: 'Dashboard'})
+router.get('/perfil', session_middleware, function(req, res, next) {
+  res.render('perfil', { title: 'Dashboard'})
 })
 
 router.get('/login', no_session_middleware, function(req, res, next) {
@@ -104,11 +104,22 @@ router.post('/session', function(req, res) {
     else if(user!=null) {
 
       req.session.user_id = user._id
-      res.redirect('/app')
+      res.redirect('/perfil')
     }
     else {
       res.send('Ingresa un usuario valido')
     }
+  })
+})
+
+router.post('/validateEmail', function(req, res) {
+  User.findOne({ email: req.body.email }, function(err, user) {
+    if(err)
+      res.send(err)
+    else if(user == null)
+      res.send('OK')
+    else
+      res.send('El usuario ya existe')
   })
 })
 

@@ -11,7 +11,7 @@ module.exports = function (req, res, next) {
       }
       else{
         res.locals = { user: user }
-        res.redirect('/app')
+        res.redirect('/perfil')
       }
     })
   }

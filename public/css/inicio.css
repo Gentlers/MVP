@@ -111,6 +111,7 @@ html {
     text-align: center;
     font-family: helvetica2; }
   .parallax-container .row .why-text {
+    color: #555;
     text-align: center;
     font-family: helvetica3;
     font-size: 25px; }
@@ -181,3 +182,14 @@ html {
     margin: auto; }
 
 /*# sourceMappingURL=inicio.css.map */
+
+.margin-sup {
+  border-top: 25px solid #333;
+}
+.seccion2 {
+  color: black;
+  background: white;
+}
+.gris {
+  background-color: #CCC;
+}
