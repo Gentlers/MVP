@@ -42,228 +42,218 @@ html(lang='es')
             p DE UNA FORMA DISTINTA
             p DE VESTIR
       // NOTE: WE WANT KNOW ABOUT YOU
-      form(action='/registro', method='POST')
-        .row.registro-date
-          .registro-date-text.center
-            h3 Queremos conocerte
-            #registro-date-know
-              .input-field
-                input#name.validate(type='text' name='nombre')
-                label(for='name') ¿Cómo te llamas?
-              .input-field
-                input#email.validate(type='email', name='email')
-                label(for='email') ¿Cuál es tu correo?
-              .input-field
-                input#phone.validate(type='number', name='phone')
-                label(for='phone') ¿Cuál es tu whatsapp?
-              .input-field
-                input#edad.validate(type='number', name='edad')
-                label(for='edad') ¿Cuál es tu Edad?
-              .input-field
-                input#password.validate(type='password', name='password')
-                label(for='password') Ingresa una contraseña
-            button#btn-know.btn.black Siguiente
-        // NOTE: ENTER SIZES
-        .row.center
-          h3
-            br
-            span ¿Cuáles son tus tallas?
-          .enter-size
-            ul.collapsible(data-collapsible='accordion')
-              // NOTE: ITEM CAMISAS
-              li.enter-size-item-1
-                .collapsible-header
-                  p
-                    i.material-icons filter_drama
-                    br
-                    | Camisa
-                .collapsible-body
-                  .input-field.enter-size-item-1-a.center
-                    p Talla
-                    select(name='talla_camisa')
-                      option(value='', disabled='', selected='') Selecciona tu talla
-                      option(value='S') S
-                      option(value='M') M
-                      option(value='L') L
-                      option(value='XL') XL
-                  .enter-size-item-1-b.center
-                    p Entalle:
-                    div
-                      p
-                        input#test-camisa-1(name='entalle_camisa', type='radio', value='recto')
-                        label(for='test-camisa-1')
-                          img(src='img/registro/entalle/01.jpg', alt='')
-                        br
-                        span Camisa - Recto
-                      p
-                        input#test2-camisa-2(name='entalle_camisa', type='radio', value='moderno')
-                        label(for='test2-camisa-2')
-                          img(src='img/registro/entalle/01.jpg', alt='')
-                        br
-                        span Camisa - Moderno
-                      p
-                        input#test-camisa-3(name='entalle_camisa', type='radio', value='slim')
-                        label(for='test-camisa-3')
-                          img(src='img/registro/entalle/01.jpg', alt='')
-                        br
-                        span Camisa - Slim
-              // NOTE: ITEM POLOS
-              li.enter-size-item-1
-                .collapsible-header
-                  p
-                    i.material-icons filter_drama
-                    br
-                    | Polo
-                .collapsible-body
-                  .input-field.enter-size-item-1-a.center
-                    p Talla
-                    select(name='talla_polo')
-                      option(value='', disabled='', selected='') Selecciona tu talla
-                      option(value='S') S
-                      option(value='M') M
-                      option(value='L') L
-                      option(value='XL') XL
-                  .enter-size-item-1-b.center
-                    p Entalle:
-                    div
-                      p
-                        input#test-polo-1(name='entalle_polo', type='radio', value='recto')
-                        label(for='test-polo-1')
-                          img(src='img/registro/entalle/01.jpg', alt='')
-                        br
-                        span Polo - Recto
-                      p
-                        input#test-polo-2(name='entalle_polo', type='radio', value='moderno')
-                        label(for='test-polo-2')
-                          img(src='img/registro/entalle/01.jpg', alt='')
-                        br
-                        span Polo - Moderno
-                      p
-                        input#test-polo-3(name='entalle_polo', type='radio', value='slim')
-                        label(for='test-polo-3')
-                          img(src='img/registro/entalle/01.jpg', alt='')
-                        br
-                        span Polo - Slim
-              // NOTE: ITEM PANTALONES
-              li.enter-size-item-1
-                .collapsible-header
-                  p
-                    i.material-icons filter_drama
-                    br
-                    | Pantalon
-                .collapsible-body
-                  .input-field.enter-size-item-1-a.center
-                    p Talla
-                    select(name='talla_pantalon')
-                      option(value='', disabled='', selected='') Selecciona tu talla
-                      option(value=28) 28
-                      option(value=30) 30
-                      option(value=32) 32
-                      option(value=34) 34
-                      option(value=36) 36
-                  .enter-size-item-1-b.center
-                    p Entalle:
-                    div
-                      p
-                        input#test-pantalon-1(name='entalle_pantalon', type='radio', value='recto')
-                        label(for='test-pantalon-1')
-                          img(src='img/registro/entalle/01.jpg', alt='')
-                        br
-                        span Pantalón - Recto
-                      p
-                        input#test-pantalon-2(name='entalle_pantalon', type='radio', value='slim')
-                        label(for='test-pantalon-2')
-                          img(src='img/registro/entalle/01.jpg', alt='')
-                        br
-                        span Pantalón - Slim
-                      p
-                        input#test-pantalon-3(name='entalle_pantalon', type='radio', value='skinny')
-                        label(for='test-pantalon-3')
-                          img(src='img/registro/entalle/01.jpg', alt='')
-                        br
-                        span Pantalón - Skinny
-              // NOTE: ITEM ZAPATOS
-              li.enter-size-item-1
-                .collapsible-header
-                  p
-                    i.material-icons filter_drama
-                    br
-                    | Zapatos
-                .collapsible-body
-                  .input-field.enter-size-item-1-a.center
-                    p Talla
-                    select(name='talla_zapato')
-                      option(value='', disabled='', selected='') Selecciona tu talla
-                      option(value='38') 38
-                      option(value='40') 40
-                      option(value='42') 42
-                      option(value='44') 44
-          h3 Cuéntanos de tu estilo:
-          .input-field.enter-size-item-1-a.center
-                    p FORMAL
-                    select(name='estilo_formal')
-                      option(value='', disabled='', selected='') Dale un valor segun estilo:
-                      option(value=0.2) *
-                      option(value=0.4) **
-                      option(value=0.6) ***
-                      option(value=0.8) ****
-                      option(value=1.0) *****
-          .input-field.enter-size-item-1-a.center
-                    p URBANO
-                    select(name='estilo_urbano')
-                      option(value='', disabled='', selected='') Dale un valor segun estilo:
-                      option(value=0.2) *
-                      option(value=0.4) **
-                      option(value=0.6) ***
-                      option(value=0.8) ****
-                      option(value=1.0) *****
-          .input-field.enter-size-item-1-a.center
-                    p CASUAL
-                    select(name='estilo_casual')
-                      option(value='', disabled='', selected='') Dale un valor segun estilo:
-                      option(value=0.2) *
-                      option(value=0.4) **
-                      option(value=0.6) ***
-                      option(value=0.8) ****
-                      option(value=1.0) *****
-          .input-field.enter-size-item-1-a.center
-                    p HIPSTER
-                    select(name='estilo_hipster')
-                      option(value='', disabled='', selected='') Dale un valor segun estilo:
-                      option(value=0.2) *
-                      option(value=0.4) **
-                      option(value=0.6) ***
-                      option(value=0.8) ****
-                      option(value=1.0) *****
-          .input-field.enter-size-item-1-a.center
-                    p TENDENCIA
-                    select(name='estilo_tendencia')
-                      option(value='', disabled='', selected='') Dale un valor segun estilo:
-                      option(value=0.2) *
-                      option(value=0.4) **
-                      option(value=0.6) ***
-                      option(value=0.8) ****
-                      option(value=1.0) *****
+      .container.center
+        form(action='/registro', method='POST')
+          .row.registro-date
+            .registro-date-text.center
+              h3 Queremos conocerte
+              #registro-date-know
+                .input-field
+                  input#name.validate(type='text' name='nombre')
+                  label(for='name') ¿Cómo te llamas?
+                .input-field
+                  input#email.validate(type='email', name='email')
+                  label(for='email') ¿Cuál es tu correo?
+                .input-field
+                  input#phone.validate(type='number', name='phone')
+                  label(for='phone') ¿Cuál es tu whatsapp?
+                .input-field
+                  input#edad.validate(type='number', name='edad')
+                  label(for='edad') ¿Cuál es tu Edad?
+                .input-field
+                  input#password.validate(type='password', name='password')
+                  label(for='password') Ingresa una contraseña
+              button#btn-know.btn.black Siguiente
+          // NOTE: ENTER SIZES
+          .row.center
+            h3
+              br
+              span ¿Cuáles son tus tallas?
+            .enter-size
+              ul.collapsible(data-collapsible='accordion')
+                // NOTE: ITEM CAMISAS
+                li.enter-size-item-1.center
+                  .collapsible-header
+                    p
+                      //- i.material-icons assignment_ind
+                      //- br
+                      | Camisa
+                  .collapsible-body
+                    .input-field.enter-size-item-1-a.center
+                      p Talla
+                      select(name='talla_camisa')
+                        option(value='', disabled='', selected='') Selecciona tu talla
+                        option(value='S') S
+                        option(value='M') M
+                        option(value='L') L
+                        option(value='XL') XL
+                    .enter-size-item-1-b.center
+                      p Entalle:
+                      div
+                        p
+                          input#test-camisa-1(name='entalle_camisa', type='radio', value='recto')
+                          label(for='test-camisa-1')
+                            img(src='img/registro/entalle/01.jpg', alt='')
+                          br
+                          span Camisa - Recto
+                        p
+                          input#test2-camisa-2(name='entalle_camisa', type='radio', value='moderno')
+                          label(for='test2-camisa-2')
+                            img(src='img/registro/entalle/01.jpg', alt='')
+                          br
+                          span Camisa - Moderno
+                        p
+                          input#test-camisa-3(name='entalle_camisa', type='radio', value='slim')
+                          label(for='test-camisa-3')
+                            img(src='img/registro/entalle/01.jpg', alt='')
+                          br
+                          span Camisa - Slim
+                // NOTE: ITEM POLOS
+                li.enter-size-item-1
+                  .collapsible-header
+                    p
+                      //- i.material-icons perm_contact_calendar
+                      //- br
+                      | Polo
+                  .collapsible-body
+                    .input-field.enter-size-item-1-a.center
+                      p Talla
+                      select(name='talla_polo')
+                        option(value='', disabled='', selected='') Selecciona tu talla
+                        option(value='S') S
+                        option(value='M') M
+                        option(value='L') L
+                        option(value='XL') XL
+                    .enter-size-item-1-b.center
+                      p Entalle:
+                      div
+                        p
+                          input#test-polo-1(name='entalle_polo', type='radio', value='recto')
+                          label(for='test-polo-1')
+                            img(src='img/registro/entalle/01.jpg', alt='')
+                          br
+                          span Polo - Recto
+                        p
+                          input#test-polo-2(name='entalle_polo', type='radio', value='moderno')
+                          label(for='test-polo-2')
+                            img(src='img/registro/entalle/01.jpg', alt='')
+                          br
+                          span Polo - Moderno
+                        p
+                          input#test-polo-3(name='entalle_polo', type='radio', value='slim')
+                          label(for='test-polo-3')
+                            img(src='img/registro/entalle/01.jpg', alt='')
+                          br
+                          span Polo - Slim
+                // NOTE: ITEM PANTALONES
+                li.enter-size-item-1
+                  .collapsible-header
+                    p
+                      //- i.material-icons play_for_work
+                      //- br
+                      | Pantalon
+                  .collapsible-body
+                    .input-field.enter-size-item-1-a.center
+                      p Talla
+                      select(name='talla_pantalon')
+                        option(value='', disabled='', selected='') Selecciona tu talla
+                        option(value=28) 28
+                        option(value=30) 30
+                        option(value=32) 32
+                        option(value=34) 34
+                        option(value=36) 36
+                    .enter-size-item-1-b.center
+                      p Entalle:
+                      div
+                        p
+                          input#test-pantalon-1(name='entalle_pantalon', type='radio', value='recto')
+                          label(for='test-pantalon-1')
+                            img(src='img/registro/entalle/01.jpg', alt='')
+                          br
+                          span Pantalón - Recto
+                        p
+                          input#test-pantalon-2(name='entalle_pantalon', type='radio', value='slim')
+                          label(for='test-pantalon-2')
+                            img(src='img/registro/entalle/01.jpg', alt='')
+                          br
+                          span Pantalón - Slim
+                        p
+                          input#test-pantalon-3(name='entalle_pantalon', type='radio', value='skinny')
+                          label(for='test-pantalon-3')
+                            img(src='img/registro/entalle/01.jpg', alt='')
+                          br
+                          span Pantalón - Skinny
+                // NOTE: ITEM ZAPATOS
+                li.enter-size-item-1
+                  .collapsible-header
+                    p
+                      //- i.material-icons filter_drama
+                      //- br
+                      | Zapatos
+                  .collapsible-body
+                    .input-field.enter-size-item-1-a.center
+                      p Talla
+                      select(name='talla_zapato')
+                        option(value='', disabled='', selected='') Selecciona tu talla
+                        option(value='38') 38
+                        option(value='40') 40
+                        option(value='42') 42
+                        option(value='44') 44
+            h3 Cuéntanos de tu estilo:
+            .row
+              .col.s6.m4
+                .input-field.enter-size-item-1-a.center
+                          p FORMAL
+                          select(name='estilo_formal')
+                            option(value='', disabled='', selected='') Dale un valor segun estilo:
+                            option(value=0.2) *
+                            option(value=0.4) **
+                            option(value=0.6) ***
+                            option(value=0.8) ****
+                            option(value=1.0) *****
+              .col.s6.m4
+                .input-field.enter-size-item-1-a.center
+                          p URBANO
+                          select(name='estilo_urbano')
+                            option(value='', disabled='', selected='') Dale un valor segun estilo:
+                            option(value=0.2) *
+                            option(value=0.4) **
+                            option(value=0.6) ***
+                            option(value=0.8) ****
+                            option(value=1.0) *****
+              .col.s6.m4
+                .input-field.enter-size-item-1-a.center
+                          p CASUAL
+                          select(name='estilo_casual')
+                            option(value='', disabled='', selected='') Dale un valor segun estilo:
+                            option(value=0.2) *
+                            option(value=0.4) **
+                            option(value=0.6) ***
+                            option(value=0.8) ****
+                            option(value=1.0) *****
+              .col.s6.m4
+                .input-field.enter-size-item-1-a.center
+                          p HIPSTER
+                          select(name='estilo_hipster')
+                            option(value='', disabled='', selected='') Dale un valor segun estilo:
+                            option(value=0.2) *
+                            option(value=0.4) **
+                            option(value=0.6) ***
+                            option(value=0.8) ****
+                            option(value=1.0) *****
+              .col.s6.m4
+                .input-field.enter-size-item-1-a.center
+                          p TENDENCIA
+                          select.center(name='estilo_tendencia')
+                            option(value='', disabled='', selected='') Dale un valor segun estilo:
+                            option(value=0.2) *
+                            option(value=0.4) **
+                            option(value=0.6) ***
+                            option(value=0.8) ****
+                            option(value=1.0) *****
 
-        input.btn.center.center-text.center-block.black(type='submit', value='enviar')
+          input.btn.center.center-text.center-block.black(type='submit', value='enviar')
 
-      // NOTE: STYLES SELECTION
-      .row.styles
-        .center
-          h3
-            strong Ya estamos cerca
-            br
-            |             Cuéntanos un poco sobre tu estilo
-        .carousel.carousel-slider.corousel-slider-styles.center(data-indicators='true')
-          //
-            <div class="carousel-fixed-item center">
-            <a class="btn waves-effect white grey-text darken-text-2">button</a>
-            </div>
-          .carousel-item.white-text.corousel-slide-styles(href='#one!')
-            .corousel-image1-styles
-              .corousel-content-styles
-                h2 First Panel
-                p
     footer.page-footer.black
       .container
         .row

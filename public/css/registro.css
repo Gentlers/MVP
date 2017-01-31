@@ -144,6 +144,9 @@ html {
 
 .input-field input[type=text]:focus + label {
   color: #2a2a2a; }
+.input-field:focus + label {
+  color: #2a2a2a;
+}
 
 .input-field input[type=email]:focus + label {
   color: #2a2a2a; }
@@ -273,3 +276,10 @@ input[type=tel] {
   padding-top: 300px; }
 
 /*# sourceMappingURL=registro.css.map */
+
+form p {
+  text-align: center;
+}
+.input-field.enter-size-item-1-a.center option {
+  text-align: center;
+}
