@@ -1,0 +1,106 @@
+doctype html
+html(lang='es')
+  head
+    meta(charset='UTF-8')
+    // Import Google Icon Font
+    link(href='http://fonts.googleapis.com/icon?family=Material+Icons', rel='stylesheet')
+    // Compiled and minified CSS
+    link(rel='stylesheet', href='css/materialize.min.css')
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css')
+    link(rel='stylesheet', href='css/registro.css')
+    link(rel='stylesheet', href='css/pronto.css')
+    // Let browser know website is optimized for mobile
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+  body
+    header
+      #header-web-gento.navbar-fixed
+        nav.black
+          .nav-wrapper
+            a.brand-logo(href='#!')
+              img(src='img/inicio/header/logo.png', alt='')
+            a.button-collapse.icono-button(href='#', data-activates='mobile-demo', onclick='buttonChange()')
+              i.material-icons.icono menu
+            ul.right.hide-on-med-and-down
+              li
+                a.active(href='/') INICIO
+              li
+                a(href='/explorar') EXPLORAR
+              li
+                a(href='/pronto') REGISTRARSE
+            ul#mobile-demo.side-nav.side-nav-content
+              li
+                a.active(href='/') INICIO
+              li
+                a(href='/explorar') EXPLORAR
+              li
+                a(href='/pronto') REGISTRARSE
+    main
+      // NOTE: THIS IS BACKGROUND PRESENTATION REGISTER
+      .row
+        .registro-presentation.center
+          .registro-presentation-a
+            p ESTAS A UN PASO
+            p DE SER PARTE
+            p DE UNA FORMA DISTINTA
+            p DE VESTIR
+      // NOTE: WE WANT KNOW ABOUT YOU
+      .container.center
+        form(action='/pronto', method='POST')
+          .row.registro-date
+            .registro-date-text.center
+              h3 Queremos conocerte
+              #registro-date-know
+                .input-field
+                  input#name.validate(type='text' name='nombre')
+                  label(for='name') ¿Cómo te llamas?
+                .input-field
+                  input#email.validate(type='email', name='email')
+                  label(for='email') ¿Cuál es tu correo?
+                .input-field
+                  input#phone.validate(type='number', name='phone')
+                  label(for='phone') ¿Cuál es tu whatsapp?
+                .input-field
+                  input#edad.validate(type='number', name='edad')
+                  label(for='edad') ¿Cuál es tu Edad?
+                .input-field
+                  input#password.validate(type='password', name='password')
+                  label(for='password') Ingresa una contraseña
+              button#btn-know.btn.black Siguiente
+          // NOTE: ENTER SIZES
+          
+    footer.page-footer.black
+      .container
+        .row
+          .col.l6.s12
+            h5.white-text Gento, la forma más inteligente de comprar ropa.
+            p.grey-text.text-lighten-4 
+              span Recuerda que al comprar en Gento, medimos tus tallas,
+              br
+              span Y acamos tu estilo para buscar en todas las tiendas
+              br
+              span Y ofrecerte las mejores prendas personalizadas para ti.
+
+          .col.l4.offset-l2.s12
+            h5.white-text Síguenos en Redes Sociales
+            ul
+              li
+                a.grey-text.text-lighten-3(target='blank' href='https://facebook.com.com/gentoapp')
+                  i.fa.fa-facebook
+                  p Facebook
+              li
+                a.grey-text.text-lighten-3(target='blank' href='https://twitter.com.com/gentoapp') 
+                  i.fa.fa-twitter
+                  p Twitter
+              li
+                a.grey-text.text-lighten-3(target='blank' href='https://instagram.com/gentoapp')
+                  i.fa.fa-instagram
+                  p Instagram
+
+      .footer-copyright
+        .container
+          strong hola@gentoapp.com  |  © 2017 GENTO
+    // Import jQuery before materialize.js
+    script(type='text/javascript', src='js/jQuery-3.1.1.js')
+    script(type='text/javascript', src='js/materialize.min.js')
+    script(src='js/headroom.min.js')
+    script(src='js/registro.js')

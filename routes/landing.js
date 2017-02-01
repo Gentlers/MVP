@@ -10,7 +10,9 @@ var session_middleware = require('../middlewares/session')
 router.get('/', function(req, res, next) {
    res.render('index', { title: "Inicio" });
 });
-
+router.get('/pronto', function(req, res, next) {
+  res.render('pronto', { title: 'GENTO Muy Pronto'})
+})
 router.get('/explorar', function(req, res, next) {
   if(!req.session.user_id){
     res.render('explorar-no-session')
@@ -27,7 +29,7 @@ router.get('/explorar', function(req, res, next) {
   }
 });
 
-router.get('/registro', no_session_middleware, function(req, res, next) {
+router.get('/v/registro', no_session_middleware, function(req, res, next) {
   res.render('registro', { title: 'Registro' });
 });
 

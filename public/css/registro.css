@@ -283,3 +283,18 @@ form p {
 .input-field.enter-size-item-1-a.center option {
   text-align: center;
 }
+.img-estilo {
+  max-width: 75%;
+  width: 75%;
+  height: 100%;
+}
+.page-footer ul li a {
+  display: inline !important;
+}
+.page-footer ul li p {
+  display: inline !important;
+  margin-left: 10px !important;
+}
+.footer-copyright .container{
+  text-align: center;
+}

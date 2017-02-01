@@ -1,0 +1,46 @@
+.sc1 {
+	text-align: center;
+}
+.container {
+	padding-top: 5%;
+}
+.btn-login {
+	background: #202020;
+	border: 0px;
+}
+.btn-login:hover {
+	background: #808080;
+}
+.registro {
+	color: #23527c;
+}
+.registro:hover {
+	color: #202020;
+}
+.logo {
+	margin-top: 100px;
+	margin-bottom: 75px;
+	width: 20%;
+	max-width: 400px;
+	min-width: 150px;
+}
+input:focus {
+	border: 0px;
+	box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(50,50,50,1) !important;
+}
+input[type="submit"]:active {
+	background: #505050 !important;
+}
+input[type="submit"]:focus {
+	background: #505050 !important;
+}
+.page-footer ul li a {
+	display: inline !important;
+}
+.page-footer ul li p {
+	display: inline !important;
+	margin-left: 10px !important;
+}
+.footer-copyright .container{
+	text-align: center;
+}

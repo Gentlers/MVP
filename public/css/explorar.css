@@ -413,3 +413,14 @@ ul {
     padding-top: 10%; } }
 
 /*# sourceMappingURL=explorar.css.map */
+
+.page-footer ul li a {
+  display: inline !important;
+}
+.page-footer ul li p {
+  display: inline !important;
+  margin-left: 10px !important;
+}
+.footer-copyright .container{
+  text-align: center;
+}

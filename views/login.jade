@@ -4,19 +4,26 @@ html(lang='es')
     title=title
     meta(charset='UTF-8')
     link(href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css', rel='stylesheet')
-    link(rel="stylesheet", href="/css/estilos.css")
+    link(rel="stylesheet", href="/css/login.css")
   body
-    .col-md-6.remove-float.center-block.big-top-space
-      form(action='/session', method='POST')
-        div.form-group
-          label(for='email') e-mail
-          input.form-control(type='text', name='email', placeholder='Ingresa tu correo: ', id='email')
-        div.form-group
-          label(for='password') Contraseña
-          input.form-control(type='password', name='password', placeholder='Ahora tu contraseña: ', id='password')
-        .row.top-space
-          .col-xs-12.col-md-6
-            input.btn.btn-info(type='submit', value='Iniciar Sesion')
-          .col-xs-12.col-md-6.text-right
-            a(href='/signup') No tengo cuenta
+    .container
+      .row.sc1.center-block.center
+        .col-sm-12.text-center
+          img.logo(src='https://trello-attachments.s3.amazonaws.com/5854ffde20fad7d82ab96f7b/600x220/68b915e428137c76c9ef9c71e5b95e20/logo.png')
+        .col-md-3 
+          br
+        .col-md-6.remove-float.center-block.big-top-space
+          form(action='/session', method='POST')
+            div.form-group
+              label(for='email') e-mail
+              input.form-control(type='text', name='email', placeholder='Ingresa tu correo: ', id='email')
+            div.form-group
+              label(for='password') Contraseña
+              input.form-control(type='password', name='password', placeholder='Ahora tu contraseña: ', id='password')
+            .row.top-space
+              .col-xs-12.col-md-12
+                input.btn.btn-info.btn-login(type='submit', value='Iniciar Sesion')
+              .col-xs-12.col-md-12.text-center
+                br
+                a.registro(href='/pronto') No tengo cuenta    
 
