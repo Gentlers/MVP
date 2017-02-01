@@ -1,0 +1,67 @@
+doctype html
+html(lang='es')
+  head
+    title= title
+    meta(charset='UTF-8')
+    // Import Google Icon Font
+    link(href='http://fonts.googleapis.com/icon?family=Material+Icons', rel='stylesheet')
+    // Compiled and minified CSS
+    link(href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css', rel='stylesheet')
+    
+    link(rel='stylesheet', href='css/materialize.min.css')
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css')
+    link(rel='stylesheet', href='css/inicio.css')
+    link(rel="stylesheet", href="/css/login.css")
+    // Let browser know website is optimized for mobile
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+  body
+    header
+      #header-web-gento.navbar-fixed
+        nav.black
+          .nav-wrapper
+            a.brand-logo(href='#!')
+              img(src='img/inicio/header/logo.png', alt='')
+            a.button-collapse.icono-button(href='#', data-activates='mobile-demo', onclick='buttonChange()')
+              i.material-icons.icono menu
+            ul.right.hide-on-med-and-down
+              li
+                a.active(href='/') INICIO
+              li
+                a(href='/explorar') EXPLORAR
+              li
+                a(href='/pronto') REGISTRARSE
+            ul#mobile-demo.side-nav.side-nav-content
+              li
+                a.active(href='/') INICIO
+              li
+                a(href='/explorar') EXPLORAR
+              li
+                a(href='/pronto') REGISTRARSE
+    .container
+      .row.sc1.center-block.center
+        .col-sm-12.text-center
+          img.logo(src='https://trello-attachments.s3.amazonaws.com/5854ffde20fad7d82ab96f7b/600x220/68b915e428137c76c9ef9c71e5b95e20/logo.png')
+        .col-md-3 
+          br
+        .col-md-6.remove-float.center-block.big-top-space
+          form(action='/session', method='POST')
+            div.form-group
+              label(for='email') e-mail
+              input.form-control(type='text', name='email', placeholder='Ingresa tu correo: ', id='email')
+            div.form-group
+              label(for='password') Contraseña
+              input.form-control(type='password', name='password', placeholder='Ahora tu contraseña: ', id='password')
+            .row.top-space
+              .col-xs-12.col-md-12
+                input.btn.btn-info.btn-login(type='submit', value='Iniciar Sesion')
+              .col-xs-12.col-md-12.text-center
+                br
+                a.registro(href='/pronto') No tengo cuenta    
+
+    script.
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-85217882-4', 'auto');
+      ga('send', 'pageview');

@@ -5,11 +5,20 @@ html(lang='es')
     // Import Google Icon Font
     link(href='http://fonts.googleapis.com/icon?family=Material+Icons', rel='stylesheet')
     // Compiled and minified CSS
+    link(rel='stylesheet', href='css/explorar.css')
     link(rel='stylesheet', href='css/materialize.min.css')
     link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css')
     link(rel='stylesheet', href='css/inicio.css')
     // Let browser know website is optimized for mobile
     meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    //- SEO
+    meta(name='keywords', content='gento, ropa para hombres, asesoria de estilo, e-commerce, fashion')
+    meta(name='description', content='Gento, el e-commerce que escanea tus tallas, analiza tu estilo y busca entre todas las tiendas para darte las prendas que vayan contigo. Entra y vive la experiencia.')
+    meta(name='author', content='Gento')
+    //- OPEN GRAPH
+    meta(property='og:title', content='GENTO')
+    meta(property='og:description', content='Gento, el e-commerce que escanea tus tallas, analiza tu estilo y busca entre todas las tiendas para darte las prendas que vayan contigo. Entra y vive la experiencia.')
+    meta(property='og:image', content='https://trello-attachments.s3.amazonaws.com/589191fc28092a79ef050122/450x450/c14126b7f86ab109ac04e0ade59dd4e7/GENTOFUTURE.png')
   body
     header
       #header-web-gento.navbar-fixed
@@ -57,6 +66,11 @@ html(lang='es')
               h3.helvetica2 Encuentra ropa solo para ti.
               h5.light.grey-text.text-lighten-3 Buscaremos las prendas precisas.
               a.waves-effect.black.btn.helvetica2 REGISTRATE
+      // NOTE: VIDEO
+      .center.center-block.video-gento
+        .row.valign.center.center-block
+          iframe(src='https://player.vimeo.com/video/201190365', width='640', height='360', frameborder='0', webkitallowfullscreen='', mozallowfullscreen='', allowfullscreen='')
+
       // NOTE: WHY USE GENTO
       .parallax-container.valign-wrapper.margin-sup.seccion2.gris
         .row.valign
@@ -125,74 +139,59 @@ html(lang='es')
           .col.s12
             span RECIBIR
             p Ahora solo espera unos dias y tendrás tu selección en la puerta de tu casa.
-      // SELECCIONES RECIENTES:
-      .row.selections
-        h3
-          p Selecciones recientes
-        .col.l3.m6.s12
-          .card.selections1
-            .card-image.selections2.waves-effect.waves-block.waves-light
-              img.activator.responsive-img(src='img/inicio/select/02.jpg')
-            .card-content
-              span.card-title.card-title-size.activator.grey-text.text-darken-4
-                | Prenda de muestra
-                i.material-icons.right more_vert
-              p
-                a(href='#') This is a link
-            .card-reveal
-              span.card-title.grey-text.text-darken-4
-                | Prenda de muestra
-                i.material-icons.right close
-              p
-                | Información del producto recientemente elegido y para quien fue elegido..
-        .col.l3.m6.s12
-          .card.selections1
-            .card-image.selections2.waves-effect.waves-block.waves-light
-              img.activator.responsive-img(src='img/inicio/select/02.jpg')
-            .card-content
-              span.card-title.card-title-size.activator.grey-text.text-darken-4
-                | Prenda de muestra
-                i.material-icons.right more_vert
-              p
-                a(href='#') This is a link
-            .card-reveal
-              span.card-title.grey-text.text-darken-4
-                | Prenda de muestra
-                i.material-icons.right close
-              p
-                | Información del producto recientemente elegido y para quien fue elegido..
-        .col.l3.m6.s12
-          .card.selections1
-            .card-image.selections2.waves-effect.waves-block.waves-light
-              img.activator.responsive-img(src='img/inicio/select/02.jpg')
-            .card-content
-              span.card-title.card-title-size.activator.grey-text.text-darken-4
-                | Prenda de muestra
-                i.material-icons.right more_vert
-              p
-                a(href='#') This is a link
-            .card-reveal
-              span.card-title.grey-text.text-darken-4
-                | Prenda de muestra
-                i.material-icons.right close
-              p
-                | Información del producto recientemente elegido y para quien fue elegido..
-        .col.l3.m6.s12
-          .card.selections1
-            .card-image.selections2.waves-effect.waves-block.waves-light
-              img.activator.responsive-img(src='img/inicio/select/02.jpg')
-            .card-content
-              span.card-title.card-title-size.activator.grey-text.text-darken-4
-                | Prenda de muestra
-                i.material-icons.right more_vert
-              p
-                a(href='#') This is a link
-            .card-reveal
-              span.card-title.grey-text.text-darken-4
-                | Prenda de muestra
-                i.material-icons.right close
-              p
-                | Información del producto recientemente elegido y para quien fue elegido..
+      
+      // NOTE: ULTIMAS COMPRAS
+      .row.sell
+        .explorar-d.center
+          .explorar-4
+            p ULTIMAS
+            p  COMPRAS
+        .carousel.carousel-sell.carousel-sell-css.valign-wrapper
+          .carousel-item.item-sell.white-text.valign(href='#one!')
+            .row.carousel-text
+              .col.l4.m4.s12.carousel-item-1
+                img(src='img/explorar/lastsell/02.png', alt='')
+                p
+                  b.helvetica3 CRISTIAN VALLE
+                  br
+                  |                   CLIENTE
+              .col.l8.m8.s12.carousel-item-2
+                p.helvetica3 BLAZER BROWN
+                p.helvetica2
+                  | ENVIADO A: SAN ISIDRO 
+                  br
+                  |                     MARCA: JOHN HOLDEN
+                a.waves-effect.black.btn.helvetica2 PRECIO S/.170
+          .carousel-item.item-sell.white-text.valign(href='#one!')
+            .row.carousel-text
+              .col.l4.m4.s12.carousel-item-1
+                img(src='img/explorar/lastsell/02.png', alt='')
+                p
+                  b.helvetica3 CRISTIAN VALLE
+                  br
+                  |                   CLIENTE
+              .col.l8.m8.s12.carousel-item-2
+                p.helvetica3 BLAZER BROWN
+                p.helvetica2
+                  | ENVIADO A: SAN ISIDRO 
+                  br
+                  |                     MARCA: JOHN HOLDEN
+                a.waves-effect.black.btn.helvetica2 PRECIO S/.170
+          .carousel-item.item-sell.white-text.valign(href='#one!')
+            .row.carousel-text
+              .col.l4.m4.s12.carousel-item-1
+                img(src='img/explorar/lastsell/02.png', alt='')
+                p
+                  b.helvetica3 CRISTIAN VALLE
+                  br
+                  |                   CLIENTE
+              .col.l8.m8.s12.carousel-item-2
+                p.helvetica3 BLAZER BROWN
+                p.helvetica2
+                  | ENVIADO A: SAN ISIDRO 
+                  br
+                  |                     MARCA: JOHN HOLDEN
+                a.waves-effect.black.btn.helvetica2 PRECIO S/.170
       .row.partner
         h3
           p Partners
@@ -238,7 +237,16 @@ html(lang='es')
 
       .footer-copyright
         .container
-          strong hola@gentoapp.com  |  © 2017 GENTO
+          strong hola@gentoapp.com  |  © 2017 GENTO      
+    script.
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-85217882-4', 'auto');
+      ga('send', 'pageview');
+
+
     // Import jQuery before materialize.js
     script(type='text/javascript', src='js/jQuery-3.1.1.js')
     script(src='js/materialize.min.js')

@@ -10,6 +10,9 @@ var session_middleware = require('../middlewares/session')
 router.get('/', function(req, res, next) {
    res.render('index', { title: "Inicio" });
 });
+router.get('/ganadores', function(req, res) {
+  res.render('ganadores', { title: "Ganadores del Sorteo" })
+})
 router.get('/pronto', function(req, res, next) {
   res.render('pronto', { title: 'GENTO Muy Pronto'})
 })

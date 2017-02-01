@@ -11,6 +11,14 @@ html(lang='es')
     link(rel='stylesheet', href='css/explorar.css')
     // Let browser know website is optimized for mobile
     meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    //- SEO
+    meta(name='keywords', content='gento, ropa para hombres, asesoria de estilo, e-commerce, fashion')
+    meta(name='description', content='Explora las mejores opciones para tu tipo de estilo, y observa las selecciones que ya hemos realizado. Tu puedes ser el siguiente en vivir la experiencia.')
+    meta(name='author', content='Gento')
+    //- OPEN GRAPH
+    meta(property='og:title', content='GENTO - Explora selecciones')
+    meta(property='og:description', content='Explora las mejores opciones para tu tipo de estilo, y observa las selecciones que ya hemos realizado. Tu puedes ser el siguiente en vivir la experiencia.')
+    meta(property='og:image', content='https://trello-attachments.s3.amazonaws.com/589191fc28092a79ef050122/450x450/c14126b7f86ab109ac04e0ade59dd4e7/GENTOFUTURE.png')
   body
     header
       #header-web-gento.navbar-fixed
@@ -222,58 +230,7 @@ html(lang='es')
                   a.button-best SUN CAMISA
                   p Up to 70% off
                   a.waves-effect.white.btn.helvetica2.black-text.text-black COMPRAR
-      // NOTE: ULTIMAS COMPRAS
-      .row.sell
-        .explorar-d.center
-          .explorar-4
-            p ULTIMAS
-            p  COMPRAS
-        .carousel.carousel-sell.carousel-sell-css.valign-wrapper
-          .carousel-item.item-sell.white-text.valign(href='#one!')
-            .row.carousel-text
-              .col.l4.m4.s12.carousel-item-1
-                img(src='img/explorar/lastsell/02.png', alt='')
-                p
-                  b.helvetica3 CRISTIAN VALLE
-                  br
-                  |                   CLIENTE
-              .col.l8.m8.s12.carousel-item-2
-                p.helvetica3 BLAZER BROWN
-                p.helvetica2
-                  | ENVIADO A: SAN ISIDRO 
-                  br
-                  |                     MARCA: JOHN HOLDEN
-                a.waves-effect.black.btn.helvetica2 PRECIO S/.170
-          .carousel-item.item-sell.white-text.valign(href='#one!')
-            .row.carousel-text
-              .col.l4.m4.s12.carousel-item-1
-                img(src='img/explorar/lastsell/02.png', alt='')
-                p
-                  b.helvetica3 CRISTIAN VALLE
-                  br
-                  |                   CLIENTE
-              .col.l8.m8.s12.carousel-item-2
-                p.helvetica3 BLAZER BROWN
-                p.helvetica2
-                  | ENVIADO A: SAN ISIDRO 
-                  br
-                  |                     MARCA: JOHN HOLDEN
-                a.waves-effect.black.btn.helvetica2 PRECIO S/.170
-          .carousel-item.item-sell.white-text.valign(href='#one!')
-            .row.carousel-text
-              .col.l4.m4.s12.carousel-item-1
-                img(src='img/explorar/lastsell/02.png', alt='')
-                p
-                  b.helvetica3 CRISTIAN VALLE
-                  br
-                  |                   CLIENTE
-              .col.l8.m8.s12.carousel-item-2
-                p.helvetica3 BLAZER BROWN
-                p.helvetica2
-                  | ENVIADO A: SAN ISIDRO 
-                  br
-                  |                     MARCA: JOHN HOLDEN
-                a.waves-effect.black.btn.helvetica2 PRECIO S/.170
+      
     footer.page-footer.black
       .container
         .row
@@ -305,6 +262,13 @@ html(lang='es')
       .footer-copyright
         .container
           strong hola@gentoapp.com  |  © 2017 GENTO
+    script.
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-85217882-4', 'auto');
+      ga('send', 'pageview');
     // Import jQuery before materialize.js
     script(type='text/javascript', src='js/jQuery-3.1.1.js')
     script(src='https://cdnjs.cloudflare.com/ajax/libs/lightslider/1.1.6/js/lightslider.min.js')
