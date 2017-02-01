@@ -29,7 +29,7 @@ router.get('/explorar', function(req, res, next) {
   }
 });
 
-router.get('/v/registro', no_session_middleware, function(req, res, next) {
+router.get('/v-registro', no_session_middleware, function(req, res, next) {
   res.render('registro', { title: 'Registro' });
 });
 
