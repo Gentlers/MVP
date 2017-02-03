@@ -43,36 +43,16 @@ html(lang='es')
               li
                 a(href='/pronto') REGISTRARSE
     main
-      .slider
-        ul.slides
-          li
-            img(src='img/inicio/slides/01.jpg')
-            // random image
-            .caption.center-align
-              h3.helvetica2 Encuentra ropa solo para ti.
-              h5.light.grey-text.text-lighten-3 Buscaremos las prendas precisas.
-              a.waves-effect.black.btn(href='/pronto') REGISTRATE
-          li
-            img(src='img/inicio/slides/02.jpg')
-            // random image
-            .caption.left-align
-              h3.helvetica2 Gento Buscará las prendas por ti.
-              h5.light.grey-text.text-lighten-3 Olvídate de los problemas.
-              a.waves-effect.black.btn(href='/pronto') REGISTRATE
-          li
-            img(src='img/inicio/slides/01.jpg')
-            // random image
-            .caption.right-align
-              h3.helvetica2 Encuentra ropa solo para ti.
-              h5.light.grey-text.text-lighten-3 Buscaremos las prendas precisas.
-              a.waves-effect.black.btn.helvetica2 REGISTRATE
-      // NOTE: VIDEO
-      .center.center-block.video-gento
-        .row.valign.center.center-block
-          iframe(src='https://player.vimeo.com/video/201190365', width='640', height='360', frameborder='0', webkitallowfullscreen='', mozallowfullscreen='', allowfullscreen='')
-
+      // NOTE: THIS IS THE  MAIN BACKGROUND OF THE PAGE
+      .background-main
+        h1 Bienvenido a la apliación que cambiará forma de comprar ropa
+      // NOTE: THIS IS THE PART OF THE VIDEO GENTO
+      .background-video
+        video(controls='')
+          source(src='https://youtu.be/cwcKC0m1eUw', type='video/mp4')
+          |             Your browser does not support HTML5 video.
       // NOTE: WHY USE GENTO
-      .parallax-container.valign-wrapper.margin-sup.seccion2.gris
+      .why-container.valign-wrapper
         .row.valign
           .col.s12.why-1
             p.why-text ¿Por qué comprar en Gento?
@@ -92,8 +72,6 @@ html(lang='es')
                 img(src='img/inicio/why/03.png', alt='')
               .col.l12.m12.s6
                 p ¿Pierdes demasiados tiempo y dinero buscando?
-        //- .parallax
-        //-   img(src='img/1.jpg')
       // NOTE: PART HOW TO USE GENTO
       .row.how
         .col.l5.m6.s12
@@ -124,23 +102,22 @@ html(lang='es')
                   //- .caption.right-align
                   //-   h3 Right Aligned Caption
                   //-   h5.light.grey-text.text-lighten-3 Compra y recibe en tu casa.
-
         .col.l7.m6.s12.how-text
           .col.s12
             h3 Es muy facil
           .col.s12
-            span ESCANEAR
+            span BUSCAR
             br
-            p Gento escaneará tus tallas con una foto y sacará tu estilo con unas simples preguntas.
+            p Lorem ipsum dolor sit amet, consectetur adipisonem accusantium assumenda.
           .col.s12
             span EXPLORAR
             br
-            p Buscará entre todas las tiendas prendas solamente para ti.
+            p Lorem ipsum dolor sit amet, consectetur adipisonem accusantium assumenda.
           .col.s12
-            span RECIBIR
-            p Ahora solo espera unos dias y tendrás tu selección en la puerta de tu casa.
-      
-      // NOTE: ULTIMAS COMPRAS
+            span DESCUBRIR
+            br
+            p Lorem ipsum dolor sit amet, consectetur adipisonem accusantium assumenda.
+      // NOTE: CAMPO AÑADIDO ULTIMAS COMPRAS
       .row.sell
         .explorar-d.center
           .explorar-4
@@ -154,13 +131,13 @@ html(lang='es')
                 p
                   b.helvetica3 CRISTIAN VALLE
                   br
-                  |                   CLIENTE
+                  |                       CLIENTE
               .col.l8.m8.s12.carousel-item-2
                 p.helvetica3 BLAZER BROWN
                 p.helvetica2
                   | ENVIADO A: SAN ISIDRO 
                   br
-                  |                     MARCA: JOHN HOLDEN
+                  |                         MARCA: JOHN HOLDEN
                 a.waves-effect.black.btn.helvetica2 PRECIO S/.170
           .carousel-item.item-sell.white-text.valign(href='#one!')
             .row.carousel-text
@@ -169,13 +146,13 @@ html(lang='es')
                 p
                   b.helvetica3 CRISTIAN VALLE
                   br
-                  |                   CLIENTE
+                  |                       CLIENTE
               .col.l8.m8.s12.carousel-item-2
                 p.helvetica3 BLAZER BROWN
                 p.helvetica2
                   | ENVIADO A: SAN ISIDRO 
                   br
-                  |                     MARCA: JOHN HOLDEN
+                  |                         MARCA: JOHN HOLDEN
                 a.waves-effect.black.btn.helvetica2 PRECIO S/.170
           .carousel-item.item-sell.white-text.valign(href='#one!')
             .row.carousel-text
@@ -184,29 +161,41 @@ html(lang='es')
                 p
                   b.helvetica3 CRISTIAN VALLE
                   br
-                  |                   CLIENTE
+                  |                       CLIENTE
               .col.l8.m8.s12.carousel-item-2
                 p.helvetica3 BLAZER BROWN
                 p.helvetica2
                   | ENVIADO A: SAN ISIDRO 
                   br
-                  |                     MARCA: JOHN HOLDEN
+                  |                         MARCA: JOHN HOLDEN
                 a.waves-effect.black.btn.helvetica2 PRECIO S/.170
+      // NOTE: ESTE EL PARALLAX DE LLAMADA A LA ACCION
+      .parallax-container.valign-wrapper
+        .row.valign
+          .col.s12.why-1.center
+            p.why-text LLAMADA A LA ACCION GENTO
+            button.btn.btn-large.white.black-text.helvetica2(id='#') REGISTRARSE
+        .parallax
+          img(src='img/inicio/llamada-accion/01.png')
       .row.partner
         h3
           p Partners
-        .col.l4.m4.s12
+        .col.l3.m3.s6
           a(href='#one!')
             img(src='img/inicio/partner/1551.png')
-            p Incubadora 1551
-        .col.l4.m4.s12
+            p Incubadora de Empresas San Marcos
+        .col.l3.m3.s6
           a(href='#one!')
             img(src='img/inicio/partner/1551.png')
-            p Devs Marketing Digital
-        .col.l4.m4.s12
+            p Incubadora de Empresas San Marcos
+        .col.l3.m3.s6
           a(href='#one!')
             img(src='img/inicio/partner/1551.png')
-            p Starter Agencia de Desarrollo
+            p Incubadora de Empresas San Marcos
+        .col.l3.m3.s6
+          a(href='#one!')
+            img(src='img/inicio/partner/1551.png')
+            p Incubadora de Empresas San Marcos
     footer.page-footer.black
       .container
         .row
