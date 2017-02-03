@@ -1,3 +1,196 @@
+@font-face {
+  font-family: "helvetica1";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../font/Helvetica1.otf");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000; }
+@font-face {
+  font-family: "helvetica2";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../font/Helvetica2.otf");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000; }
+@font-face {
+  font-family: "helvetica3";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../font/Helvetica3.otf");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000; }
+html {
+  font-family: helvetica1; }
+
+.helvetica2 {
+  font-family: helvetica2; }
+
+.helvetica3 {
+  font-family: helvetica3; }
+
+.nav-wrapper a img {
+  padding-top: 17px;
+  margin-left: 20px; }
+.nav-wrapper li a {
+  font-family: helvetica2; }
+  .nav-wrapper li a:hover {
+    color: #4f82c2; }
+  .nav-wrapper li a:active {
+    color: #4f82c2; }
+
+.side-nav {
+  top: 56px;
+  height: 600px; }
+
+.navbar-fixed {
+  position: fixed;
+  width: 100%;
+  top: 0px;
+  background-color: none; }
+
+#sidenav-overlay {
+  background: none;
+  height: 0vh; }
+
+.drag-target {
+  z-index: -1; }
+
+.side-nav-content {
+  color: white;
+  text-align: center;
+  /*ANIMACION DEL NAVBAR SCROLL */ }
+
+.animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both; }
+
+@-webkit-keyframes headroom--unpinned {
+  from {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0); }
+  to {
+    visibility: hidden;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0); } }
+@keyframes headroom--unpinned {
+  from {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0); }
+  to {
+    visibility: hidden;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0); } }
+.slideUp {
+  -webkit-animation-name: headroom--unpinned;
+  animation-name: headroom--unpinned;
+  animation-duration: 1s; }
+
+@-webkit-keyframes headroom--pinned {
+  from {
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+    visibility: visible; }
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0); } }
+@keyframes headroom--pinned {
+  from {
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+    visibility: visible; }
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0); } }
+.slideDown {
+  -webkit-animation-name: headroom--pinned;
+  animation-name: headroom--pinned; }
+
+.pronto {
+  background: url("../img/pronto/01.png") center no-repeat;
+  background: cover;
+  width: auto;
+  height: 800px;
+  color: white;
+  padding-top: 100px; }
+
+.pronto-content {
+  max-width: 500px;
+  display: block;
+  margin: auto; }
+  .pronto-content img {
+    width: 250px;
+    height: auto; }
+  .pronto-content p.pronto-content-text1 {
+    font-size: 20px;
+    line-height: 20px; }
+  .pronto-content p.pronto-content-text2 {
+    font-size: 19px;
+    font-weight: bold;
+    padding-top: 17px; }
+
+.pronto-form {
+  min-width: 320px;
+  max-width: 360px;
+  display: block;
+  margin: auto;
+  padding-top: 20px; }
+
+.pronto-date-know {
+  text-align: center;
+  width: 400px; }
+  .pronto-date-know .input-field {
+    text-align: center; }
+
+/* label color */
+.input-field {
+  color: white; }
+  .input-field label {
+    font-size: 1.2rem; }
+  .input-field label.active {
+    font-size: 1rem; }
+
+.input-field input[type=text]:focus + label {
+  color: white; }
+
+.input-field input[type=email]:focus + label {
+  color: white; }
+
+.input-field input[type=tel]:focus + label {
+  color: white; }
+
+/* label focus color */
+input:not([type]),
+input[type=text],
+input[type=email],
+input[type=tel] {
+  color: white;
+  text-align: center;
+  font-size: 1.2rem; }
+
+/* label underline focus color */
+.input-field input[type=text]:focus {
+  border-bottom: 1px solid white;
+  box-shadow: 0 1px 0 0 white; }
+
+.input-field input[type=email]:focus {
+  border-bottom: 1px solid white;
+  box-shadow: 0 1px 0 0 white; }
+
+.input-field input[type=tel]:focus {
+  border-bottom: 1px solid white;
+  box-shadow: 0 1px 0 0 white; }
+
+/* valid color */
+.input-field input[type=text].valid, input[type=email].valid, input[type=tel].valid {
+  border-bottom: 1px solid #000;
+  box-shadow: 0 1px 0 0 #000; }
+
+/* invalid color */
+.input-field input[type=email].invalid, input[type=tel].invalid {
+  border-bottom: 1px solid red;
+  box-shadow: 0 1px 0 0 red; }
+
+/*# sourceMappingURL=pronto.css.map */
+
 .page-footer ul li a {
 	display: inline !important;
 }

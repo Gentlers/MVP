@@ -1,6 +1,7 @@
 doctype html
 html(lang='es')
   head
+    title= title
     meta(charset='UTF-8')
     // Import Google Icon Font
     link(href='http://fonts.googleapis.com/icon?family=Material+Icons', rel='stylesheet')
@@ -31,50 +32,38 @@ html(lang='es')
             ul.right.hide-on-med-and-down
               li
                 a.active(href='/') INICIO
+              //- li
+              //-   a(href='/explorar') EXPLORAR
               li
-                a(href='/explorar') EXPLORAR
-              li
-                a(href='/pronto') REGISTRARSE
+                a(href='/registro') REGISTRARSE
             ul#mobile-demo.side-nav.side-nav-content
               li
                 a.active(href='/') INICIO
+              //- li
+              //-   a(href='/explorar') EXPLORAR
               li
-                a(href='/explorar') EXPLORAR
-              li
-                a(href='/pronto') REGISTRARSE
+                a(href='/registro') REGISTRARSE
     main
-      // NOTE: THIS IS BACKGROUND PRESENTATION REGISTER
       .row
-        .registro-presentation.center
-          .registro-presentation-a
-            p ESTAS A UN PASO
-            p DE SER PARTE
-            p DE UNA FORMA DISTINTA
-            p DE VESTIR
-      // NOTE: WE WANT KNOW ABOUT YOU
-      .container.center
-        form(action='/pronto', method='POST')
-          .row.registro-date
-            .registro-date-text.center
-              h3 Queremos conocerte
-              #registro-date-know
-                .input-field
-                  input#name.validate(type='text' name='nombre')
-                  label(for='name') ¿Cómo te llamas?
-                .input-field
-                  input#email.validate(type='email', name='email')
-                  label(for='email') ¿Cuál es tu correo?
-                .input-field
-                  input#phone.validate(type='number', name='phone')
-                  label(for='phone') ¿Cuál es tu whatsapp?
-                .input-field
-                  input#edad.validate(type='number', name='edad')
-                  label(for='edad') ¿Cuál es tu Edad?
-                .input-field
-                  input#password.validate(type='password', name='password')
-                  label(for='password') Ingresa una contraseña
-              button#btn-know.btn.black Siguiente
-          // NOTE: ENTER SIZES
+        .pronto.center
+          .pronto-content.helvetica2
+            img(src='img/pronto/02.png', alt='gentoapp.com')
+            p.pronto-content-text1 ¡Grácias por tu interes en ser parte de Gento!
+            p.pronto-content-text1 Pronto podrás ser parte de la mejor experiencia en comprar ropa
+            p.pronto-content-text2 ¡SE UNO DE LOS PRIMEROS EN SABER SOBRE GENTO. REGÍSTRATE Y PODRÁS GANAR UN VALE DE S/.50.00!
+          .pronto-form
+            form#pronto-date-know(action="https://formspree.io/hola@gentoapp.com", method="POST")
+              .input-field
+                input#name.validate(type='text', name='nombre')
+                label(for='name') NOMBRES
+              .input-field
+                input#phone.validate(type='tel', name='telefono')
+                label(for='phone') NÚMERO
+              .input-field
+                input#email.validate(type='email', name='email')
+                label(for='email') CORREO
+              br
+              input.btn.btn-large.white.black-text(type="submit" value="Registrarme")
           
     footer.page-footer.black
       .container

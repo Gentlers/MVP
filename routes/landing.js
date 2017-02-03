@@ -14,7 +14,10 @@ router.get('/ganadores', function(req, res) {
   res.render('ganadores', { title: "Ganadores del Sorteo" })
 })
 router.get('/pronto', function(req, res, next) {
-  res.render('pronto', { title: 'GENTO Muy Pronto'})
+  res.render('pronto', { title: 'GENTO Muy Pronto' })
+})
+router.get('/registro', function(req, res) {
+  res.redirect('/pronto', { title: 'GENTO Muy Pronto' })
 })
 router.get('/explorar', function(req, res, next) {
   if(!req.session.user_id){

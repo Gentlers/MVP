@@ -326,7 +326,7 @@ html {
   background: url("../img/inicio/main/04.png") center top no-repeat;
   background-size: cover;
   width: 100%;
-  height: 500px;
+  height: 90vh;
   margin-top: 55px;
   text-align: center; }
   .background-main h1 {
@@ -361,7 +361,7 @@ html {
     font-family: helvetica3;
     font-size: 25px; }
   .why-container .row img {
-    background-color: black;
+    /*background-color: black;*/
     display: block;
     margin: auto;
     max-width: 70px;
