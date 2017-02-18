@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <title></title>
+    <meta charset="UTF-8">
+    <!-- Import Google Icon Font-->
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Compiled and minified CSS-->
+    <link rel="stylesheet" href="css/materialize.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/registro.css">
+    <link rel="stylesheet" href="css/pronto.css">
+    <!-- Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="gento, ropa para hombres, asesoria de estilo, e-commerce, fashion">
+    <meta name="description" content="Pronto cambiarás tu manera de pensar acerca de comprar ropa en línea. Gento, la forma mas inteligente de comprar ropa.">
+    <meta name="author" content="Gento">
+    <meta property="og:title" content="GENTO, muy pronto.">
+    <meta property="og:description" content="Pronto cambiarás tu manera de pensar acerca de comprar ropa en línea. Gento, la forma mas inteligente de comprar ropa.">
+    <meta property="og:image" content="https://trello-attachments.s3.amazonaws.com/589191fc28092a79ef050122/450x450/c14126b7f86ab109ac04e0ade59dd4e7/GENTOFUTURE.png">
+  </head>
+  <body>
+    <header>
+      <div id="header-web-gento" class="navbar-fixed">
+        <nav class="black">
+          <div class="nav-wrapper"><a href="#!" class="brand-logo"><img src="img/inicio/header/logo.png" alt=""></a><a href="#" data-activates="mobile-demo" onclick="buttonChange()" class="button-collapse icono-button"><i class="material-icons icono">menu</i></a>
+            <ul class="right hide-on-med-and-down">
+              <li><a href="/" class="active">INICIO</a></li>
+              <li><a href="/registro">REGISTRARSE</a></li>
+            </ul>
+            <ul id="mobile-demo" class="side-nav side-nav-content">
+              <li><a href="/" class="active">INICIO</a></li>
+              <li><a href="/registro">REGISTRARSE</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <div class="row">
+        <div class="pronto center">
+          <div class="pronto-content helvetica2"><img src="img/pronto/02.png" alt="gentoapp.com">
+            <p class="pronto-content-text1">¡Grácias por tu interes en ser parte de Gento!</p>
+            <p class="pronto-content-text1">Pronto podrás ser parte de la mejor experiencia en comprar ropa</p>
+            <p class="pronto-content-text2">¡SE UNO DE LOS PRIMEROS EN SABER SOBRE GENTO. REGÍSTRATE Y PODRÁS GANAR UN VALE DE S/.50.00!</p>
+          </div>
+          <div class="pronto-form">
+            <form id="pronto-date-know" action="https://formspree.io/hola@gentoapp.com" method="POST">
+              <div class="input-field">
+                <input id="name" type="text" name="nombre" class="validate">
+                <label for="name">NOMBRES</label>
+              </div>
+              <div class="input-field">
+                <input id="phone" type="tel" name="telefono" class="validate">
+                <label for="phone">NÚMERO</label>
+              </div>
+              <div class="input-field">
+                <input id="email" type="email" name="email" class="validate">
+                <label for="email">CORREO</label>
+              </div><br>
+              <input type="submit" value="Registrarme" class="btn btn-large white black-text">
+            </form>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="page-footer black">
+      <div class="container">
+        <div class="row">
+          <div class="col l6 s12">
+            <h5 class="white-text">Gento, la forma más inteligente de comprar ropa.</h5>
+            <p class="grey-text text-lighten-4"> <span>Recuerda que al comprar en Gento, medimos tus tallas,</span><br><span>Y acamos tu estilo para buscar en todas las tiendas</span><br><span>Y ofrecerte las mejores prendas personalizadas para ti.</span></p>
+          </div>
+          <div class="col l4 offset-l2 s12">
+            <h5 class="white-text">Síguenos en Redes Sociales</h5>
+            <ul>
+              <li><a target="blank" href="https://facebook.com.com/gentoapp" class="grey-text text-lighten-3"><i class="fa fa-facebook"></i>
+                  <p>Facebook</p></a></li>
+              <li><a target="blank" href="https://twitter.com.com/gentoapp" class="grey-text text-lighten-3"> <i class="fa fa-twitter"></i>
+                  <p>Twitter</p></a></li>
+              <li><a target="blank" href="https://instagram.com/gentoapp" class="grey-text text-lighten-3"><i class="fa fa-instagram"></i>
+                  <p>Instagram</p></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container"><strong>hola@gentoapp.com  |  © 2017 GENTO</strong></div>
+      </div>
+    </footer>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-85217882-4', 'auto');
+      ga('send', 'pageview');
+    </script>
+    <!-- Import jQuery before materialize.js-->
+    <script type="text/javascript" src="js/jQuery-3.1.1.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script src="js/headroom.min.js"></script>
+    <script src="js/registro.js"></script>
+  </body>
+</html>

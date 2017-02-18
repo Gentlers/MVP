@@ -17,7 +17,7 @@ router.get('/pronto', function(req, res, next) {
   res.render('pronto', { title: 'GENTO Muy Pronto' })
 })
 router.get('/registro', function(req, res) {
-  res.redirect('/pronto', { title: 'GENTO Muy Pronto' })
+  res.redirect('/pronto')
 })
 router.get('/explorar', function(req, res, next) {
   if(!req.session.user_id){
