@@ -130,6 +130,9 @@ html {
       line-height: 41px; }
   .explorar-a .explorar-2 {
     padding: 0px 10px; }
+    .explorar-a .explorar-2 .iconSearch {
+      padding-top: 15px;
+      margin: auto; }
     .explorar-a .explorar-2 .search-gento {
       box-shadow: -2px 2px 5px rgba(59, 59, 59, 0.4);
       margin-top: 140px;
@@ -180,167 +183,21 @@ html {
   .row.explorar-clothes .explorar-prendas .center a {
     margin: 30px 0px; }
 
-.bestseller {
-  margin-top: 100px;
-  color: white; }
-  .bestseller p.bestseller-title {
-    padding-top: 20px;
-    font-family: helvetica3;
-    font-size: 30px;
-    text-align: center; }
-
-.lSSlideWrapper {
-  max-width: 100%;
-  overflow: hidden;
-  position: relative; }
-  .lSSlideWrapper > .lightSlider:after {
-    clear: both; }
-  .lSSlideWrapper .lSSlide {
-    -webkit-transform: translate(0px, 0px);
-    -ms-transform: translate(0px, 0px);
-    transform: translate(0px, 0px);
-    -webkit-transition: all 1s;
-    -webkit-transition-property: -webkit-transform, height;
-    -moz-transition-property: -moz-transform, height;
-    -webkit-transition-duration: inherit !important;
-    transition-duration: inherit !important;
-    -webkit-transition-timing-function: inherit !important;
-    transition-timing-function: inherit !important; }
-  .lSSlideWrapper .lSFade {
-    position: relative; }
-  .lSSlideWrapper .lSFade > * {
-    position: absolute !important;
-    top: 0;
-    left: 0;
-    z-index: 9;
-    margin-right: 0;
-    width: 100%; }
-  .lSSlideWrapper.usingCss .lSFade > * {
-    opacity: 0;
-    -webkit-transition-delay: 0s;
-    transition-delay: 0s;
-    -webkit-transition-duration: inherit !important;
-    transition-duration: inherit !important;
-    -webkit-transition-property: opacity;
-    transition-property: opacity;
-    -webkit-transition-timing-function: inherit !important;
-    transition-timing-function: inherit !important; }
-  .lSSlideWrapper .lSFde > *.active {
-    z-index: 10; }
-  .lSSlideWrapper.usingCss .lSFade > *.active {
-    opacity: 1; }
-
-/** /!!! End of core css Should not edit !!!/* */
-/* Pager - this is the number below of the slides (are hidden) */
-.lSPager {
-  visibility: hidden;
-  width: 100%;
-  text-align: center; }
-  .lSPager li {
-    display: inline-block; }
-    .lSPager li a {
-      display: block;
-      padding: 5px; }
-    .lSPager li.active a {
-      color: black; }
-
-/* End of pager */
-/* slider actions */
-.lSAction a {
-  color: white;
-  text-align: center;
-  position: absolute;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-  cursor: pointer; }
-  .lSAction a.lSPrev {
-    left: 10px; }
-    .lSAction a.lSPrev:before {
-      display: block; }
-  .lSAction a.lSNext {
-    right: 10px; }
-    .lSAction a.lSNext:before {
-      display: block; }
-  .lSAction a.disabled {
-    pointer-events: none; }
-
-.cS-hidden {
-  height: 1px;
-  opacity: 0;
-  filter: alpha(opacity=0);
-  overflow: hidden; }
-
-.lSSlideOuter {
-  overflow: hidden;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none; }
-  .lSSlideOuter .lightSlider,
-  .lSSlideOuter .lSPager {
-    padding-left: 0;
-    list-style: none outside none; }
-  .lSSlideOuter .lightSlider > * {
-    float: left; }
-  .lSSlideOuter .rightEnd {
-    -webkit-animation: rightEnd 0.3s;
-    animation: rightEnd 0.3s;
-    position: relative; }
-  .lSSlideOuter .leftEnd {
-    -webkit-animation: leftEnd 0.3s;
-    animation: leftEnd 0.3s;
-    position: relative; }
-  .lSSlideOuter.lSrtl .rightEnd {
-    -webkit-animation: leftEnd 0.3s;
-    animation: leftEnd 0.3s;
-    position: relative; }
-  .lSSlideOuter.lSrtl .leftEnd {
-    -webkit-animation: rightEnd 0.3s;
-    animation: rightEnd 0.3s;
-    position: relative; }
-
-/* END DEFAUL SLIDE CAROUSEL CSS */
-ul {
-  list-style: none outside none;
-  margin: 0;
-  margin-bottom: 5px; }
-
-.demo .item {
-  margin-bottom: 60px; }
-
-.content-slider li {
-  text-align: center; }
-
-.content-slider img {
-  width: 300px;
-  height: auto;
-  display: block;
-  margin-left: auto;
-  margin-right: auto; }
-
-.demo {
-  width: 800px; }
-
-.container-best-slide {
-  position: relative; }
-  .container-best-slide .center-best-slide {
-    position: absolute;
-    top: 30%;
-    width: 100%;
-    text-align: center; }
-    .container-best-slide .center-best-slide .button-best {
+.card {
+  width: 280px;
+  margin: auto;
+  margin-top: 30px; }
+  .card .card-title {
+    font-size: 20px; }
+  .card .card-content {
+    padding: 10px; }
+    .card .card-content a {
+      color: #0054ff;
       font-family: helvetica2;
-      font-size: 20px;
-      color: white;
-      width: 140px;
-      border: 2px solid white;
-      padding: 3px 35px; }
-    .container-best-slide .center-best-slide p {
-      font-size: 14px; }
+      font-size: 16px; }
+
+.card-reveal {
+  padding-top: 100px; }
 
 .sell .explorar-d {
   margin-top: 60px; }
@@ -366,17 +223,8 @@ ul {
   margin-right: auto;
   height: 380px;
   margin-bottom: 100px; }
-  .item-01 {
-    background: url("../img/explorar/lastsell/01.png") no-repeat;
-  }
-  .item-02 {
-    background: url("../img/explorar/lastsell/03.png") no-repeat;
-  }
-  .item-03 {
-    background: url("../img/explorar/lastsell/05.png") no-repeat;
-  }
   .sell .carousel-sell-css .item-sell {
-    
+    background: url("../img/explorar/lastsell/01.png") no-repeat;
     background-size: cover;
     width: 700px;
     height: 300px;
@@ -422,14 +270,3 @@ ul {
     padding-top: 10%; } }
 
 /*# sourceMappingURL=explorar.css.map */
-
-.page-footer ul li a {
-  display: inline !important;
-}
-.page-footer ul li p {
-  display: inline !important;
-  margin-left: 10px !important;
-}
-.footer-copyright .container{
-  text-align: center;
-}
