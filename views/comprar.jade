@@ -1,0 +1,134 @@
+doctype html
+html(lang='es')
+  head
+    title Explorar
+    meta(charset='UTF-8')
+    // Import Google Icon Font
+    link(href='http://fonts.googleapis.com/icon?family=Material+Icons', rel='stylesheet')
+    // Compiled and minified CSS
+    link(rel='stylesheet', href='/css/materialize.min.css')
+    link(rel='stylesheet', href='/https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css')
+    link(rel='stylesheet', href='/css/explorar.css')
+    link(rel='stylesheet', href='/css/inicio.css')
+    // Let browser know website is optimized for mobile
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    //- SEO
+    meta(name='keywords', content='gento, ropa para hombres, asesoria de estilo, e-commerce, fashion')
+    meta(name='description', content='Explora las mejores opciones para tu tipo de estilo, y observa las selecciones que ya hemos realizado. Tu puedes ser el siguiente en vivir la experiencia.')
+    meta(name='author', content='Gento')
+    //- OPEN GRAPH
+    meta(property='og:title', content='GENTO - Explora selecciones')
+    meta(property='og:description', content='Explora las mejores opciones para tu tipo de estilo, y observa las selecciones que ya hemos realizado. Tu puedes ser el siguiente en vivir la experiencia.')
+    meta(property='og:image', content='https://trello-attachments.s3.amazonaws.com/589191fc28092a79ef050122/450x450/c14126b7f86ab109ac04e0ade59dd4e7/GENTOFUTURE.png')
+  body
+    header
+      #header-web-gento.navbar-fixed
+        nav.black
+          .nav-wrapper
+            a.brand-logo(href='#')
+              img(src='/img/inicio/header/logo.png', alt='')
+            a.button-collapse.icono-button(href='#', data-activates='mobile-demo', onclick='buttonChange()')
+              i.material-icons.icono menu
+            ul.right.hide-on-med-and-down
+              li
+                a.active(href='/') INICIO
+              if bol.valor == 1
+                li
+                  a(href='/explorar') EXPLORAR
+              if bol.valor == 0
+                li
+                  a(href='/pronto') REGISTRO
+              else
+                li
+                  a(href='/perfil') PERFIL
+            ul#mobile-demo.side-nav.side-nav-content
+              li
+                a.active(href='/') INICIO
+              if bol.valor == 1
+                li
+                  a(href='/explorar') EXPLORAR
+              if bol.valor == 0
+                li
+                  a(href='/pronto') REGISTRO
+              else
+                li
+                  a(href='/perfil') PERFIL
+    main
+      // NOTE: EXPLORER CLOTHES
+      br
+      br
+      br
+      .row.explorar-clothes
+        .explorar-b.center
+          .explorar-3
+            p EXPLORAMOS
+            p PRENDAS QUE VAN
+            p  CONTIGO
+        .explorar-prendas
+          .col.l4.m6.s12
+            .card.selections1
+              .card-image.selections2.waves-effect.waves-block.waves-light
+                // NOTE: IMAGEN DE LA PRENDA NO MAYOR A 280PX DE WITH
+                img.activator.responsive-img(src='/img/inicio/select/02.jpg')
+              .card-content
+                span.card-title.card-title-size.activator.grey-text.text-darken-4
+                  | Sport Elegante
+                  i.material-icons.right more_vert
+                p
+                  a(href='#') S/. 150.00
+              .card-reveal
+                span.card-title.grey-text.text-darken-4
+                  | Camisa Abantos
+                  i.material-icons.right close
+                // NOTE: ADD MORE INFORMATION OF THE CLOTHES
+                p
+                  | Here is some more information about this product that is only revealed once clicked on.
+                p.center
+                  a.waves-effect.waves-light.btn.black.helvetica2
+                    i.material-icons.right shopping_cart
+                    | COMPRAR
+          
+      
+    footer.page-footer.black
+      .container
+        .row
+          .col.l6.s12
+            h5.white-text Gento, la forma más inteligente de comprar ropa.
+            p.grey-text.text-lighten-4
+              span Recuerda que al comprar en Gento, medimos tus tallas,
+              br
+              span y analizamos tu estilo para buscar en todas las tiendas
+              br
+              span y poder ofrecerte las mejores prendas personalizadas para ti.
+          .col.l4.offset-l2.s12
+            h5.white-text Síguenos en Redes Sociales
+            ul
+              li
+                a.grey-text.text-lighten-3(target='blank', href='https://facebook.com.com/gentoapp')
+                  i.fa.fa-facebook
+                  p Facebook
+              li
+                a.grey-text.text-lighten-3(target='blank', href='https://twitter.com.com/gentoapp')
+                  i.fa.fa-twitter
+                  p Twitter
+              li
+                a.grey-text.text-lighten-3(target='blank', href='https://instagram.com/gentoapp')
+                  i.fa.fa-instagram
+                  p Instagram
+      .footer-copyright
+        .container
+          strong hola@gento.pe  |  © 2017 GENTO      
+    // Google Analytics
+    script.
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-85217882-6', 'auto');
+      ga('send', 'pageview');
+    // Import jQuery before materialize.js
+    script(type='text/javascript', src='/js/jQuery-3.1.1.js')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/lightslider/1.1.6/js/lightslider.min.js')
+    script(src='/js/materialize.min.js')
+    script(src='/js/headroom.min.js')
+    script(src='/js/explorar.js')

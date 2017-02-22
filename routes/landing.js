@@ -3,6 +3,7 @@ var express = require('express');
 var router = express.Router();
 var Venta = require('../models').Venta
 var Prenda = require('../models').Prenda
+var Marca = require('../models').Marca
 var User = require('../models').User
 var no_session_middleware = require('../middlewares/no-session')
 var session_middleware = require('../middlewares/session')
@@ -39,15 +40,30 @@ router.get('/explorar', function(req, res, next) {
   }
   else {
     // res.render('explorar-session')
-     Venta.find(function(err, ventas) {
-      User.populate(ventas,  {path: 'user' }, function(err, ventas) {
-        Prenda.populate(ventas, {path:'prenda'}, function(err, ventas) {
-          res.render('explorar-session', { data: ventas, bol: band })
-        })
+    Prenda.find(function(err, prendas) {
+      Marca.populate(prendas, {path: "marca"}, function(err, prendas){
+        res.render('explorar-session', {data:prendas,bol:band})
       })
     })
+    //  Venta.find(function(err, ventas) {
+    //   User.populate(ventas,  {path: 'user' }, function(err, ventas) {
+    //     Prenda.populate(ventas, {path:'prenda'}, function(err, ventas) {
+    //       res.render('explorar-session', { data: ventas, bol: band })
+    //     })
+    //   })
+    // })
   }
 });
+
+router.get('/comprar/:id', session_middleware, function(req, res) {
+  var band = {
+    valor: 0
+  }
+  if(req.session.user_id != null) band.valor = 1
+  Prenda.find({_id: req.params.id}, function(err, prenda) {
+    res.render('comprar', { data: prenda, bol: band })
+  })
+})
 
 router.get('/v-registro', admin_middleware, function(req, res, next) {
   var band = {

@@ -76,138 +76,31 @@ html(lang='es')
             p PRENDAS QUE VAN
             p  CONTIGO
         .explorar-prendas
-          .col.l4.m6.s12
-            .card.selections1
-              .card-image.selections2.waves-effect.waves-block.waves-light
-                // NOTE: IMAGEN DE LA PRENDA NO MAYOR A 280PX DE WITH
-                img.activator.responsive-img(src='img/inicio/select/02.jpg')
-              .card-content
-                span.card-title.card-title-size.activator.grey-text.text-darken-4
-                  | Sport Elegante
-                  i.material-icons.right more_vert
-                p
-                  a(href='#') S/. 150.00
-              .card-reveal
-                span.card-title.grey-text.text-darken-4
-                  | Camisa Abantos
-                  i.material-icons.right close
-                // NOTE: ADD MORE INFORMATION OF THE CLOTHES
-                p
-                  | Here is some more information about this product that is only revealed once clicked on.
-                p.center
-                  a.waves-effect.waves-light.btn.black.helvetica2
-                    i.material-icons.right shopping_cart
-                    | COMPRAR
-          .col.l4.m6.s12
-            .card.selections1
-              .card-image.selections2.waves-effect.waves-block.waves-light
-                // NOTE: IMAGEN DE LA PRENDA NO MAYOR A 280PX DE WITH
-                img.activator.responsive-img(src='img/inicio/select/02.jpg')
-              .card-content
-                span.card-title.card-title-size.activator.grey-text.text-darken-4
-                  | Sport Elegante
-                  i.material-icons.right more_vert
-                p
-                  a(href='#') S/. 150.00
-              .card-reveal
-                span.card-title.grey-text.text-darken-4
-                  | Camisa Abantos
-                  i.material-icons.right close
-                // NOTE: ADD MORE INFORMATION OF THE CLOTHES
-                p
-                  | Here is some more information about this product that is only revealed once clicked on.
-                p.center
-                  a.waves-effect.waves-light.btn.black.helvetica2
-                    i.material-icons.right shopping_cart
-                    | COMPRAR
-          .col.l4.m6.s12
-            .card.selections1
-              .card-image.selections2.waves-effect.waves-block.waves-light
-                // NOTE: IMAGEN DE LA PRENDA NO MAYOR A 280PX DE WITH
-                img.activator.responsive-img(src='img/inicio/select/02.jpg')
-              .card-content
-                span.card-title.card-title-size.activator.grey-text.text-darken-4
-                  | Sport Elegante
-                  i.material-icons.right more_vert
-                p
-                  a(href='#') S/. 150.00
-              .card-reveal
-                span.card-title.grey-text.text-darken-4
-                  | Camisa Abantos
-                  i.material-icons.right close
-                // NOTE: ADD MORE INFORMATION OF THE CLOTHES
-                p
-                  | Here is some more information about this product that is only revealed once clicked on.
-                p.center
-                  a.waves-effect.waves-light.btn.black.helvetica2
-                    i.material-icons.right shopping_cart
-                    | COMPRAR
-          .col.l4.m6.s12
-            .card.selections1
-              .card-image.selections2.waves-effect.waves-block.waves-light
-                // NOTE: IMAGEN DE LA PRENDA NO MAYOR A 280PX DE WITH
-                img.activator.responsive-img(src='img/inicio/select/02.jpg')
-              .card-content
-                span.card-title.card-title-size.activator.grey-text.text-darken-4
-                  | Sport Elegante
-                  i.material-icons.right more_vert
-                p
-                  a(href='#') S/. 150.00
-              .card-reveal
-                span.card-title.grey-text.text-darken-4
-                  | Camisa Abantos
-                  i.material-icons.right close
-                // NOTE: ADD MORE INFORMATION OF THE CLOTHES
-                p
-                  | Here is some more information about this product that is only revealed once clicked on.
-                p.center
-                  a.waves-effect.waves-light.btn.black.helvetica2
-                    i.material-icons.right shopping_cart
-                    | COMPRAR
-          .col.l4.m6.s12
-            .card.selections1
-              .card-image.selections2.waves-effect.waves-block.waves-light
-                // NOTE: IMAGEN DE LA PRENDA NO MAYOR A 280PX DE WITH
-                img.activator.responsive-img(src='img/inicio/select/02.jpg')
-              .card-content
-                span.card-title.card-title-size.activator.grey-text.text-darken-4
-                  | Sport Elegante
-                  i.material-icons.right more_vert
-                p
-                  a(href='#') S/. 150.00
-              .card-reveal
-                span.card-title.grey-text.text-darken-4
-                  | Camisa Abantos
-                  i.material-icons.right close
-                // NOTE: ADD MORE INFORMATION OF THE CLOTHES
-                p
-                  | Here is some more information about this product that is only revealed once clicked on.
-                p.center
-                  a.waves-effect.waves-light.btn.black.helvetica2
-                    i.material-icons.right shopping_cart
-                    | COMPRAR
-          .col.l4.m6.s12
-            .card.selections1
-              .card-image.selections2.waves-effect.waves-block.waves-light
-                // NOTE: IMAGEN DE LA PRENDA NO MAYOR A 280PX DE WITH
-                img.activator.responsive-img(src='img/inicio/select/02.jpg')
-              .card-content
-                span.card-title.card-title-size.activator.grey-text.text-darken-4
-                  | Sport Elegante
-                  i.material-icons.right more_vert
-                p
-                  a(href='#') S/. 150.00
-              .card-reveal
-                span.card-title.grey-text.text-darken-4
-                  | Camisa Abantos
-                  i.material-icons.right close
-                // NOTE: ADD MORE INFORMATION OF THE CLOTHES
-                p
-                  | Here is some more information about this product that is only revealed once clicked on.
-                p.center
-                  a.waves-effect.waves-light.btn.black.helvetica2
-                    i.material-icons.right shopping_cart
-                    | COMPRAR
+          each thing in data
+            .col.l4.m6.s12
+              .card.selections1
+                .card-image.selections2.waves-effect.waves-block.waves-light
+                  // NOTE: IMAGEN DE LA PRENDA NO MAYOR A 280PX DE WITH
+                  img.activator.responsive-img(src='img/inicio/select/02.jpg')
+                .card-content
+                  span.card-title.card-title-size.activator.grey-text.text-darken-4
+                    | #{thing.nombre}
+                    i.material-icons.right more_vert
+                  p
+                    a S/. #{thing.pventa}
+                .card-reveal
+                  span.card-title.grey-text.text-darken-4
+                    | #{thing.nombre}
+                    | #{thing.marca.nombre}
+                    i.material-icons.right close
+                  // NOTE: ADD MORE INFORMATION OF THE CLOTHES
+                  p
+                    | #{thing.descripcion}
+                  p.center
+                    a.waves-effect.waves-light.btn.black.helvetica2(href='/comprar/#{thing._id}')
+                      i.material-icons.right shopping_cart
+                      | COMPRAR
+          
       // NOTE: ULTIMAS COMPRAS
       .row.sell
         .explorar-d.center
