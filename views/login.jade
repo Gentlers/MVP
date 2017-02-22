@@ -1,29 +1,31 @@
 doctype html
-html(lang='es')
+html
   head
-    title=title
     meta(charset='UTF-8')
-    link(href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css', rel='stylesheet')
-    link(rel="stylesheet", href="/css/login.css")
+    title Gento Login
+    link(href='http://fonts.googleapis.com/css?family=Open+Sans:400,700', rel='stylesheet', type='text/css')
+    link(rel='stylesheet', href='//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css')
+    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css')
+    link(rel='stylesheet', href='css/login.css')
   body
-    .container
-      .row.sc1.center-block.center
-        .col-sm-12.text-center
-          img.logo(src='https://trello-attachments.s3.amazonaws.com/5854ffde20fad7d82ab96f7b/600x220/68b915e428137c76c9ef9c71e5b95e20/logo.png')
-        .col-md-3 
-          br
-        .col-md-6.remove-float.center-block.big-top-space
-          form(action='/session', method='POST')
-            div.form-group
-              label(for='email') e-mail
-              input.form-control(type='text', name='email', placeholder='Ingresa tu correo: ', id='email')
-            div.form-group
-              label(for='password') Contraseña
-              input.form-control(type='password', name='password', placeholder='Ahora tu contraseña: ', id='password')
-            .row.top-space
-              .col-xs-12.col-md-12
-                input.btn.btn-info.btn-login(type='submit', value='Iniciar Sesion')
-              .col-xs-12.col-md-12.text-center
-                br
-                a.registro(href='/pronto') No tengo cuenta    
-
+    center
+      img.img-logo(src='img/pronto/02.png', width='250', height='90')
+    .wrapper
+      form.login(action='/session', method='POST')
+        center
+          h5(style='color: white;') E-mail
+        input(type='email', name='email', placeholder='Ingresar Correo')
+        i.fa.fa-user
+        center
+          h5(style='color: white;') Contraseña
+        input(type='password', name='password', placeholder='Ingresar conraseña')
+        i.fa.fa-key
+        tr
+        //- input(type='submit', value='Enviar')
+        
+        button#botn
+          i.spinner
+          span.state Iniciar Sesion
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js')
+    script(src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js')
+    script(src='js/login.js')

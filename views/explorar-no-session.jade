@@ -31,17 +31,27 @@ html(lang='es')
             ul.right.hide-on-med-and-down
               li
                 a.active(href='/') INICIO
-              li
-                a(href='/explorar') EXPLORAR
-              li
-                a(href='/pronto') REGISTRARSE
+              if bol.valor == 1
+                li
+                  a(href='/explorar') EXPLORAR
+              if bol.valor == 0
+                li
+                  a(href='/pronto') REGISTRO
+              else
+                li
+                  a(href='/perfil') PERFIL
             ul#mobile-demo.side-nav.side-nav-content
               li
                 a.active(href='/') INICIO
-              li
-                a(href='/explorar') EXPLORAR
-              li
-                a(href='/pronto') REGISTRARSE
+              if bol.valor == 1
+                li
+                  a(href='/explorar') EXPLORAR
+              if bol.valor == 0
+                li
+                  a(href='/pronto') REGISTRO
+              else
+                li
+                  a(href='/perfil') PERFIL
     main
       .explorar-a.center
         .explorar-1

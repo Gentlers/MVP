@@ -21,15 +21,17 @@ html(lang='es')
             ul.right.hide-on-med-and-down
               li
                 a.active(href='/') INICIO
-              li
-                a(href='/explorar') EXPLORAR
+              if bol.valor == 1
+                li
+                  a(href='/explorar') EXPLORAR
               li
                 a(href='/v-registro') REGISTRARSE
             ul#mobile-demo.side-nav.side-nav-content
               li
                 a.active(href='/') INICIO
-              li
-                a(href='/explorar') EXPLORAR
+              if bol.valor == 1
+                li
+                  a(href='/explorar') EXPLORAR
               li
                 a(href='/v-registro') REGISTRARSE
     main

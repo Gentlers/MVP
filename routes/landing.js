@@ -6,37 +6,55 @@ var Prenda = require('../models').Prenda
 var User = require('../models').User
 var no_session_middleware = require('../middlewares/no-session')
 var session_middleware = require('../middlewares/session')
+var admin_middleware = require('../middlewares/admin')
 
 router.get('/', function(req, res, next) {
-   res.render('index', { title: "Inicio" });
+  var band = {
+    valor: 0
+  }
+  if(req.session.user_id != null) band.valor = 1
+  res.render('index', { title: "Inicio", bol: band });
 });
 router.get('/ganadores', function(req, res) {
   res.render('ganadores', { title: "Ganadores del Sorteo" })
 })
-router.get('/pronto', function(req, res, next) {
-  res.render('pronto', { title: 'GENTO Muy Pronto' })
+router.get('/pronto', no_session_middleware, function(req, res, next) {
+  var band = {
+    valor: 0
+  }
+  if(req.session.user_id != null) band.valor = 1
+  res.render('pronto', { title: 'GENTO Muy Pronto', bol: band })
 })
-router.get('/registro', function(req, res) {
+router.get('/registro', no_session_middleware, function(req, res) {
   res.redirect('/pronto')
 })
 router.get('/explorar', function(req, res, next) {
+  var band = {
+    valor: 0
+  }
+  if(req.session.user_id != null) band.valor = 1
+    
   if(!req.session.user_id){
-    res.render('explorar-no-session')
+    res.render('explorar-no-session', { bol: band })
   }
   else {
     // res.render('explorar-session')
      Venta.find(function(err, ventas) {
       User.populate(ventas,  {path: 'user' }, function(err, ventas) {
         Prenda.populate(ventas, {path:'prenda'}, function(err, ventas) {
-          res.render('explorar-session', { data: ventas })
+          res.render('explorar-session', { data: ventas, bol: band })
         })
       })
     })
   }
 });
 
-router.get('/v-registro', no_session_middleware, function(req, res, next) {
-  res.render('registro', { title: 'Registro' });
+router.get('/v-registro', admin_middleware, function(req, res, next) {
+  var band = {
+    valor: 0
+  }
+  if(req.session.user_id != null) band.valor = 1
+  res.render('registro', { title: 'Registro', bol: band });
 });
 
 router.get('/consumo', function(req, res) {
@@ -91,7 +109,11 @@ router.post('/registro', function(req, res, next) {
 })
 
 router.get('/perfil', session_middleware, function(req, res, next) {
-  res.render('perfil', { title: 'Dashboard'})
+  var band = {
+    valor: 0
+  }
+  if(req.session.user_id != null) band.valor = 1
+  res.render('perfil', { title: 'Dashboard', bol: band })
 })
 
 router.get('/login', no_session_middleware, function(req, res, next) {

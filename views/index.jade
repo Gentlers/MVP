@@ -30,17 +30,31 @@ html(lang='es')
             ul.right.hide-on-med-and-down
               li
                 a.active(href='/') INICIO
-              li
-                a(href='/pronto') REGISTRO
+              if bol.valor == 1
+                li
+                  a(href='/explorar') EXPLORAR
+              if bol.valor == 0
+                li
+                  a(href='/pronto') REGISTRO
+              else
+                li
+                  a(href='/perfil') PERFIL
             ul#mobile-demo.side-nav.side-nav-content
               li
                 a.active(href='/') INICIO
-              li
-                a(href='/pronto') REGISTRO
+              if bol.valor == 1
+                li
+                  a(href='/explorar') EXPLORAR
+              if bol.valor == 0
+                li
+                  a(href='/pronto') REGISTRO
+              else
+                li
+                  a(href='/perfil') PERFIL
     main
       // NOTE: THIS IS THE  MAIN BACKGROUND OF THE PAGE
       .background-main
-        h1(style='text-align:center;color:white') Ropa de tu estilo a un click
+        h1(style='text-align:center;color:white') Ropa de tu estilo a un click #{bol.valor}
         br
         br
         br
