@@ -1,3 +1,4 @@
+var requestify = require('requestify');
 var request = require('request');
 var express = require('express');
 var router = express.Router();
@@ -39,11 +40,43 @@ router.get('/explorar', session_middleware, function(req, res, next) {
     res.render('explorar-no-session', { bol: band })
   }
   else {
-    Prenda.find(function(err, prendas) {
-      Marca.populate(prendas, {path: "marca"}, function(err, prendas){
-        res.render('explorar-session', {data:prendas,bol:band})
-      })
+    var url = 'https://fierce-atoll-99852.herokuapp.com/api_clothes/?style=['
+    User.find({ _id: req.session.user_id }, function(err, user) {
+      var style = user.estilo
+      url = url + style + ']'
+      requestify.get(url).then(function(response) {
+        console.log(response.getBody());
+        var recos = []
+        recos = recos.concat(response.getBody().pantalon)
+        recos = recos.concat(response.getBody().casaca)
+        recos = recos.concat(response.getBody().polo)
+        recos = recos.concat(response.getBody().camisa)
+        console.log(recos)
+        var resultados = []
+        for (var i = 0 ; i < recos.length; i++) {
+          console.log('ID '+i+': ' + recos[i])
+          if(i!=recos.length -1){
+            Prenda.findOne({ _id: recos[i] }, function(err, prendas) {
+              Marca.populate(prendas, {path: "marca"}, function(err, prendas){
+                resultados = resultados.concat(prendas)
+                console.log(resultados)
+                })
+            })  
+          }
+          else{
+            Prenda.findOne({ _id: recos[i] }, function(err, prendas) {
+              Marca.populate(prendas, {path: "marca"}, function(err, prendas){
+                resultados = resultados.concat(prendas)
+                res.render('explorar-session', {data:resultados,bol:band})
+                console.log(resultados)
+                })
+            })
+          }
+        }
+        
+      });  
     })
+    
   }
 });
 
