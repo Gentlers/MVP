@@ -127,37 +127,35 @@ router.post('/registro', function(req, res, next) {
 })
 
 router.post('/update', session_middleware, function(req, res) {
-  console.log(req.body)
-  res.end()
-  // User.findOne({_id: req.session.user_id}, function(err, newUser) {
-  //   newUser.tallas = []
-  //   newUser.tallas.push(req.body.talla_camisa)
-  //   newUser.tallas.push(req.body.talla_polo)
-  //   newUser.tallas.push(Number(req.body.talla_pantalon))
-  //   newUser.tallas.push(Number(req.body.talla_zapato))
-  //   newUser.estilo = []
-  //   newUser.estilo.push(Number(req.body.estilo_formal))
-  //   newUser.estilo.push(Number(req.body.estilo_urbano))
-  //   newUser.estilo.push(Number(req.body.estilo_casual))
-  //   newUser.estilo.push(Number(req.body.estilo_hipster))
-  //   newUser.estilo.push(Number(req.body.estilo_tendencia))
+  User.findOne({_id: req.session.user_id}, function(err, newUser) {
+    newUser.tallas = []
+    newUser.tallas.push(req.body.talla_camisa)
+    newUser.tallas.push(req.body.talla_polo)
+    newUser.tallas.push(Number(req.body.talla_pantalon))
+    newUser.tallas.push(Number(req.body.talla_zapato))
+    newUser.estilo = []
+    newUser.estilo.push(Number(req.body.estilo_formal))
+    newUser.estilo.push(Number(req.body.estilo_urbano))
+    newUser.estilo.push(Number(req.body.estilo_casual))
+    newUser.estilo.push(Number(req.body.estilo_hipster))
+    newUser.estilo.push(Number(req.body.estilo_tendencia))
 
-  //   newUser.entalle = []
-  //   newUser.entalle.push(req.body.entalle_camisa)
-  //   newUser.entalle.push(req.body.entalle_polo)
-  //   newUser.entalle.push(req.body.entalle_pantalon)
-  //   console.log(newUser)
-  //   newUser.save(function(err, savedUser) {
-  //     if(err) {
-  //       console.log(err)
-  //       return res.status(500).send()
-  //     }
-  //     else{
-  //       req.session.user_id = savedUser._id
-  //       res.redirect('/perfil')
-  //     }
-  //   })
-  // })
+    newUser.entalle = []
+    newUser.entalle.push(req.body.entalle_camisa)
+    newUser.entalle.push(req.body.entalle_polo)
+    newUser.entalle.push(req.body.entalle_pantalon)
+    console.log(newUser)
+    newUser.save(function(err, savedUser) {
+      if(err) {
+        console.log(err)
+        return res.status(500).send()
+      }
+      else{
+        req.session.user_id = savedUser._id
+        res.redirect('/explorar')
+      }
+    })
+  })
 })
 
 router.get('/perfil', session_middleware, function(req, res, next) {
