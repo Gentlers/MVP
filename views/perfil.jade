@@ -6,10 +6,14 @@ html(lang='es')
     // Import Google Icon Font
     link(href='http://fonts.googleapis.com/icon?family=Material+Icons', rel='stylesheet')
     // Compiled and minified CSS
-    link(rel='stylesheet', href='css/explorar.css')
+    
     link(rel='stylesheet', href='css/materialize.min.css')
     link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css')
+    link(rel='stylesheet', href='css/explorar.css')
+    link(rel='stylesheet', href='css/registro.css')
     link(rel='stylesheet', href='css/inicio.css')
+    link(rel='stylesheet', href='css/materialize.min.css')
+    link(rel='stylesheet', href='css/perfil.css')
     // Let browser know website is optimized for mobile
     meta(name='viewport', content='width=device-width, initial-scale=1.0')
     meta(name='keywords', content='gento, ropa para hombres, asesoria de estilo, e-commerce, fashion')
@@ -23,7 +27,7 @@ html(lang='es')
       #header-web-gento.navbar-fixed
         nav.black
           .nav-wrapper
-            a.brand-logo(href='/')
+            a.brand-logo(href='#!')
               img(src='img/inicio/header/logo.png', alt='')
             a.button-collapse.icono-button(href='#', data-activates='mobile-demo', onclick='buttonChange()')
               i.material-icons.icono menu
@@ -52,46 +56,190 @@ html(lang='es')
                 li
                   a(href='/perfil') PERFIL
     main
-    h1 HOLA YA ENTRASTE
-    h2=user.username
-    form(action='/logout', method='POST')
-      .row.top-space
-        .col-xs-12.col-md-6
-          input.btn.btn-info(type='submit', value='Cerrar Sesion')
-        .col-xs-12.col-md-6.text-right
-          a(href='/signup') No tengo cuenta
-
-  br
-  br
-  footer.page-footer.black
-    .container
-      .row
-        .col.l6.s12
-          h5.white-text Gento, la forma más inteligente de comprar ropa.
-          p.grey-text.text-lighten-4
-            span Recuerda que al comprar en Gento, medimos tus tallas,
-            br
-            span analizamos tu estilo para buscar en todas las tiendas
-            br
-            span y poder ofrecerte las mejores prendas personalizadas para ti.
-        .col.l4.offset-l2.s12
-          h5.white-text Síguenos en Redes Sociales
-          ul
-            li
-              a.grey-text.text-lighten-3(target='blank', href='https://facebook.com/gentoapp')
-                i.fa.fa-facebook
-                p Facebook
-            li
-              a.grey-text.text-lighten-3(target='blank', href='https://twitter.com/gentoapp')
-                i.fa.fa-twitter
-                p Twitter
-            li
-              a.grey-text.text-lighten-3(target='blank', href='https://instagram.com/gentoapp')
-                i.fa.fa-instagram
-                p Instagram
-    .footer-copyright
+      .row.container.perfil
+        .col.l5.m4.s12.center
+          .perfil-foto
+            .image-upload
+              label.tooltipped(for='file-input', data-position='top', data-delay='50', data-tooltip='Cambiar Foto')
+                img.image-circle(src='http://sunoticiero.com/wp-content/uploads/2016/09/donald-trump-ppl.jpg', alt='')
+              input#file-input(type='file')
+        .col.l7.m8.s12.perfil-text.center
+          p
+            | ¡Bienvenido a Gento, 
+            span #{user.username}
+            | !
+          p
+            | Modifica aspectos de tu perfil, así Gento aprenderá más sobre ti y te dará recomendaciones más precisas.
+          hr
+      form(action='/logout', method='POST')
+        .row.top-space
+          .col-xs-12.col-md-6
+            input.btn.btn-info(type='submit', value='Cerrar Sesion')
+      .row.container.preferencias
+        h4.heletica3 Preferencias
+        form(action='/update', method='POST')
+          .row
+            .col.l3.m4.s12
+              .preferencias-prenda
+                img(src='http://i51.twenga.com/moda/camisas/ralph-lauren-camisa-azul-tp_3915612622791642398f.jpg', alt='')
+              br
+              .input-field.col.s12
+                select.icons(name='talla_camisa')
+                  option(value='', disabled='', selected='') TALLA
+                  option.left.circle(value='S') S
+                  option.left.circle(value='M') M
+                  option.left.circle(value='L') L
+                  option.left.circle(value='XL') XL
+              br
+              br
+              .input-field.col.s12
+                select.icons(name='entalle_camisa')
+                  option(value='', disabled='', selected='') ENTALLE
+                  option.left.circle(value='modern') Modern fit
+                  option.left.circle(value='normal') Normal Fit
+                  option.left.circle(value='slim') Slim Fit
+            .col.l3.m4.s12
+              .preferencias-prenda
+                img(src='http://static.kiabi.es/images/pantalon-chino-regular-de-sarga-elastica-marino-hombre-tz476_2_lpr1.jpg', alt='')
+              br
+              .input-field.col.s12
+                select.icons(name='talla_pantalon')
+                  option(value='', disabled='', selected='') TALLA
+                  option.left.circle(value='28') 28
+                  option.left.circle(value='30') 30
+                  option.left.circle(value='32') 32
+                  option.left.circle(value='34') 34
+              br
+              br
+              .input-field.col.s12
+                select.icons(name='entalle_pantalon')
+                  option(value='', disabled='', selected='') ENTALLE
+                  option.left.circle(value='recto') Recto
+                  option.left.circle(value='skinny') Skinny Fit
+                  option.left.circle(value='slim') Slim Fit
+            .col.l3.m4.s12
+              .preferencias-prenda
+                img(src='https://http2.mlstatic.com/S_439411-MLV20565825385_012016-Y.jpg', alt='')
+              br
+              .input-field.col.s12
+                select.icons(name='talla_polo')
+                  option(value='', disabled='', selected='') TALLA
+                  option.left.circle(value='S') S
+                  option.left.circle(value='M') M
+                  option.left.circle(value='L') L
+                  option.left.circle(value='XL') XL
+              br
+              br
+              .input-field.col.s12
+                select.icons(name='entalle_polo')
+                  option(value='', disabled='', selected='') ENTALLE
+                  option.left.circle(value='modern') Modern fit
+                  option.left.circle(value='normal') Normal Fit
+                  option.left.circle(value='slim') Slim Fit
+            .col.l3.m4.s12
+              .preferencias-prenda
+                img(src='https://s-media-cache-ak0.pinimg.com/736x/8e/78/ab/8e78abe5ffdd8384d813db755cdcc420.jpg', alt='')
+              br
+              .input-field.col.s12
+                select.icons(name='talla_zapato')
+                  option(value='', disabled='', selected='') TALLA
+                  option.left.circle(value='38') 38
+                  option.left.circle(value='40') 40
+                  option.left.circle(value='42') 42
+                  option.left.circle(value='44') 44
+              br
+              br
+          br
+          br
+          br
+          br
+          .row
+            .col.s6.m4
+              .input-field.enter-size-item-1-a.center
+                        p FORMAL
+                        img.img-estilo(src='/img/registro/estilos/01.png')
+                        select(name='estilo_formal')
+                          option(value='', disabled='', selected='') Dale un valor segun estilo:
+                          option(value=0.2) *
+                          option(value=0.4) **
+                          option(value=0.6) ***
+                          option(value=0.8) ****
+                          option(value=1.0) *****
+            .col.s6.m4
+              .input-field.enter-size-item-1-a.center
+                        p CASUAL
+                        img.img-estilo(src='/img/registro/estilos/02.png')
+                        select(name='estilo_casual')
+                          option(value='', disabled='', selected='') Dale un valor segun estilo:
+                          option(value=0.2) *
+                          option(value=0.4) **
+                          option(value=0.6) ***
+                          option(value=0.8) ****
+                          option(value=1.0) *****
+            .col.s6.m4
+              .input-field.enter-size-item-1-a.center
+                        p URBANO
+                        img.img-estilo(src='/img/registro/estilos/03.png')
+                        select(name='estilo_urbano')
+                          option(value='', disabled='', selected='') Dale un valor segun estilo:
+                          option(value=0.2) *
+                          option(value=0.4) **
+                          option(value=0.6) ***
+                          option(value=0.8) ****
+                          option(value=1.0) *****
+            .col.s6.m4
+              .input-field.enter-size-item-1-a.center
+                        p HIPSTER
+                        img.img-estilo(src='/img/registro/estilos/04.png')
+                        select(name='estilo_hipster')
+                          option(value='', disabled='', selected='') Dale un valor segun estilo:
+                          option(value=0.2) *
+                          option(value=0.4) **
+                          option(value=0.6) ***
+                          option(value=0.8) ****
+                          option(value=1.0) *****
+            .col.s6.m4
+              .input-field.enter-size-item-1-a.center
+                        p TENDENCIA
+                        img.img-estilo(src='/img/registro/estilos/05.png')
+                        select.center(name='estilo_tendencia')
+                          option(value='', disabled='', selected='') Dale un valor segun estilo:
+                          option(value=0.2) *
+                          option(value=0.4) **
+                          option(value=0.6) ***
+                          option(value=0.8) ****
+                          option(value=1.0) *****
+          .row.center
+            button.waves-effect.waves-light.black.btn.botonesGuardar GUARDAR CAMBIOS
+    footer.page-footer.black
       .container
-        strong hola@gento.pe  |  © 2017 GENTO      
+        .row
+          .col.l6.s12
+            h5.white-text Gento, la forma más inteligente de comprar ropa.
+            p.grey-text.text-lighten-4
+              span Recuerda que al comprar en Gento, medimos tus tallas,
+              br
+              span analizamos tu estilo para buscar en todas las tiendas
+              br
+              span y poder ofrecerte las mejores prendas personalizadas para ti.
+          .col.l4.offset-l2.s12
+            h5.white-text Síguenos en Redes Sociales
+            ul
+              li
+                a.grey-text.text-lighten-3(target='blank', href='https://facebook.com/gentoapp')
+                  i.fa.fa-facebook
+                  p Facebook
+              li
+                a.grey-text.text-lighten-3(target='blank', href='https://twitter.com/gentoapp')
+                  i.fa.fa-twitter
+                  p Twitter
+              li
+                a.grey-text.text-lighten-3(target='blank', href='https://instagram.com/gentoapp')
+                  i.fa.fa-instagram
+                  p Instagram
+      .footer-copyright
+        .container
+          strong hola@gento.pe  |  © 2017 GENTO      
     // Google Analytics
     script.
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -100,9 +248,9 @@ html(lang='es')
       })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
       ga('create', 'UA-85217882-6', 'auto');
       ga('send', 'pageview');
-
     // Import jQuery before materialize.js
     script(type='text/javascript', src='js/jQuery-3.1.1.js')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/lightslider/1.1.6/js/lightslider.min.js')
     script(src='js/materialize.min.js')
     script(src='js/headroom.min.js')
-    script(src='js/inicio.js')
+    script(src='js/explorar.js')

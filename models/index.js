@@ -39,7 +39,9 @@ var PrendaSchema = new Schema({
 	marca: {
 		type: Schema.ObjectId,
 		ref: 'marca'
-	}
+	},
+	mainImg: String,
+	secondaryImg: Array
 })
 mongoose.model('prenda', PrendaSchema)
 var Prenda = mongoose.model('prenda')

@@ -3,6 +3,9 @@ $(document).ready(function(){
   $('.slider').slider({full_width: true, height:500, indicators:false});
   $('.parallax').parallax();
   $('.scrollspy').scrollSpy();
+  $('.collapsible').collapsible();
+  $('select').material_select();
+  $('.materialboxed').materialbox();
   $('.carousel.carousel-slider').carousel({full_width: true});
   $('.carousel-sell').carousel();
   $("#content-slider").lightSlider({

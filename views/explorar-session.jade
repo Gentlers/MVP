@@ -56,18 +56,13 @@ html(lang='es')
     main
       .row
         .explorar-a.center
-          .explorar-1
-            p REVISA
-            p NUESTRA COLECCIÓN
-            p DE PRENDAS
-            p PARA TI
-          .explorar-2
-            .search-gento.valign-wrapper
-              .col.l11.m11.s10
-                input.input-gento(placeholder='BUSCA LO QUE NECESITAS', id='', type='search')
-              .col.l1.m1.s2
-                a(href='#')
-                  i.small.material-icons.iconSearch search
+          .explorar-perfil
+            img(src='https://scontent.flim2-1.fna.fbcdn.net/v/t1.0-9/12990931_1063264723733731_5224235448937683852_n.jpg?oh=6c87d8619f917456c2e714fa001ac105&oe=592F94A9', alt='')
+          .explorar-msj
+            h3 
+              strong ¡Bienvenido a Gento #{user.username}!
+            h4 Gento será tu aliado para que 
+            h4 encuentres lo que realmente va contigo
       // NOTE: EXPLORER CLOTHES
       .row.explorar-clothes
         .explorar-b.center

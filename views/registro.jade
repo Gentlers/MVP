@@ -4,6 +4,7 @@ html(lang='es')
     meta(charset='UTF-8')
     // Import Google Icon Font
     link(href='http://fonts.googleapis.com/icon?family=Material+Icons', rel='stylesheet')
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css')
     // Compiled and minified CSS
     link(rel='stylesheet', href='css/materialize.min.css')
     link(rel='stylesheet', href='css/registro.css')
@@ -21,19 +22,21 @@ html(lang='es')
             ul.right.hide-on-med-and-down
               li
                 a.active(href='/') INICIO
-              if bol.valor == 1
-                li
-                  a(href='/explorar') EXPLORAR
+              li
+                a(href='/explorar') EXPLORAR
               li
                 a(href='/v-registro') REGISTRARSE
+              li
+                a(href='/perfil') PERFIL
             ul#mobile-demo.side-nav.side-nav-content
               li
                 a.active(href='/') INICIO
-              if bol.valor == 1
-                li
-                  a(href='/explorar') EXPLORAR
               li
-                a(href='/v-registro') REGISTRARSE
+                a(href='/explorar') EXPLORAR
+              li
+                a(href='/v-registro') REGISTRAR
+              li
+                a(href='/perfil') PERFIL
     main
       // NOTE: THIS IS BACKGROUND PRESENTATION REGISTER
       .row
@@ -95,19 +98,19 @@ html(lang='es')
                         p
                           input#test-camisa-1(name='entalle_camisa', type='radio', value='recto')
                           label(for='test-camisa-1')
-                            img(src='img/registro/entalle/01.jpg', alt='')
+                            img(src='img/registro/entalle/camisa/recto.png', alt='')
                           br
                           span Camisa - Recto
                         p
                           input#test2-camisa-2(name='entalle_camisa', type='radio', value='moderno')
                           label(for='test2-camisa-2')
-                            img(src='img/registro/entalle/01.jpg', alt='')
+                            img(src='img/registro/entalle/camisa/modern.png', alt='')
                           br
                           span Camisa - Moderno
                         p
                           input#test-camisa-3(name='entalle_camisa', type='radio', value='slim')
                           label(for='test-camisa-3')
-                            img(src='img/registro/entalle/01.jpg', alt='')
+                            img(src='img/registro/entalle/camisa/slim.png', alt='')
                           br
                           span Camisa - Slim
                 // NOTE: ITEM POLOS
@@ -170,19 +173,19 @@ html(lang='es')
                         p
                           input#test-pantalon-1(name='entalle_pantalon', type='radio', value='recto')
                           label(for='test-pantalon-1')
-                            img(src='img/registro/entalle/01.jpg', alt='')
+                            img(src='img/registro/entalle/pantalon/recto.png', alt='')
                           br
                           span Pantalón - Recto
                         p
                           input#test-pantalon-2(name='entalle_pantalon', type='radio', value='slim')
                           label(for='test-pantalon-2')
-                            img(src='img/registro/entalle/01.jpg', alt='')
+                            img(src='img/registro/entalle/pantalon/slim.png', alt='')
                           br
                           span Pantalón - Slim
                         p
                           input#test-pantalon-3(name='entalle_pantalon', type='radio', value='skinny')
                           label(for='test-pantalon-3')
-                            img(src='img/registro/entalle/01.jpg', alt='')
+                            img(src='img/registro/entalle/pantalon/skinny.png', alt='')
                           br
                           span Pantalón - Skinny
                 // NOTE: ITEM ZAPATOS
@@ -216,9 +219,9 @@ html(lang='es')
                             option(value=1.0) *****
               .col.s6.m4
                 .input-field.enter-size-item-1-a.center
-                          p URBANO
+                          p CASUAL
                           img.img-estilo(src='/img/registro/estilos/02.png')
-                          select(name='estilo_urbano')
+                          select(name='estilo_casual')
                             option(value='', disabled='', selected='') Dale un valor segun estilo:
                             option(value=0.2) *
                             option(value=0.4) **
@@ -227,9 +230,9 @@ html(lang='es')
                             option(value=1.0) *****
               .col.s6.m4
                 .input-field.enter-size-item-1-a.center
-                          p CASUAL
+                          p URBANO
                           img.img-estilo(src='/img/registro/estilos/03.png')
-                          select(name='estilo_casual')
+                          select(name='estilo_urbano')
                             option(value='', disabled='', selected='') Dale un valor segun estilo:
                             option(value=0.2) *
                             option(value=0.4) **

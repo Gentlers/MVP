@@ -29,7 +29,7 @@ router.get('/pronto', no_session_middleware, function(req, res, next) {
 router.get('/registro', no_session_middleware, function(req, res) {
   res.redirect('/pronto')
 })
-router.get('/explorar', function(req, res, next) {
+router.get('/explorar', session_middleware, function(req, res, next) {
   var band = {
     valor: 0
   }
@@ -39,19 +39,11 @@ router.get('/explorar', function(req, res, next) {
     res.render('explorar-no-session', { bol: band })
   }
   else {
-    // res.render('explorar-session')
     Prenda.find(function(err, prendas) {
       Marca.populate(prendas, {path: "marca"}, function(err, prendas){
         res.render('explorar-session', {data:prendas,bol:band})
       })
     })
-    //  Venta.find(function(err, ventas) {
-    //   User.populate(ventas,  {path: 'user' }, function(err, ventas) {
-    //     Prenda.populate(ventas, {path:'prenda'}, function(err, ventas) {
-    //       res.render('explorar-session', { data: ventas, bol: band })
-    //     })
-    //   })
-    // })
   }
 });
 
@@ -61,8 +53,18 @@ router.get('/comprar/:id', session_middleware, function(req, res) {
   }
   if(req.session.user_id != null) band.valor = 1
   Prenda.find({_id: req.params.id}, function(err, prenda) {
-    res.render('comprar', { data: prenda, bol: band })
+    Marca.populate(prenda, {path: "marca"}, function(err, prenda){
+      Prenda.find(function(err, todasprendas) {
+        res.render('comprar', { data: prenda, bol: band, otros: todasprendas })  
+      })
+    })
   })
+  // Prenda.find({_id: req.params.id}, function(err, prenda) {
+  //   Prenda.find(function(err, todasprendas) {
+  //     res.render('comprar', { data: prenda, bol: band, otros: todasprendas })  
+  //   })
+    
+  // })
 })
 
 router.get('/v-registro', admin_middleware, function(req, res, next) {
@@ -124,6 +126,40 @@ router.post('/registro', function(req, res, next) {
   
 })
 
+router.post('/update', session_middleware, function(req, res) {
+  console.log(req.body)
+  res.end()
+  // User.findOne({_id: req.session.user_id}, function(err, newUser) {
+  //   newUser.tallas = []
+  //   newUser.tallas.push(req.body.talla_camisa)
+  //   newUser.tallas.push(req.body.talla_polo)
+  //   newUser.tallas.push(Number(req.body.talla_pantalon))
+  //   newUser.tallas.push(Number(req.body.talla_zapato))
+  //   newUser.estilo = []
+  //   newUser.estilo.push(Number(req.body.estilo_formal))
+  //   newUser.estilo.push(Number(req.body.estilo_urbano))
+  //   newUser.estilo.push(Number(req.body.estilo_casual))
+  //   newUser.estilo.push(Number(req.body.estilo_hipster))
+  //   newUser.estilo.push(Number(req.body.estilo_tendencia))
+
+  //   newUser.entalle = []
+  //   newUser.entalle.push(req.body.entalle_camisa)
+  //   newUser.entalle.push(req.body.entalle_polo)
+  //   newUser.entalle.push(req.body.entalle_pantalon)
+  //   console.log(newUser)
+  //   newUser.save(function(err, savedUser) {
+  //     if(err) {
+  //       console.log(err)
+  //       return res.status(500).send()
+  //     }
+  //     else{
+  //       req.session.user_id = savedUser._id
+  //       res.redirect('/perfil')
+  //     }
+  //   })
+  // })
+})
+
 router.get('/perfil', session_middleware, function(req, res, next) {
   var band = {
     valor: 0
@@ -142,7 +178,6 @@ router.post('/logout', function(req, res, next) {
 })
 
 router.post('/session', function(req, res) {
-  // Puede ponerse un segundo parametro que son los campos que quieren ser devueltos.
   User.findOne({ email: req.body.email, password: req.body.password }, "", function(err, user) {
     if(err) {
       res.send(err)
