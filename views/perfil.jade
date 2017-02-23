@@ -71,11 +71,12 @@ html(lang='es')
           p
             | Modifica aspectos de tu perfil, así Gento aprenderá más sobre ti y te dará recomendaciones más precisas.
           hr
-      form(action='/logout', method='POST')
-        .row.top-space
-          .col-xs-12.col-md-6
-            input.btn.btn-info(type='submit', value='Cerrar Sesion')
       .row.container.preferencias
+        
+        form(action='/logout', method='POST')
+          .row.top-space
+            .col-xs-12.col-md-6
+              input.btn.btn-info(type='submit', value='Cerrar Sesion')
         h4.heletica3 Preferencias
         form(action='/update', method='POST')
           .row
