@@ -40,8 +40,9 @@ router.get('/explorar', session_middleware, function(req, res, next) {
     res.render('explorar-no-session', { bol: band })
   }
   else {
-    var url = 'https://fierce-atoll-99852.herokuapp.com/api_clothes/?style=['
-    User.find({ _id: req.session.user_id }, function(err, user) {
+    
+    User.findOne({ _id: req.session.user_id }, function(err, user) {
+      var url = 'https://fierce-atoll-99852.herokuapp.com/api_clothes/?style=['
       var style = user.estilo
       url = url + style + ']'
       requestify.get(url).then(function(response) {
@@ -74,7 +75,7 @@ router.get('/explorar', session_middleware, function(req, res, next) {
           }
         }
         
-      });  
+      });
     })
     
   }
