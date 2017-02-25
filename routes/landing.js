@@ -1,3 +1,4 @@
+var nodemailer = require('nodemailer');
 var requestify = require('requestify');
 var request = require('request');
 var express = require('express');
@@ -245,8 +246,65 @@ router.post('/validateEmail', function(req, res) {
   })
 })
 
-router.get('/comprado', function(req, res) {
-  res.render('comprado')
+router.post('/pre', function(req, res) {
+  console.log(req)
+  var mensaje = "Usuario: " + req.body.nombre + "\nTelefono: " + req.body.telefono + "\nEmail: " + req.body.email
+  console.log(mensaje)
+  var transporter = nodemailer.createTransport({
+    service: 'Gmail',
+    auth: {
+       user: 'gentoapp@gmail.com',
+       pass: 'gentoapp!'
+    }
+  })
+  var mailOptions = {
+    from: 'GENTO',
+    to: 'hola@gento.pe',
+    subject: 'Pre-registro',
+    text: mensaje
+  };
+  transporter.sendMail(mailOptions, function(error, info){
+    if (error){
+      console.log(error);
+      res.send(500, err.message);
+    } else {
+      console.log("Correo enviado papu");
+      res.status(200).jsonp(req.body);
+    }
+  });
+})
+
+router.post('/venta', function(req, res) {
+  console.log(req)
+  var mensaje = "Cliente: " + req.body.cliente + "\nCorreo: " + req.body.correo + "\nTelefono: "+req.body.phone + "\nPrenda: " + req.body.prenda + "\nMarca: " + req.body.marca + "\nPrecio Venta:" + req.body.pv + "\nPrecio Normal: " + req.body.pc + "\nEntrega: " + req.body.tipo_pedido
+  console.log(mensaje)
+  var transporter = nodemailer.createTransport({
+    service: 'Gmail',
+    auth: {
+       user: 'gentoapp@gmail.com',
+       pass: 'gentoapp!'
+    }
+  })
+  var mailOptions = {
+    from: 'GENTO',
+    to: 'hola@gento.pe',
+    subject: 'Venta Realizada',
+    text: mensaje
+  };
+  transporter.sendMail(mailOptions, function(error, info){
+    if (error){
+      console.log(error);
+      res.send(500, err.message);
+    } else {
+      console.log("Correo enviado papu");
+      res.status(200).jsonp(req.body);
+    }
+  });
+})
+
+router.post('/test', function(req, res) {
+  console.log(req.body)
+  res.send(req.body)
 })
 
 module.exports = router;
