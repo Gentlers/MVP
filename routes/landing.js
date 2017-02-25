@@ -245,7 +245,7 @@ router.post('/validateEmail', function(req, res) {
   })
 })
 
-router.post('/comprado', function(req, res) {
+router.get('/comprado', function(req, res) {
   res.render('comprado')
 })
 
