@@ -71,7 +71,7 @@ html(lang='es')
             p #{data[0].nombre}
             p S/.#{data[0].pventa}
           div
-            form#formCompra(action="https://formspree.io/your@email.com" method="POST")
+            form#formCompra(action="https://formspree.io/hola@gento.pe" method="POST")
               input(type='hidden', name='_next', value='/comprado')
               input(type='hidden' name='cliente' value='#{user.username}')
               input(type='hidden' name='correo' value='#{user.email}')
