@@ -245,9 +245,8 @@ router.post('/validateEmail', function(req, res) {
   })
 })
 
-router.post('/test', function(req, res) {
-  console.log(req.body)
-  res.end()
+router.post('/comprado', function(req, res) {
+  res.render('comprado')
 })
 
 module.exports = router;

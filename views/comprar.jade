@@ -4,7 +4,7 @@ html(lang='es')
     title GENTO
     meta(charset='UTF-8')
     // Import Google Icon Font
-    link(href='http://fonts.googleapis.com/icon?family=Material+Icons', rel='stylesheet')
+    link(href='https://fonts.googleapis.com/icon?family=Material+Icons', rel='stylesheet')
     // Compiled and minified CSS
     link(rel='stylesheet', href='/css/materialize.min.css')
     link(rel='stylesheet', href='/css/inicio.css')
@@ -71,17 +71,20 @@ html(lang='es')
             p #{data[0].nombre}
             p S/.#{data[0].pventa}
           div
-            form#formCompra(action="/test" method="POST")
+            form#formCompra(action="https://formspree.io/your@email.com" method="POST")
+              input(type='hidden', name='_next', value='/comprado')
               input(type='hidden' name='cliente' value='#{user.username}')
               input(type='hidden' name='correo' value='#{user.email}')
               input(type='hidden' name='phone' value='#{user.celular}')
               input(type='hidden' name='prenda' value='#{data[0].nombre}')
               input(type='hidden' name='marca' value='#{data[0].marca.nombre}')
+              input(type='hidden' name='pv' value='#{data[0].marca.pventa}')
+              input(type='hidden' name='pc' value='#{data[0].marca.precio}')
               .input-field.col.s12
-                select.icons
-                  option(value='', disabled='', selected='') ELIGE COLOR
+                select.icons(name='color')
+                  option(name='color' value='', disabled='', selected='') ELIGE COLOR
                   each thing in data[0].colores
-                    option.left.circle(value='#{thing}') #{thing}
+                    option.left.circle(name='color' value='#{thing}') #{thing}
               div
                 ul.collapsible(data-collapsible='accordion')
                   li
@@ -90,6 +93,12 @@ html(lang='es')
                       | DESCRIPCION
                     .collapsible-body
                       span #{data[0].descripcion]
+                  li
+                    .collapsible-header
+                      i.material-icons money
+                      | PRECIO
+                    .collapsible-body
+                      span #{data[0].pventa]
                   li
                     .collapsible-header
                       i.material-icons playlist_add
