@@ -245,4 +245,11 @@ router.post('/validateEmail', function(req, res) {
   })
 })
 
+router.post('/test', function(req, res) {
+  console.log(req.body)
+  res.end()
+})
+
 module.exports = router;
+
+

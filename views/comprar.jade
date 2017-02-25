@@ -57,7 +57,7 @@ html(lang='es')
       // NOTE: VENTANAS DE COMPRAS
       .row.container.compras
         .col.l6.m9.s12.vistaCompleta
-          img.materialboxed(data-caption='Camisa Abantos a cuadros Slim Fit', width='250', src='/img/comprar/03.jpg')
+          img.materialboxed(data-caption='#{data[0].descripcion}', width='250', src='#{data[0].mainImg}')
         .col.l2.m3.s12.center
           .vistaPrendas.center
             .col.l12.center
@@ -71,7 +71,12 @@ html(lang='es')
             p #{data[0].nombre}
             p S/.#{data[0].pventa}
           div
-            form(action='')
+            form#formCompra(action="/test" method="POST")
+              input(type='hidden' name='cliente' value='#{user.username}')
+              input(type='hidden' name='correo' value='#{user.email}')
+              input(type='hidden' name='phone' value='#{user.celular}')
+              input(type='hidden' name='prenda' value='#{data[0].nombre}')
+              input(type='hidden' name='marca' value='#{data[0].marca.nombre}')
               .input-field.col.s12
                 select.icons
                   option(value='', disabled='', selected='') ELIGE COLOR
@@ -102,10 +107,10 @@ html(lang='es')
                 p
                   | Se entregara en: 
                   b 2 a 4 dias laborables
-                a.waves-effect.waves-light.black.btn.botonesComprar Pedir Delivery
+                a#btnDelivery.waves-effect.waves-light.black.btn.botonesComprar Pedir Delivery
                 br
                 br
-                a.waves-effect.waves-light.black.btn.botonesComprar Probar en Tienda
+                a#btnTienda.waves-effect.waves-light.black.btn.botonesComprar Probar en Tienda
       // NOTE: BEST SELLER
       .row.bestseller.grey.darken-4
         p.bestseller-title #{user.username}, ¡Estas prendas también van contigo!
@@ -114,7 +119,7 @@ html(lang='es')
             ul#content-slider.content-slider
               each thing in otros
                 li.container-best-slide
-                  img(src='/img/explorar/best/02.png', alt='')
+                  img(src='#{thing.mainImg}', alt='')
                   .center-best-slide
                     a.button-best #{thing.nombre}
                     p S/ #{thing.pventa}
@@ -156,3 +161,4 @@ html(lang='es')
     script(src='/js/materialize.min.js')
     script(src='/js/headroom.min.js')
     script(src='/js/explorar.js')
+    script(src='/js/comprar.js')
