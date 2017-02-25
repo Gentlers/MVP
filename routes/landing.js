@@ -27,6 +27,15 @@ router.get('/pronto', no_session_middleware, function(req, res, next) {
   if(req.session.user_id != null) band.valor = 1
   res.render('pronto', { title: 'GENTO Muy Pronto', bol: band })
 })
+
+router.get('/gracias', no_session_middleware, function(req, res) {
+  var band = {
+    valor: 0
+  }
+  if(req.session.user_id != null) band.valor = 1
+  res.render('gracias', { bol: band })
+})
+
 router.get('/registro', no_session_middleware, function(req, res) {
   res.redirect('/pronto')
 })

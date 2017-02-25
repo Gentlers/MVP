@@ -94,6 +94,8 @@ router.post('/prenda/', function(req, res, next) {
 	newprenda.entalle = req.body.entalle
 	newprenda.tallas = req.body.tallas
 	newprenda.marca = req.body.marca
+	newprenda.mainImg = req.body.mainImg
+	newprenda.secondaryImg = req.body.secondaryImg
 
 	newprenda.save(function(err, savedPrenda) {
 		if(err) {

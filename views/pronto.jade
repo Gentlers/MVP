@@ -38,7 +38,7 @@ html(lang='es')
               li
                 a(href='/pronto') REGISTRO
     main
-      .row
+      .row(style='margin-bottom:0px')
         .pronto.center
           .pronto-content.helvetica2
             img(src='img/pronto/02.png', alt='gentoapp.com')
@@ -48,6 +48,7 @@ html(lang='es')
               | ¡SE UNO DE LOS PRIMEROS EN SABER SOBRE GENTO. REGÍSTRATE Y PODRÁS GANAR UN VALE DE S/.25.00!
           .pronto-form
             form#pronto-date-know(action='https://formspree.io/hola@gento.pe', method='POST')
+              input(type='hidden', name='_next', value='/gracias')
               .input-field
                 input#name.validate(type='text', name='nombre')
                 label(for='name') NOMBRES
@@ -59,6 +60,8 @@ html(lang='es')
                 label(for='email') CORREO
               br
               input.btn.btn-large.white.black-text(type='submit', value='Registrarme')
+          br
+          a.login(href='/login') Ya tengo una cuenta.
     footer.page-footer.black
       .container
         .row

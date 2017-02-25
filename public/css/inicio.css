@@ -323,7 +323,8 @@ html {
   animation-name: headroom--pinned; }
 
 .background-main {
-  background: url("../img/inicio/main/04.png") center top no-repeat;
+  background: url("https://trello-attachments.s3.amazonaws.com/56e5b83c1594ea60108bff5d/589191fc28092a79ef050122/08ad58235af1a0431170ab6bf0c8e272/Slide-PRincipal.png") center top no-repeat;
+  /*background: url("../img/inicio/main/04.png") center top no-repeat;*/
   background-size: cover;
   width: 100%;
   height: 90vh;
