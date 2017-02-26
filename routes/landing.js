@@ -50,12 +50,11 @@ router.get('/explorar', session_middleware, function(req, res, next) {
     var url = 'https://fierce-atoll-99852.herokuapp.com/api_clothes/?style=[' + style + ']'
     requestify.get(url).then(function(response) {
       // Creación del JSON de IDs en bruto a partir del response del API en categorias
-      var recos = [
-        response.getBody().pantalon, 
-        response.getBody().casaca,
-        response.getBody().polo,
-        response.getBody().camisa
-      ]
+      var recos = []
+      recos = recos.concat(response.getBody().pantalon)
+      recos = recos.concat(response.getBody().casaca)
+      recos = recos.concat(response.getBody().polo)
+      recos = recos.concat(response.getBody().camisa)
       // Creacion del JSON de prendas completo buscando por IDs
       var resultados = []
       if(recos.length==0) res.render('explorar-session', {data:resultados, bol: logged(req.session) })
