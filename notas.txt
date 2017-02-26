@@ -1,17 +1,31 @@
 *****PARA HACER*****
 Arreglar boton de cierre de sesion en Perfil.
-Añadir FavIcon
+Arreglra imagenes secundarias en vista comprar
+====Añadir FavIcon
+Arreglar el Zoom de la iamgen al comprar.
 Añadir las tallas al envio de la compra.
-Arreglar el SEO
+Corregir para obligar a poner todos los estilos al editar
 Arreglar form de edicion de estilo cargando predefinidamnte los estilos actuales.
+Arreglar Responsive Menu
+Arreglar Video Responsive
+Arreglar Explorar slider Responsive
+Cambiar fotos de Abanto y enlaces
+Arreglar el SEO
+Crear vista de Admin para crear nuevas prendas.
+Crear vista de admin para crear nuevos usuarios.
 Mejorar el mensaje AJAX de pre-registro
 Mejorar el mensaje AJAX de compra
+Poner Estrellas para edicion de estilos.
 Agregar boton para ver la coleccion completa de prendas.
 Agregar Caso para cuando no tengamos nada que recomendarle, pero puede ver la seleccion entera
 Agregar subida de imagen de perfil por S3
 Usar Layouts en Head y para Footer
 Arreglar los Titles usando variables 
 Proteger el API con Query String contraseña
+Arreglar Redireccionamiento para SEO
+
+
+
 
 *****NOTAS*****
 EN BD como manejar prendas de un mismo tipo pero con diferentes modelos (colores, prints, etc)

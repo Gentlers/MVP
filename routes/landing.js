@@ -251,4 +251,50 @@ router.post('/venta', function(req, res) {
   });
 })
 
+router.get('/prenda', admin_middleware, function(req, res) {
+  Marca.find(function(err,marcas) {
+    res.render('newPrenda', { data: marcas })
+  })
+})
+
+router.post('/prenda', admin_middleware, function(req, res) {
+  var newPrenda = new Prenda()
+  newPrenda.nombre = req.body.nombre
+  newPrenda.colores = [req.body.colores]
+  newPrenda.tipo = req.body.tipo
+  newPrenda.descripcion = req.body.descripcion
+  newPrenda.precio = req.body.precio
+  newPrenda.pventa = req.body.pventa
+  newPrenda.estilo = [
+    Number(req.body.estilo_formal), 
+    Number(req.body.estilo_urbano), 
+    Number(req.body.estilo_casual), 
+    Number(req.body.estilo_hipster), 
+    Number(req.body.estilo_tendencia)
+  ]
+  newPrenda.medidas = []
+  newPrenda.entalle = req.body.entalle
+  newPrenda.tallas = [
+    req.body.talla_1,
+    req.body.talla_2,
+    req.body.talla_3,
+    req.body.talla_4,
+    req.body.talla_5
+  ]
+  newPrenda.marca = req.body.marca
+  console.log('LO QUE LLEGO:')
+  console.log(req.body)
+  console.log('LO QUE VAMOS A GUARDAR:')
+  console.log(newPrenda)
+  newPrenda.save(function(err, savedPrenda) {
+    if(err) {
+      console.log(err)
+      return res.status(500).send()
+    }
+    else{
+      res.redirect('/explorar')
+    }
+  })
+})
+
 module.exports = router;

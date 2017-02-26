@@ -1,0 +1,152 @@
+doctype html
+html(lang='es')
+  head
+    meta(charset='UTF-8')
+    link(rel="shortcut icon" type="image/png" href="/favicon.png")
+    // Import Google Icon Font
+    link(href='http://fonts.googleapis.com/icon?family=Material+Icons', rel='stylesheet')
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css')
+    // Compiled and minified CSS
+    link(rel='stylesheet', href='css/materialize.min.css')
+    link(rel='stylesheet', href='css/registro.css')
+    // Let browser know website is optimized for mobile
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+  body
+    header
+      #header-web-gento.navbar-fixed
+        nav.black
+          .nav-wrapper
+            a.brand-logo(href='#!')
+              img(src='img/inicio/header/logo.png', alt='')
+            a.button-collapse.icono-button(href='#', data-activates='mobile-demo', onclick='buttonChange()')
+              i.material-icons.icono menu
+            ul.right.hide-on-med-and-down
+              li
+                a.active(href='/') INICIO
+              li
+                a(href='/explorar') EXPLORAR
+              li
+                a(href='/v-registro') REGISTRARSE
+              li
+                a(href='/perfil') PERFIL
+            ul#mobile-demo.side-nav.side-nav-content
+              li
+                a.active(href='/') INICIO
+              li
+                a(href='/explorar') EXPLORAR
+              li
+                a(href='/v-registro') REGISTRAR
+              li
+                a(href='/perfil') PERFIL
+    main
+      .container.center
+        br
+        br
+        br
+        br
+        br
+        br
+        form(action='/prenda', method='POST')
+          input(type='text' name='nombre' placeholder=' Nombre')
+          input(type='text' name='descripcion' placeholder=' Descripcion')
+          input(type='text' name='colores' placeholder=' Color')
+          h3 Escribir en minusculas el tipo
+          input(type='text' name='tipo' placeholder=' Tipo: pantalon,polo,camisa,zapato')
+          input(type='number' name='pventa' placeholder=' Precio Venta')
+          input(type='number' name='precio' placeholder=' Precio Real')
+          input(type='text' name='entalle' placeholder=' Entalle')
+          p Para polo y camisa: Slim, modern, normal
+          p Para pantalon: Slim, Skinny, Recto
+          p Para zapato dejar vacio
+          input(type='text' name='mainImg' placeholder=' Imagen Principal')
+          input(type='text' name='secondaryImg1' placeholder=' Imagen Secundaria 1')
+          input(type='text' name='secondaryImg2' placeholder=' Imagen Secundaria 2')
+          input(type='text' name='talla_1' placeholder=' Talla 1')
+          input(type='text' name='talla_2' placeholder=' Talla 2')
+          input(type='text' name='talla_3' placeholder=' Talla 3')
+          input(type='text' name='talla_4' placeholder=' Talla 4')
+          input(type='text' name='talla_5' placeholder=' Talla 5')
+          select(name='marca')
+            option(value='', disabled='', selected='') MARCA
+            each thing in data
+              option(value='#{thing._id}') #{thing.nombre}
+          select(name='estilo_formal')
+            option(value='', disabled='', selected='') ESTILO FORMAL
+            option(value=0.2) *
+            option(value=0.4) **
+            option(value=0.6) ***
+            option(value=0.8) ****
+            option(value=1.0) *****
+          select(name='estilo_casual')
+            option(value='', disabled='', selected='') ESTILO CASUAL
+            option(value=0.2) *
+            option(value=0.4) **
+            option(value=0.6) ***
+            option(value=0.8) ****
+            option(value=1.0) *****
+          select(name='estilo_urbano')
+            option(value='', disabled='', selected='') ESTILO URBANO
+            option(value=0.2) *
+            option(value=0.4) **
+            option(value=0.6) ***
+            option(value=0.8) ****
+            option(value=1.0) *****
+          select(name='estilo_hipster')
+            option(value='', disabled='', selected='') ESTILO HIPSTER
+            option(value=0.2) *
+            option(value=0.4) **
+            option(value=0.6) ***
+            option(value=0.8) ****
+            option(value=1.0) *****
+          select(name='estilo_tendencia')
+            option(value='', disabled='', selected='') ESTILO TENDENCIA
+            option(value=0.2) *
+            option(value=0.4) **
+            option(value=0.6) ***
+            option(value=0.8) ****
+            option(value=1.0) *****
+          
+
+          input.btn.center.center-text.center-block.black(type='submit', value='enviar')
+
+    footer.page-footer.black
+      .container
+        .row
+          .col.l6.s12
+            h5.white-text Gento, la forma más inteligente de comprar ropa.
+            p.grey-text.text-lighten-4
+              span Recuerda que al comprar en Gento, medimos tus tallas,
+              br
+              span analizamos tu estilo para buscar en todas las tiendas
+              br
+              span y poder ofrecerte las mejores prendas personalizadas para ti.
+          .col.l4.offset-l2.s12
+            h5.white-text Síguenos en Redes Sociales
+            ul
+              li
+                a.grey-text.text-lighten-3(target='blank', href='https://facebook.com/gentoapp')
+                  i.fa.fa-facebook
+                  p Facebook
+              li
+                a.grey-text.text-lighten-3(target='blank', href='https://twitter.com/gentoapp')
+                  i.fa.fa-twitter
+                  p Twitter
+              li
+                a.grey-text.text-lighten-3(target='blank', href='https://instagram.com/gentoapp')
+                  i.fa.fa-instagram
+                  p Instagram
+      .footer-copyright
+        .container
+          strong hola@gento.pe  |  © 2017 GENTO      
+    script.
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-85217882-6', 'auto');
+      ga('send', 'pageview');
+    // Import jQuery before materialize.js
+    script(type='text/javascript', src='js/jQuery-3.1.1.js')
+    script(type='text/javascript', src='js/materialize.min.js')
+    script(src='js/headroom.min.js')
+    script(src='js/registro.js')
