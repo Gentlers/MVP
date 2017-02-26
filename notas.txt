@@ -1,3 +1,12 @@
-NOTAS
+*****PARA HACER*****
+Agregar Caso para cuando no tengamos nada que recomendarle, pero puede ver la seleccion entera
+Agregar boton para ver la coleccion completa de prendas.
+Agregar subida de imagen de perfil por S3
+Mejorar el mensaje AJAX de pre-registro
+Mejorar el mensaje AJAX de compra
+Proteger el API con Query String contraseña
+Añadir FavIcon
+
+*****NOTAS*****
 EN BD como manejar prendas de un mismo tipo pero con diferentes modelos (colores, prints, etc)
 Modelar BD por cada prenda, habra un color y una talla, y esta prenda tendra una cantida de stock especifico.
