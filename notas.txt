@@ -6,6 +6,9 @@ Mejorar el mensaje AJAX de pre-registro
 Mejorar el mensaje AJAX de compra
 Proteger el API con Query String contraseña
 Añadir FavIcon
+Usar Layouts en Head y para Footer
+Arreglar el SEO
+Arreglar los Titles usando variables 
 
 *****NOTAS*****
 EN BD como manejar prendas de un mismo tipo pero con diferentes modelos (colores, prints, etc)
