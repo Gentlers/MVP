@@ -155,3 +155,17 @@ html {
     margin-top: 50px; }
 
 /*# sourceMappingURL=perfil.css.map */
+
+.btn-close {
+  background: #B00 !important;
+}
+.btn-edicion {
+  background: #214873 !important;
+}
+#edicion {
+  display: none;
+}
+.botones {
+  display: block;
+  text-align: center;
+}

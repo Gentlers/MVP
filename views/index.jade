@@ -71,8 +71,12 @@ html(lang='es')
         br
         a.btn.btn-black(style='background:black', href='#vid') CONOCER MÁS
       // NOTE: THIS IS THE PART OF THE VIDEO GENTO
-      #vid.background-video(style='text-align:center;padding:50px')
-        iframe(src='https://player.vimeo.com/video/201190365', width='640', height='360', frameborder='0', webkitallowfullscreen='', mozallowfullscreen='', allowfullscreen='')
+      .row.sc1Video
+        .container
+          .video-container
+            iframe(width="853" height="480" src="https://player.vimeo.com/video/201190365" frameborder="0" allowfullscreen)
+      //- #vid.background-video(style='text-align:center;padding:50px')
+      //-   iframe(src='https://player.vimeo.com/video/201190365', width='640', height='360', frameborder='0', webkitallowfullscreen='', mozallowfullscreen='', allowfullscreen='')
       // NOTE: WHY USE GENTO
       .why-container.valign-wrapper
         .row.valign

@@ -73,146 +73,148 @@ html(lang='es')
             | Modifica aspectos de tu perfil, así Gento aprenderá más sobre ti y te dará recomendaciones más precisas.
           hr
       .row.container.preferencias
-        
-        form(action='/logout', method='POST')
-          .row.top-space
-            .col-xs-12.col-md-6
-              input.btn.btn-info(type='submit', value='Cerrar Sesion')
-        h4.heletica3 Preferencias
-        form(action='/update', method='POST')
-          .row
-            .col.l3.m4.s12
-              .preferencias-prenda
-                img(src='http://i51.twenga.com/moda/camisas/ralph-lauren-camisa-azul-tp_3915612622791642398f.jpg', alt='')
-              br
-              .input-field.col.s12
-                select.icons(name='talla_camisa')
-                  option(value='', disabled='', selected='') TALLA
-                  option.left.circle(value='S') S
-                  option.left.circle(value='M') M
-                  option.left.circle(value='L') L
-                  option.left.circle(value='XL') XL
-              br
-              br
-              .input-field.col.s12
-                select.icons(name='entalle_camisa')
-                  option(value='', disabled='', selected='') ENTALLE
-                  option.left.circle(value='modern') Modern fit
-                  option.left.circle(value='normal') Normal Fit
-                  option.left.circle(value='slim') Slim Fit
-            .col.l3.m4.s12
-              .preferencias-prenda
-                img(src='http://static.kiabi.es/images/pantalon-chino-regular-de-sarga-elastica-marino-hombre-tz476_2_lpr1.jpg', alt='')
-              br
-              .input-field.col.s12
-                select.icons(name='talla_pantalon')
-                  option(value='', disabled='', selected='') TALLA
-                  option.left.circle(value='28') 28
-                  option.left.circle(value='30') 30
-                  option.left.circle(value='32') 32
-                  option.left.circle(value='34') 34
-              br
-              br
-              .input-field.col.s12
-                select.icons(name='entalle_pantalon')
-                  option(value='', disabled='', selected='') ENTALLE
-                  option.left.circle(value='recto') Recto
-                  option.left.circle(value='skinny') Skinny Fit
-                  option.left.circle(value='slim') Slim Fit
-            .col.l3.m4.s12
-              .preferencias-prenda
-                img(src='https://http2.mlstatic.com/S_439411-MLV20565825385_012016-Y.jpg', alt='')
-              br
-              .input-field.col.s12
-                select.icons(name='talla_polo')
-                  option(value='', disabled='', selected='') TALLA
-                  option.left.circle(value='S') S
-                  option.left.circle(value='M') M
-                  option.left.circle(value='L') L
-                  option.left.circle(value='XL') XL
-              br
-              br
-              .input-field.col.s12
-                select.icons(name='entalle_polo')
-                  option(value='', disabled='', selected='') ENTALLE
-                  option.left.circle(value='modern') Modern fit
-                  option.left.circle(value='normal') Normal Fit
-                  option.left.circle(value='slim') Slim Fit
-            .col.l3.m4.s12
-              .preferencias-prenda
-                img(src='https://s-media-cache-ak0.pinimg.com/736x/8e/78/ab/8e78abe5ffdd8384d813db755cdcc420.jpg', alt='')
-              br
-              .input-field.col.s12
-                select.icons(name='talla_zapato')
-                  option(value='', disabled='', selected='') TALLA
-                  option.left.circle(value='38') 38
-                  option.left.circle(value='40') 40
-                  option.left.circle(value='42') 42
-                  option.left.circle(value='44') 44
-              br
-              br
-          br
-          br
-          br
-          br
-          .row
-            .col.s6.m4
-              .input-field.enter-size-item-1-a.center
-                        p FORMAL
-                        img.img-estilo(src='/img/registro/estilos/01.png')
-                        select(name='estilo_formal')
-                          option(value='', disabled='', selected='') Dale un valor segun estilo:
-                          option(value=0.2) *
-                          option(value=0.4) **
-                          option(value=0.6) ***
-                          option(value=0.8) ****
-                          option(value=1.0) *****
-            .col.s6.m4
-              .input-field.enter-size-item-1-a.center
-                        p CASUAL
-                        img.img-estilo(src='/img/registro/estilos/02.png')
-                        select(name='estilo_casual')
-                          option(value='', disabled='', selected='') Dale un valor segun estilo:
-                          option(value=0.2) *
-                          option(value=0.4) **
-                          option(value=0.6) ***
-                          option(value=0.8) ****
-                          option(value=1.0) *****
-            .col.s6.m4
-              .input-field.enter-size-item-1-a.center
-                        p URBANO
-                        img.img-estilo(src='/img/registro/estilos/03.png')
-                        select(name='estilo_urbano')
-                          option(value='', disabled='', selected='') Dale un valor segun estilo:
-                          option(value=0.2) *
-                          option(value=0.4) **
-                          option(value=0.6) ***
-                          option(value=0.8) ****
-                          option(value=1.0) *****
-            .col.s6.m4
-              .input-field.enter-size-item-1-a.center
-                        p HIPSTER
-                        img.img-estilo(src='/img/registro/estilos/04.png')
-                        select(name='estilo_hipster')
-                          option(value='', disabled='', selected='') Dale un valor segun estilo:
-                          option(value=0.2) *
-                          option(value=0.4) **
-                          option(value=0.6) ***
-                          option(value=0.8) ****
-                          option(value=1.0) *****
-            .col.s6.m4
-              .input-field.enter-size-item-1-a.center
-                        p TENDENCIA
-                        img.img-estilo(src='/img/registro/estilos/05.png')
-                        select.center(name='estilo_tendencia')
-                          option(value='', disabled='', selected='') Dale un valor segun estilo:
-                          option(value=0.2) *
-                          option(value=0.4) **
-                          option(value=0.6) ***
-                          option(value=0.8) ****
-                          option(value=1.0) *****
-          .row.center
-            button.waves-effect.waves-light.black.btn.botonesGuardar GUARDAR CAMBIOS
+        .botones
+          form(action='/logout', method='POST')
+            .row.top-space
+              .col-xs-12.col-md-6
+                input.btn.btn-info.btn-close(type='submit', value='Cerrar Sesion')
+          button.btn.btn-edicion Editar Estilos y Tallas
+        #edicion
+          h4.heletica3 Preferencias
+          form(action='/update', method='POST')
+            .row
+              .col.l3.m4.s12
+                .preferencias-prenda
+                  img(src='http://i51.twenga.com/moda/camisas/ralph-lauren-camisa-azul-tp_3915612622791642398f.jpg', alt='')
+                br
+                .input-field.col.s12
+                  select.icons(name='talla_camisa')
+                    option(value='', disabled='', selected='') TALLA
+                    option.left.circle(value='S') S
+                    option.left.circle(value='M') M
+                    option.left.circle(value='L') L
+                    option.left.circle(value='XL') XL
+                br
+                br
+                .input-field.col.s12
+                  select.icons(name='entalle_camisa')
+                    option(value='', disabled='', selected='') ENTALLE
+                    option.left.circle(value='modern') Modern fit
+                    option.left.circle(value='normal') Normal Fit
+                    option.left.circle(value='slim') Slim Fit
+              .col.l3.m4.s12
+                .preferencias-prenda
+                  img(src='http://static.kiabi.es/images/pantalon-chino-regular-de-sarga-elastica-marino-hombre-tz476_2_lpr1.jpg', alt='')
+                br
+                .input-field.col.s12
+                  select.icons(name='talla_pantalon')
+                    option(value='', disabled='', selected='') TALLA
+                    option.left.circle(value='28') 28
+                    option.left.circle(value='30') 30
+                    option.left.circle(value='32') 32
+                    option.left.circle(value='34') 34
+                br
+                br
+                .input-field.col.s12
+                  select.icons(name='entalle_pantalon')
+                    option(value='', disabled='', selected='') ENTALLE
+                    option.left.circle(value='recto') Recto
+                    option.left.circle(value='skinny') Skinny Fit
+                    option.left.circle(value='slim') Slim Fit
+              .col.l3.m4.s12
+                .preferencias-prenda
+                  img(src='https://http2.mlstatic.com/S_439411-MLV20565825385_012016-Y.jpg', alt='')
+                br
+                .input-field.col.s12
+                  select.icons(name='talla_polo')
+                    option(value='', disabled='', selected='') TALLA
+                    option.left.circle(value='S') S
+                    option.left.circle(value='M') M
+                    option.left.circle(value='L') L
+                    option.left.circle(value='XL') XL
+                br
+                br
+                .input-field.col.s12
+                  select.icons(name='entalle_polo')
+                    option(value='', disabled='', selected='') ENTALLE
+                    option.left.circle(value='modern') Modern fit
+                    option.left.circle(value='normal') Normal Fit
+                    option.left.circle(value='slim') Slim Fit
+              .col.l3.m4.s12
+                .preferencias-prenda
+                  img(src='https://s-media-cache-ak0.pinimg.com/736x/8e/78/ab/8e78abe5ffdd8384d813db755cdcc420.jpg', alt='')
+                br
+                .input-field.col.s12
+                  select.icons(name='talla_zapato')
+                    option(value='', disabled='', selected='') TALLA
+                    option.left.circle(value='38') 38
+                    option.left.circle(value='40') 40
+                    option.left.circle(value='42') 42
+                    option.left.circle(value='44') 44
+                br
+                br
+            br
+            br
+            br
+            br
+            .row
+              .col.s6.m4
+                .input-field.enter-size-item-1-a.center
+                          p FORMAL
+                          img.img-estilo(src='/img/registro/estilos/01.png')
+                          select(name='estilo_formal')
+                            option(value='', disabled='', selected='') Dale un valor segun estilo:
+                            option(value=0.2) *
+                            option(value=0.4) **
+                            option(value=0.6) ***
+                            option(value=0.8) ****
+                            option(value=1.0) *****
+              .col.s6.m4
+                .input-field.enter-size-item-1-a.center
+                          p CASUAL
+                          img.img-estilo(src='/img/registro/estilos/02.png')
+                          select(name='estilo_casual')
+                            option(value='', disabled='', selected='') Dale un valor segun estilo:
+                            option(value=0.2) *
+                            option(value=0.4) **
+                            option(value=0.6) ***
+                            option(value=0.8) ****
+                            option(value=1.0) *****
+              .col.s6.m4
+                .input-field.enter-size-item-1-a.center
+                          p URBANO
+                          img.img-estilo(src='/img/registro/estilos/03.png')
+                          select(name='estilo_urbano')
+                            option(value='', disabled='', selected='') Dale un valor segun estilo:
+                            option(value=0.2) *
+                            option(value=0.4) **
+                            option(value=0.6) ***
+                            option(value=0.8) ****
+                            option(value=1.0) *****
+              .col.s6.m4
+                .input-field.enter-size-item-1-a.center
+                          p HIPSTER
+                          img.img-estilo(src='/img/registro/estilos/04.png')
+                          select(name='estilo_hipster')
+                            option(value='', disabled='', selected='') Dale un valor segun estilo:
+                            option(value=0.2) *
+                            option(value=0.4) **
+                            option(value=0.6) ***
+                            option(value=0.8) ****
+                            option(value=1.0) *****
+              .col.s6.m4
+                .input-field.enter-size-item-1-a.center
+                          p TENDENCIA
+                          img.img-estilo(src='/img/registro/estilos/05.png')
+                          select.center(name='estilo_tendencia')
+                            option(value='', disabled='', selected='') Dale un valor segun estilo:
+                            option(value=0.2) *
+                            option(value=0.4) **
+                            option(value=0.6) ***
+                            option(value=0.8) ****
+                            option(value=1.0) *****
+            .row.center
+              button.waves-effect.waves-light.black.btn.botonesGuardar GUARDAR CAMBIOS
     footer.page-footer.black
       .container
         .row
@@ -256,3 +258,4 @@ html(lang='es')
     script(src='js/materialize.min.js')
     script(src='js/headroom.min.js')
     script(src='js/explorar.js')
+    script(src='js/perfil.js')

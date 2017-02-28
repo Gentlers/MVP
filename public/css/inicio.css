@@ -500,3 +500,8 @@ html {
     margin: auto; }
 
 /*# sourceMappingURL=inicio.css.map */
+.sc1Video {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background: #333 !important;
+}
