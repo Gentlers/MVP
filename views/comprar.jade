@@ -61,12 +61,10 @@ html(lang='es')
           img.materialboxed(data-caption='#{data[0].descripcion}', width='250', src='#{data[0].mainImg}')
         .col.l2.m3.s12.center
           .vistaPrendas.center
-            .col.l12.center
-              img(src='/img/comprar/01.jpg', alt='')
-            .col.l12.center
-              img(src='/img/comprar/02.jpg', alt='')
-            .col.l12.center
-              img(src='/img/comprar/03.jpg', alt='')
+            each thing in data[0].secondaryImg
+              if thing != null
+                .col.l12.center
+                  img(src='#{thing}', alt='')
         .col.l4.m12.s12
           .comprasTitle.helvetica3
             p #{data[0].nombre}

@@ -12,8 +12,8 @@ Arreglar Color Responsive Menu
 Arreglar Explorar slider Responsive
 Cambiar fotos de Abanto y enlaces
 Arreglar el SEO
-Crear vista de Admin para crear nuevas prendas.
-Crear vista de admin para crear nuevos usuarios.
+====Crear vista de Admin para crear nuevas prendas.
+====Crear vista de admin para crear nuevos usuarios.
 Mejorar el mensaje AJAX de pre-registro
 Mejorar el mensaje AJAX de compra
 Poner Estrellas para edicion de estilos.

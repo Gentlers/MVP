@@ -22,12 +22,6 @@ var logged = function(session) {
   return band
 }
 
-// Ruta para mostrar el Requirement obtenido
-router.post('/test', function(req, res) {
-  console.log(req.body)
-  res.send(req.body)
-})
-
 router.get('/', function(req, res, next) {
   res.render('index', { title: "Inicio", bol: logged(req.session) })
 })
@@ -130,7 +124,6 @@ router.post('/registro', function(req, res, next) {
       return res.status(500).send()
     }
     else{
-      req.session.user_id = savedUser._id
       res.redirect('/perfil')
     }
   })
@@ -271,6 +264,11 @@ router.post('/prenda', admin_middleware, function(req, res) {
     Number(req.body.estilo_casual), 
     Number(req.body.estilo_hipster), 
     Number(req.body.estilo_tendencia)
+  ]
+  newPrenda.mainImg = req.body.mainImg
+  newPrenda.secondaryImg = [
+    req.body.secondaryImg1,
+    req.body.secondaryImg2
   ]
   newPrenda.medidas = []
   newPrenda.entalle = req.body.entalle
