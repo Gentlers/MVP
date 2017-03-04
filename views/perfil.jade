@@ -89,19 +89,24 @@ html(lang='es')
                 br
                 .input-field.col.s12
                   select.icons(name='talla_camisa')
-                    option(value='', disabled='', selected='') TALLA
-                    option.left.circle(value='S') S
-                    option.left.circle(value='M') M
-                    option.left.circle(value='L') L
-                    option.left.circle(value='XL') XL
+                    option(value='', disabled='') TALLA
+                    - tallas_camisa = ["S","M","L","XL"]
+                    for item in tallas_camisa
+                      if user.tallas[0] == item
+                        option.left.circle(value='#{item}', selected='true') #{item}
+                      else
+                        option.left.circle(value='#{item}') #{item}
                 br
                 br
                 .input-field.col.s12
                   select.icons(name='entalle_camisa')
                     option(value='', disabled='', selected='') ENTALLE
-                    option.left.circle(value='modern') Modern fit
-                    option.left.circle(value='normal') Normal Fit
-                    option.left.circle(value='slim') Slim Fit
+                    - entalles_camisa = ['modern','normal','slim']
+                    for item in entalles_camisa
+                      if user.entalle[0] == item
+                        option.left.circle(value='#{item}', selected='true') #{item} fit
+                      else
+                        option.left.circle(value='#{item}') #{item} fit
               .col.l3.m4.s12
                 .preferencias-prenda
                   img(src='http://static.kiabi.es/images/pantalon-chino-regular-de-sarga-elastica-marino-hombre-tz476_2_lpr1.jpg', alt='')
@@ -109,18 +114,23 @@ html(lang='es')
                 .input-field.col.s12
                   select.icons(name='talla_pantalon')
                     option(value='', disabled='', selected='') TALLA
-                    option.left.circle(value='28') 28
-                    option.left.circle(value='30') 30
-                    option.left.circle(value='32') 32
-                    option.left.circle(value='34') 34
+                    - tallas_pantalon = ['28','30','32','34']
+                    for item in tallas_pantalon
+                      if user.tallas[1] == item
+                        option.left.circle(value='#{item}', selected='true') #{item}
+                      else
+                        option.left.circle(value='#{item}') #{item}
                 br
                 br
                 .input-field.col.s12
                   select.icons(name='entalle_pantalon')
                     option(value='', disabled='', selected='') ENTALLE
-                    option.left.circle(value='recto') Recto
-                    option.left.circle(value='skinny') Skinny Fit
-                    option.left.circle(value='slim') Slim Fit
+                    - entalles_pantalon = ['recto','skinny','slim']
+                    for item in entalles_pantalon
+                      if user.entalle[1] == item
+                        option.left.circle(value='#{item}', selected='true') #{item} fit
+                      else
+                        option.left.circle(value='#{item}') #{item} fit
               .col.l3.m4.s12
                 .preferencias-prenda
                   img(src='https://http2.mlstatic.com/S_439411-MLV20565825385_012016-Y.jpg', alt='')
@@ -128,18 +138,23 @@ html(lang='es')
                 .input-field.col.s12
                   select.icons(name='talla_polo')
                     option(value='', disabled='', selected='') TALLA
-                    option.left.circle(value='S') S
-                    option.left.circle(value='M') M
-                    option.left.circle(value='L') L
-                    option.left.circle(value='XL') XL
+                    - tallas_polo = ['S','M','L','XL']
+                    for item in tallas_polo
+                      if user.tallas[2] == item
+                        option.left.circle(value='#{item}', selected='true') #{item}
+                      else
+                        option.left.circle(value='#{item}') #{item}
                 br
                 br
                 .input-field.col.s12
                   select.icons(name='entalle_polo')
                     option(value='', disabled='', selected='') ENTALLE
-                    option.left.circle(value='modern') Modern fit
-                    option.left.circle(value='normal') Normal Fit
-                    option.left.circle(value='slim') Slim Fit
+                    - entalles_polo = ['modern','normal','slim']
+                    for item in entalles_polo
+                      if user.entalle[2] == item
+                        option.left.circle(value='#{item}', selected='true') #{item} fit
+                      else
+                        option.left.circle(value='#{item}') #{item} fit
               .col.l3.m4.s12
                 .preferencias-prenda
                   img(src='https://s-media-cache-ak0.pinimg.com/736x/8e/78/ab/8e78abe5ffdd8384d813db755cdcc420.jpg', alt='')
@@ -147,10 +162,12 @@ html(lang='es')
                 .input-field.col.s12
                   select.icons(name='talla_zapato')
                     option(value='', disabled='', selected='') TALLA
-                    option.left.circle(value='38') 38
-                    option.left.circle(value='40') 40
-                    option.left.circle(value='42') 42
-                    option.left.circle(value='44') 44
+                    - tallas_zapato = ['38','40','42','44']
+                    for item in tallas_zapato
+                      if user.tallas[3] == item
+                        option.left.circle(value='#{item}', selected='true') #{item}
+                      else
+                        option.left.circle(value='#{item}') #{item}
                 br
                 br
             br
@@ -158,61 +175,80 @@ html(lang='es')
             br
             br
             .row
+              - estilos = [0.2,0.4,0.6,0.8,1]
+              - stars = ['*','**','***','****','*****']
               .col.s6.m4
                 .input-field.enter-size-item-1-a.center
                           p FORMAL
                           img.img-estilo(src='/img/registro/estilos/01.png')
                           select(name='estilo_formal')
+                            
                             option(value='', disabled='', selected='') Dale un valor segun estilo:
-                            option(value=0.2) *
-                            option(value=0.4) **
-                            option(value=0.6) ***
-                            option(value=0.8) ****
-                            option(value=1.0) *****
+                            - cont = 0
+                            each item in estilos
+                              if item == user.estilo[0]
+                                option(value=item, selected='true')= stars[cont]
+                              else
+                                option(value=item)= stars[cont]
+                              - cont = cont+1  
+
+                            //- option(value=0.2) *
+                            //- option(value=0.4) **
+                            //- option(value=0.6) ***
+                            //- option(value=0.8) ****
+                            //- option(value=1.0) *****
               .col.s6.m4
                 .input-field.enter-size-item-1-a.center
                           p CASUAL
                           img.img-estilo(src='/img/registro/estilos/02.png')
                           select(name='estilo_casual')
                             option(value='', disabled='', selected='') Dale un valor segun estilo:
-                            option(value=0.2) *
-                            option(value=0.4) **
-                            option(value=0.6) ***
-                            option(value=0.8) ****
-                            option(value=1.0) *****
+                            - cont = 0
+                            each item in estilos
+                              if item == user.estilo[1]
+                                option(value=item, selected='true')= stars[cont]
+                              else
+                                option(value=item)= stars[cont]
+                              - cont = cont+1  
               .col.s6.m4
                 .input-field.enter-size-item-1-a.center
                           p URBANO
                           img.img-estilo(src='/img/registro/estilos/03.png')
                           select(name='estilo_urbano')
                             option(value='', disabled='', selected='') Dale un valor segun estilo:
-                            option(value=0.2) *
-                            option(value=0.4) **
-                            option(value=0.6) ***
-                            option(value=0.8) ****
-                            option(value=1.0) *****
+                            - cont = 0
+                            each item in estilos
+                              if item == user.estilo[2]
+                                option(value=item, selected='true')= stars[cont]
+                              else
+                                option(value=item)= stars[cont]
+                              - cont = cont+1  
               .col.s6.m4
                 .input-field.enter-size-item-1-a.center
                           p HIPSTER
                           img.img-estilo(src='/img/registro/estilos/04.png')
                           select(name='estilo_hipster')
                             option(value='', disabled='', selected='') Dale un valor segun estilo:
-                            option(value=0.2) *
-                            option(value=0.4) **
-                            option(value=0.6) ***
-                            option(value=0.8) ****
-                            option(value=1.0) *****
+                            - cont = 0
+                            each item in estilos
+                              if item == user.estilo[3]
+                                option(value=item, selected='true')= stars[cont]
+                              else
+                                option(value=item)= stars[cont]
+                              - cont = cont+1  
               .col.s6.m4
                 .input-field.enter-size-item-1-a.center
                           p TENDENCIA
                           img.img-estilo(src='/img/registro/estilos/05.png')
                           select.center(name='estilo_tendencia')
                             option(value='', disabled='', selected='') Dale un valor segun estilo:
-                            option(value=0.2) *
-                            option(value=0.4) **
-                            option(value=0.6) ***
-                            option(value=0.8) ****
-                            option(value=1.0) *****
+                            - cont = 0
+                            each item in estilos
+                              if item == user.estilo[4]
+                                option(value=item, selected='true')= stars[cont]
+                              else
+                                option(value=item)= stars[cont]
+                              - cont = cont+1  
             .row.center
               button.waves-effect.waves-light.black.btn.botonesGuardar GUARDAR CAMBIOS
     footer.page-footer.black

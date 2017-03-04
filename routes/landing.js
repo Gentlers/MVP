@@ -102,21 +102,21 @@ router.post('/registro', function(req, res, next) {
   newUser.celular = Number(req.body.phone)
   newUser.estilo = [
     Number(req.body.estilo_formal), 
-    Number(req.body.estilo_urbano), 
     Number(req.body.estilo_casual), 
+    Number(req.body.estilo_urbano), 
     Number(req.body.estilo_hipster), 
     Number(req.body.estilo_tendencia)
   ]
   newUser.tallas = [
     req.body.talla_camisa, 
-    req.body.talla_polo, 
     Number(req.body.talla_pantalon), 
+    req.body.talla_polo, 
     Number(req.body.talla_zapato)
   ]
   newUser.entalle = [
     req.body.entalle_camisa, 
-    req.body.entalle_polo, 
-    req.body.entalle_pantalon
+    req.body.entalle_pantalon,
+    req.body.entalle_polo
   ]
   newUser.save(function(err, savedUser) {
     if(err) {
@@ -134,21 +134,21 @@ router.post('/update', session_middleware, function(req, res) {
   User.findById(req.session.user_id, function(err, user) {
     user.tallas = [
       req.body.talla_camisa,
-      req.body.talla_polo,
       Number(req.body.talla_pantalon),
+      req.body.talla_polo,
       Number(req.body.talla_zapato)
       ]
     user.estilo = [
       Number(req.body.estilo_formal),
-      Number(req.body.estilo_urbano),
       Number(req.body.estilo_casual),
+      Number(req.body.estilo_urbano),
       Number(req.body.estilo_hipster),
       Number(req.body.estilo_tendencia)
     ]
     user.entalle = [
       req.body.entalle_camisa,
-      req.body.entalle_polo,
-      req.body.entalle_pantalon
+      req.body.entalle_pantalon,
+      req.body.entalle_polo
     ]
     user.save(function(err, savedUser) {
       if(err) {

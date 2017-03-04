@@ -1,11 +1,11 @@
 *****PARA HACER*****
 ====Arreglar boton de cierre de sesion en Perfil.
-Arreglra imagenes secundarias en vista comprar
+====Arreglar imagenes secundarias en vista comprar
 ====Añadir FavIcon
 Arreglar el Zoom de la iamgen al comprar.
 Añadir las tallas al envio de la compra.
-Corregir para obligar a poner todos los estilos al editar
-Arreglar form de edicion de estilo cargando predefinidamnte los estilos actuales.
+====Corregir para obligar a poner todos los estilos al editar
+====Arreglar form de edicion de estilo cargando predefinidamnte los estilos actuales.
 Arreglar Responsive Menu
 Arreglar Color Responsive Menu
 ====Arreglar Video Responsive
