@@ -219,7 +219,7 @@ router.post('/pre', function(req, res) {
 })
  // Ruta para el envio de mail para cada venta
 router.post('/venta', function(req, res) {
-  var mensaje = "Cliente: " + req.body.cliente + "\nCorreo: " + req.body.correo + "\nTelefono: "+req.body.phone + "\nPrenda: " + req.body.prenda + "\nMarca: " + req.body.marca + "\nPrecio Venta:" + req.body.pv + "\nPrecio Normal: " + req.body.pc + "\nEntrega: " + req.body.tipo_pedido
+  var mensaje = "Cliente: " + req.body.cliente + "\nCorreo: " + req.body.correo + "\nTelefono: "+req.body.phone + "\nPrenda: " + req.body.prenda + "\nMarca: " + req.body.marca + "\nPrecio Venta:" + req.body.pventa + "\nPrecio Normal: " + req.body.precio + "\nEntrega: " + req.body.tipo_pedido + "\nTallas: " + req.body.tallas
   var transporter = nodemailer.createTransport({
     service: 'Gmail',
     auth: {

@@ -1,32 +1,29 @@
 *****PARA HACER*****
-====Arreglar boton de cierre de sesion en Perfil.
-====Arreglar imagenes secundarias en vista comprar
-====Añadir FavIcon
-Arreglar el Zoom de la iamgen al comprar.
-Añadir las tallas al envio de la compra.
-====Corregir para obligar a poner todos los estilos al editar
-====Arreglar form de edicion de estilo cargando predefinidamnte los estilos actuales.
 Arreglar Responsive Menu
-Arreglar Color Responsive Menu
-====Arreglar Video Responsive
-Arreglar Explorar slider Responsive
-Cambiar fotos de Abanto y enlaces
-Arreglar el SEO
-====Crear vista de Admin para crear nuevas prendas.
-====Crear vista de admin para crear nuevos usuarios.
 Mejorar el mensaje AJAX de pre-registro
+Arreglar Color Responsive Menu
+Arreglar Explorar slider Responsive
 Mejorar el mensaje AJAX de compra
-Poner Estrellas para edicion de estilos.
-Agregar boton para ver la coleccion completa de prendas.
+Arreglar el SEO
+Arreglar Redireccionamiento para SEO
 Agregar Caso para cuando no tengamos nada que recomendarle, pero puede ver la seleccion entera
+Agregar boton para ver la coleccion completa de prendas.
+Arreglar el Zoom de la imagen al comprar.
+Proteger el API con Query String contraseña
 Agregar subida de imagen de perfil por S3
 Usar Layouts en Head y para Footer
 Arreglar los Titles usando variables 
-Proteger el API con Query String contraseña
-Arreglar Redireccionamiento para SEO
-
-
-
+Poner Estrellas para edicion de estilos.
+====Arreglar boton de cierre de sesion en Perfil.
+====Arreglar imagenes secundarias en vista comprar
+====Añadir FavIcon
+====Añadir las tallas al envio de la compra.
+====Corregir para obligar a poner todos los estilos al editar
+====Arreglar form de edicion de estilo cargando predefinidamnte los estilos actuales.
+====Arreglar Video Responsive
+====Cambiar fotos de Abanto y enlaces
+====Crear vista de Admin para crear nuevas prendas.
+====Crear vista de admin para crear nuevos usuarios.
 
 *****NOTAS*****
 EN BD como manejar prendas de un mismo tipo pero con diferentes modelos (colores, prints, etc)
