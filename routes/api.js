@@ -55,22 +55,22 @@ router.get('/marcas', function(req, res, next) {
 	})
 })
 
-// router.post('/marca/', function(req, res, next) {
-// 	var newmarca = new Marca()
-// 	newmarca.nombre = req.body.nombre
-// 	newmarca.descripcion = req.body.descripcion
-// 	newmarca.estilo = req.body.estilo
-// 	newmarca.tipos = req.body.tipos
+router.post('/marca/', function(req, res, next) {
+	var newmarca = new Marca()
+	newmarca.nombre = req.body.nombre
+	newmarca.descripcion = req.body.descripcion
+	newmarca.estilo = req.body.estilo
+	newmarca.tipos = req.body.tipos
 
-// 	newmarca.save(function(err, savedMarca) {
-// 		if(err) {
-// 			console.log(err)
-// 			return res.status(500).send()
-// 		}
-// 		return res.status(200).send()
-// 	})
+	newmarca.save(function(err, savedMarca) {
+		if(err) {
+			console.log(err)
+			return res.status(500).send()
+		}
+		return res.status(200).send()
+	})
 
-// })
+})
 
 // Prendas
 router.get('/prendas', function(req, res, next) {
@@ -82,31 +82,31 @@ router.get('/prendas', function(req, res, next) {
 })	
 
 
-// router.post('/prenda/', function(req, res, next) {
-// 	var newprenda = new Prenda()
-// 	newprenda.nombre = req.body.nombre
-// 	newprenda.colores = req.body.colores
-// 	newprenda.tipo = req.body.tipo
-// 	newprenda.descripcion = req.body.descripcion
-// 	newprenda.precio = req.body.precio
-// 	newprenda.pventa = req.body.pventa
-// 	newprenda.estilo = req.body.estilo
-// 	newprenda.medidas = req.body.medidas
-// 	newprenda.entalle = req.body.entalle
-// 	newprenda.tallas = req.body.tallas
-// 	newprenda.marca = req.body.marca
-// 	newprenda.mainImg = req.body.mainImg
-// 	newprenda.secondaryImg = req.body.secondaryImg
+router.post('/prenda/', function(req, res, next) {
+	var newprenda = new Prenda()
+	newprenda.nombre = req.body.nombre
+	newprenda.colores = req.body.colores
+	newprenda.tipo = req.body.tipo
+	newprenda.descripcion = req.body.descripcion
+	newprenda.precio = req.body.precio
+	newprenda.pventa = req.body.pventa
+	newprenda.estilo = req.body.estilo
+	newprenda.medidas = req.body.medidas
+	newprenda.entalle = req.body.entalle
+	newprenda.tallas = req.body.tallas
+	newprenda.marca = req.body.marca
+	newprenda.mainImg = req.body.mainImg
+	newprenda.secondaryImg = req.body.secondaryImg
 
-// 	newprenda.save(function(err, savedPrenda) {
-// 		if(err) {
-// 			console.log(err)
-// 			return res.status(500).send()
-// 		}
-// 		return res.status(200).send()
-// 	})
+	newprenda.save(function(err, savedPrenda) {
+		if(err) {
+			console.log(err)
+			return res.status(500).send()
+		}
+		return res.status(200).send()
+	})
 
-// })
+})
 //DELETE
 router.delete('/prenda/:id', function(req, res, next) {
 	Prenda.findById(req.params.id, function(err, prend) {

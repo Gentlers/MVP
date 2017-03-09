@@ -41,18 +41,18 @@ router.get('/ganadores', function(req, res) {
 router.get('/explorar', session_middleware, function(req, res, next) {    
   User.findOne({ _id: req.session.user_id }, function(err, user) {
     var style = user.estilo
-    var url = 'https://fierce-atoll-99852.herokuapp.com/api_clothes/?style=[' + style + ']'
+    var url = 'https://fierce-atoll-99852.herokuapp.com/api_clothes/?style=[' + style + ']&type=list'
     requestify.get(url).then(function(response) {
       // Creación del JSON de IDs en bruto a partir del response del API en categorias
       var recos = []
-      recos = recos.concat(response.getBody().pantalon)
-      recos = recos.concat(response.getBody().casaca)
-      recos = recos.concat(response.getBody().polo)
-      recos = recos.concat(response.getBody().camisa)
+      recos = recos.concat(response.getBody().clothes)
       // Creacion del JSON de prendas completo buscando por IDs
       var resultados = []
-      if(recos.length==0) res.render('explorar-session', {data:resultados, bol: logged(req.session) })
+      if(recos.length==0) {
+        res.render('explorar-session', {data:resultados, bol: logged(req.session) })
+      }
       else {
+        console.log('Entramos porque length = ' + recos.length)
         for (var i = 0 ; i < recos.length; i++) {
           // Logica cuando estamos recorriendo todos menos el ultimo
           if(i!=recos.length -1){
