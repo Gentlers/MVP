@@ -9,6 +9,7 @@ $('#btnDelivery').on('click', function(e) {
     data: $('#formCompra').serializeArray()
   })
   .done(function( msg ) {
+    fbq('track', 'Purchase')
     alert("Gracias por Comprar!");
   });
 })
@@ -23,6 +24,7 @@ $('#btnTienda').on('click', function(e) {
     data: $('#formCompra').serializeArray()
   })
   .done(function( msg ) {
+    fbq('track', 'Purchase')
     alert("Gracias por Comprar!");
   });
 });
