@@ -1,8 +1,9 @@
 *****PARA HACER*****
-Arreglar Responsive Menu
+Agregar vista de Registro
+====Arreglar Responsive Menu
 Mejorar el mensaje AJAX de pre-registro
 Arreglar Color Responsive Menu
-Arreglar Explorar slider Responsive
+====Arreglar Explorar slider Responsive
 Mejorar el mensaje AJAX de compra
 Arreglar el SEO
 Arreglar Redireccionamiento para SEO
