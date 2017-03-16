@@ -107,7 +107,16 @@ router.post('/register', function(req, res, next) {
   ]
   newUser.tallas = []
   newUser.entalle = []
-
+  newUser.save(function(err, savedUser) {
+    if(err) {
+      console.log(err)
+      return res.status(500).send()
+    }
+    else{
+      req.session.user_id = savedUser._id
+      res.redirect('/perfil')
+    }
+  })
 })
 router.post('/registro', function(req, res, next) {
   var newUser = new User()
