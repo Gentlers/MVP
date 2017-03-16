@@ -27,11 +27,11 @@ router.get('/', function(req, res, next) {
 })
 
 router.get('/registro', no_session_middleware, function(req, res) {
-  res.redirect('/pronto')
+  res.render('pronto', { title: 'Entrar en GENTO', bol: logged(req.session) })
 })
 
 router.get('/pronto', no_session_middleware, function(req, res, next) {  
-  res.render('pronto', { title: 'GENTO Muy Pronto', bol: logged(req.session) })
+  res.redirect('/registro')
 })
 
 router.get('/ganadores', function(req, res) {
