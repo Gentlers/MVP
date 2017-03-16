@@ -4,21 +4,24 @@ html(lang='es')
     title GENTO, muy pronto.
     link(rel="shortcut icon" type="image/png" href="/favicon.png")
     meta(charset='UTF-8')
-    // Import Google Icon Font
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    // Iconos
     link(href='http://fonts.googleapis.com/icon?family=Material+Icons', rel='stylesheet')
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css')
     // Compiled and minified CSS
     link(rel='stylesheet', href='css/materialize.min.css')
-    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css')
     link(rel='stylesheet', href='css/registro.css')
     link(rel='stylesheet', href='css/pronto.css')
-    // Let browser know website is optimized for mobile
-    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    link(rel='stylesheet', href='//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css')
+    // SEO
     meta(name='keywords', content='gento, ropa para hombres, asesoria de estilo, e-commerce, fashion')
     meta(name='description', content='Pronto cambiarás tu manera de pensar acerca de comprar ropa en línea. Gento, la forma mas inteligente de comprar ropa.')
     meta(name='author', content='Gento')
+    // Open Graph
     meta(property='og:title', content='GENTO, muy pronto.')
     meta(property='og:description', content='Pronto cambiarás tu manera de pensar acerca de comprar ropa en línea. Gento, la forma mas inteligente de comprar ropa.')
     meta(property='og:image', content='https://trello-attachments.s3.amazonaws.com/589191fc28092a79ef050122/450x450/c14126b7f86ab109ac04e0ade59dd4e7/GENTOFUTURE.png')
+    // Facebook Pixel
     script.
       !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
       n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
@@ -53,16 +56,50 @@ html(lang='es')
               li
                 a(href='/pronto') REGISTRO
     main
+      .row
+        .registro-presentation.center
+          .registro-presentation-a
+            p ESTAS A UN PASO
+            p DE SER PARTE
+            p DE UNA FORMA DISTINTA
+            p DE VESTIR
       .row(style='margin-bottom:0px')
         .pronto.center
-          .pronto-content.helvetica2
-            img(src='img/pronto/02.png', alt='gentoapp.com')
-            p.pronto-content-text1 ¡Grácias por tu interes en ser parte de Gento!
-            p.pronto-content-text1 Pronto podrás ser parte de la mejor experiencia en comprar ropa
-            p.pronto-content-text2
-              | ¡SE UNO DE LOS PRIMEROS EN SABER SOBRE GENTO. REGÍSTRATE Y PODRÁS GANAR UN VALE DE S/.25.00!
           .pronto-form
-            form#pronto-date-know
+            a.fireRegister(href='#') REGISTRO
+            a.fireLogin(href='#') LOGIN
+            form.registro#formRegistro(action='/register', method='POST')
+              input(type='email', name='email', placeholder='Ingresar Correo' required)
+              i.fa.fa-user
+              input(type='hidden', name='estilo_formal' value=1)
+              input(type='hidden', name='estilo_casual' value=1)
+              input(type='hidden', name='estilo_urbano' value=1)
+              input(type='hidden', name='estilo_hipster' value=1)
+              input(type='hidden', name='estilo_tendencia' value=1)
+              input(type='text', name='nombre', placeholder='Tu Nombre' required)
+              i.fa.fa-user
+              input(type='number', name='phone', placeholder='Tu Celular' required)
+              i.fa.fa-user                
+              input(type='password', name='password', placeholder='Ingresar conraseña' required)
+              i.fa.fa-key
+              tr      
+              button#btnRegistro
+                i.spinner
+                span.state Iniciar Sesion
+            form.login#formLogin(style='display:none',action='/session', method='POST')
+              center
+                h5(style='color: white;') E-mail
+              input(type='email', name='email', placeholder='Ingresar Correo')
+              i.fa.fa-user
+              center
+                h5(style='color: white;') Contraseña
+              input(type='password', name='password', placeholder='Ingresar conraseña')
+              i.fa.fa-key
+              tr      
+              button#btnLogin
+                i.spinner
+                span.state Iniciar Sesion
+            form#pronto-date-know(style='display:none')
               input(type='hidden', name='_next', value='/gracias')
               .input-field
                 input#name.validate(type='text', name='nombre')
@@ -75,8 +112,9 @@ html(lang='es')
                 label(for='email') CORREO
               br
               button#botn.btn.btn-large.white.black-text Registrarme
-          br
-          a.login(href='/login') Ya tengo una cuenta.
+            
+          //- br
+          //- a.login(href='/login') Ya tengo una cuenta.
     footer.page-footer.black
       .container
         .row
@@ -120,3 +158,4 @@ html(lang='es')
     script(src='js/headroom.min.js')
     script(src='js/registro.js')
     script(src='js/preRegistro.js')
+    script(src='js/login.js')

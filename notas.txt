@@ -1,20 +1,21 @@
 *****PARA HACER*****
 Agregar vista de Registro
-====Arreglar Responsive Menu
-Mejorar el mensaje AJAX de pre-registro
-Arreglar Color Responsive Menu
-====Arreglar Explorar slider Responsive
+Agregar validacion de datos completos al registrarse
+Enviar error de login por AJAX
+Enviar error de registor por AJAX
 Mejorar el mensaje AJAX de compra
-Arreglar el SEO
-Arreglar Redireccionamiento para SEO
+Arreglar el JSON que se envía al comprar
+Poner el url fuente de los scrappeados en el modelo
+Arreglar el Zoom de la imagen al comprar.
 Agregar Caso para cuando no tengamos nada que recomendarle, pero puede ver la seleccion entera
 Agregar boton para ver la coleccion completa de prendas.
-Arreglar el Zoom de la imagen al comprar.
-Proteger el API con Query String contraseña
-Agregar subida de imagen de perfil por S3
-Usar Layouts en Head y para Footer
-Arreglar los Titles usando variables 
-Poner Estrellas para edicion de estilos.
+Arreglar el SEO
+Arreglar Redireccionamiento para SEO
+
+
+====Arreglar Responsive Menu
+====Arreglar Color Responsive Menu
+====Arreglar Explorar slider Responsive
 ====Arreglar boton de cierre de sesion en Perfil.
 ====Arreglar imagenes secundarias en vista comprar
 ====Añadir FavIcon
@@ -25,6 +26,13 @@ Poner Estrellas para edicion de estilos.
 ====Cambiar fotos de Abanto y enlaces
 ====Crear vista de Admin para crear nuevas prendas.
 ====Crear vista de admin para crear nuevos usuarios.
+
+****BAJA PRIORIDAD****
+Proteger el API con Query String contraseña
+Agregar subida de imagen de perfil por S3
+Usar Layouts en Head y para Footer
+Arreglar los Titles usando variables 
+Poner Estrellas para edicion de estilos.
 
 *****NOTAS*****
 EN BD como manejar prendas de un mismo tipo pero con diferentes modelos (colores, prints, etc)
