@@ -43,9 +43,13 @@ $('.fireLogin').on('click', function(e) {
   e.preventDefault()
   $('#formRegistro').css('display','none')
   $('#formLogin').css('display','block')
+  $('.fireLogin').css('background','#1AD245')
+  $('.fireRegister').css('background','#666')
 })
 $('.fireRegister').on('click', function(e) {
   e.preventDefault()
   $('#formLogin').css('display','none')
   $('#formRegistro').css('display','block')
+  $('.fireLogin').css('background','#666')
+  $('.fireRegister').css('background','#1AD245')
 })
