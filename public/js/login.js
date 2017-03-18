@@ -15,7 +15,6 @@ $('.login').on('submit', e => {
 })
 
 $('.registro').on('submit', e => {
-  e.preventDefault();
   if (workingRegistro) return;
   workingRegistro = true;
   var $this = $('.registro'),
