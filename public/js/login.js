@@ -1,14 +1,7 @@
 var workingRegistro = false;
 var workingLogin = false;
-$('#btnLogin').on('click', e => {
-  e.preventDefault();
+$('.login').on('submit', e => {
   if (workingLogin) return;
-  var email = $('#formLogin input[name="email"')[0].value
-  var password = $('#formLogin input[name="password"')[0].value
-  if(email == "" || password == "") {
-    alert('Ingresa todos los datos requeridos')
-    break
-  }
   workingLogin = true;
   var $this = $('.login'),
   $state = $this.find('button > .state');
@@ -18,21 +11,12 @@ $('#btnLogin').on('click', e => {
     $this.addClass('ok');
     $state.html('!Bienvenido a Gento¡');
     $('.login').submit()
-  }, 3000);
+  }, 3000)
+})
 
-});
-
-$('#btnRegistro').on('click', e => {
+$('.registro').on('submit', e => {
   e.preventDefault();
   if (workingRegistro) return;
-  var email = $('#formRegistro input[name="email"')[0].value
-  var nombre = $('#formRegistro input[name="nombre"')[0].value
-  var phone = $('#formRegistro input[name="phone"')[0].value
-  var password = $('#formRegistro input[name="password"')[0].value
-  if( email == "" || nombre == "" || phone == "" || password == "") {
-    alert('Ingresa todos los datos requeridos')
-    break
-  }
   workingRegistro = true;
   var $this = $('.registro'),
   $state = $this.find('button > .state');
@@ -42,8 +26,7 @@ $('#btnRegistro').on('click', e => {
     $this.addClass('ok');
     $state.html('¡Bienvenido a Gento!');
     $('.registro').submit()
-  }, 3000);
-
+  }, 3000)
 })
 
 $('.fireLogin').on('click', e => {
