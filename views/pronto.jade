@@ -89,32 +89,16 @@ html(lang='es')
             form.login#formLogin(style='display:none',action='/session', method='POST')
               center
                 h5(style='color: white;') E-mail
-              input(type='email', name='email', placeholder='Ingresar Correo')
+              input(type='email', name='email', placeholder='Ingresar Correo' required)
               i.fa.fa-user
               center
                 h5(style='color: white;') Contraseña
-              input(type='password', name='password', placeholder='Ingresar conraseña')
+              input(type='password', name='password', placeholder='Ingresar conraseña' required)
               i.fa.fa-key
               tr      
               button#btnLogin
                 i.spinner
                 span.state Iniciar Sesion
-            form#pronto-date-know(style='display:none')
-              input(type='hidden', name='_next', value='/gracias')
-              .input-field
-                input#name.validate(type='text', name='nombre')
-                label(for='name') NOMBRES
-              .input-field
-                input#phone.validate(type='tel', name='telefono')
-                label(for='phone') NÚMERO
-              .input-field
-                input#email.validate(type='email', name='email')
-                label(for='email') CORREO
-              br
-              button#botn.btn.btn-large.white.black-text Registrarme
-            
-          //- br
-          //- a.login(href='/login') Ya tengo una cuenta.
     footer.page-footer.black
       .container
         .row

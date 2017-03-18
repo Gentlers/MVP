@@ -1,6 +1,8 @@
 *****PARA HACER*****
-Agregar vista de Registro
+====Agregar vista de Registro
 Agregar validacion de datos completos al registrarse
+Agregar validacion de datos correctos al registrarse
+Agregar validacion de email ya registrado al registrarse.
 Enviar error de login por AJAX
 Enviar error de registor por AJAX
 Mejorar el mensaje AJAX de compra
