@@ -93,30 +93,39 @@ router.get('/v-registro', admin_middleware, function(req, res, next) {
 
 // Registro de Nuevo Usuario
 router.post('/register', function(req, res, next) {
-  var newUser = new User()
-  newUser.username = req.body.nombre
-  newUser.password = req.body.password
-  newUser.email = req.body.email
-  newUser.celular = req.body.phone
-  newUser.estilo = [
-    Number(req.body.estilo_formal), 
-    Number(req.body.estilo_casual), 
-    Number(req.body.estilo_urbano), 
-    Number(req.body.estilo_hipster), 
-    Number(req.body.estilo_tendencia)
-  ]
-  newUser.tallas = []
-  newUser.entalle = []
-  newUser.save(function(err, savedUser) {
-    if(err) {
-      console.log(err)
-      return res.status(500).send()
+  // Validacion
+  User.findOne({ email: req.body.email }, function(err, user) {
+    if(user) {
+      return res.send("El usuario ya existe")
     }
-    else{
-      req.session.user_id = savedUser._id
-      res.redirect('/perfil')
+    else {
+      var newUser = new User()
+      newUser.username = req.body.nombre
+      newUser.password = req.body.password
+      newUser.email = req.body.email
+      newUser.celular = req.body.phone
+      newUser.estilo = [
+        Number(req.body.estilo_formal), 
+        Number(req.body.estilo_casual), 
+        Number(req.body.estilo_urbano), 
+        Number(req.body.estilo_hipster), 
+        Number(req.body.estilo_tendencia)
+      ]
+      newUser.tallas = []
+      newUser.entalle = []
+      newUser.save(function(err, savedUser) {
+        if(err) {
+          console.log(err)
+          return res.status(500).send()
+        }
+        else{
+          req.session.user_id = savedUser._id
+          res.redirect('/perfil')
+        }
+      })
     }
   })
+  
 })
 router.post('/registro', function(req, res, next) {
   var newUser = new User()
