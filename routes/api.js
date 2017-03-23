@@ -6,29 +6,29 @@ var Prenda = require('../models').Prenda
 var Venta = require('../models').Venta
 
 // Ruta para mostrar el Requirement obtenido
-router.post('/test', function (req, res) {
+router.post('/test', (req, res) => {
   console.log(req.body)
   res.send(req.body)
 })
 
 // Usuarios
-router.get('/users', function (req, res, next) {
+router.get('/users', (req, res, next) => {
   console.log('Hola mundo')
-  User.find(function (err, users) {
+  User.find((err, users) => {
     if (err) return res.status(500).send(err)
     res.send(users)
   })
 })
 
 // GET Unitario
-router.get('/user/:mail', function (req, res, next) {
-  User.find({email: req.params.mail}, function (err, user) {
+router.get('/user/:mail', (req, res, next) => {
+  User.find({ email: req.params.mail }, (err, user) => {
     if (err) return res.status(500).send(err)
     res.send(user)
   })
 })
 
-// router.post('/user/', function (req, res, next) {
+// router.post('/user/', (req, res, next) => {
 //  var newuser = new User()
 //  newuser.username = req.body.username
 //  newuser.password = req.body.password
@@ -38,7 +38,7 @@ router.get('/user/:mail', function (req, res, next) {
 //  newuser.estilo = req.body.estilo
 //  newuser.tallas = req.body.tallas
 //  newuser.entalle = req.body.entalle
-//  newuser.save(function (err, savedUser) {
+//  newuser.save((err, savedUser) => {
 //    if (err) {
 //      console.log(err)
 //      return res.status(500).send()
@@ -48,20 +48,20 @@ router.get('/user/:mail', function (req, res, next) {
 // })
 
 // Marcas
-router.get('/marcas', function (req, res, next) {
-  Marca.find(function (err, marcas) {
+router.get('/marcas', (req, res, next) => {
+  Marca.find((err, marcas) => {
     if (err) return res.status(500).send(err)
     res.send(marcas)
   })
 })
 
-router.post('/marca/', function (req, res, next) {
+router.post('/marca/', (req, res, next) => {
   var newmarca = new Marca()
   newmarca.nombre = req.body.nombre
   newmarca.descripcion = req.body.descripcion
   newmarca.estilo = req.body.estilo
   newmarca.tipos = req.body.tipos
-  newmarca.save(function (err, savedMarca) {
+  newmarca.save((err, savedMarca) => {
     if (err) {
       console.log(err)
       return res.status(500).send()
@@ -71,17 +71,17 @@ router.post('/marca/', function (req, res, next) {
 })
 
 // Prendas
-router.get('/prendas', function (req, res, next) {
-  Prenda.find(function (err, prendas) {
+router.get('/prendas', (req, res, next) => {
+  Prenda.find((err, prendas) => {
     if (err) return res.status(500).send(err)
-    Marca.populate(prendas, { path: 'marca' }, function (err, prendas) {
+    Marca.populate(prendas, { path: 'marca' }, (err, prendas) => {
       if (err) return res.status(500).send(err)
       res.send(prendas)
     })
   })
 })
 
-router.post('/prenda/', function (req, res, next) {
+router.post('/prenda/', (req, res, next) => {
   var newprenda = new Prenda()
   newprenda.nombre = req.body.nombre
   newprenda.colores = req.body.colores
@@ -96,7 +96,7 @@ router.post('/prenda/', function (req, res, next) {
   newprenda.marca = req.body.marca
   newprenda.mainImg = req.body.mainImg
   newprenda.secondaryImg = req.body.secondaryImg
-  newprenda.save(function (err, savedPrenda) {
+  newprenda.save((err, savedPrenda) => {
     if (err) {
       console.log(err)
       return res.status(500).send(err)
@@ -106,10 +106,10 @@ router.post('/prenda/', function (req, res, next) {
 })
 
 // DELETE
-router.delete('/prenda/:id', function (req, res, next) {
-  Prenda.findById(req.params.id, function (err, prend) {
+router.delete('/prenda/:id', (req, res, next) => {
+  Prenda.findById(req.params.id, (err, prend) => {
     if (err) return res.status(500).send(err)
-    prend.remove(function (err) {
+    prend.remove((err) => {
       if (err) return res.send(500, err.message)
       res.json({ message: 'Successfully deleted' })
     })
@@ -117,12 +117,12 @@ router.delete('/prenda/:id', function (req, res, next) {
 })
 
 // Ventas
-router.get('/ventas', function (req, res, next) {
-  Venta.find(function (err, ventas) {
+router.get('/ventas', (req, res, next) => {
+  Venta.find((err, ventas) => {
     if (err) return res.status(500).send(err)
-    User.populate(ventas, { path: 'user' }, function (err, ventas) {
+    User.populate(ventas, { path: 'user' }, (err, ventas) => {
       if (err) return res.status(500).send(err)
-      Prenda.populate(ventas, { path: 'prenda' }, function (err, ventas) {
+      Prenda.populate(ventas, { path: 'prenda' }, (err, ventas) => {
         if (err) return res.status(500).send(err)
         res.send(ventas)
       })
@@ -130,13 +130,13 @@ router.get('/ventas', function (req, res, next) {
   })
 })
 
-// router.post('/venta/', function (req, res, next) {
+// router.post('/venta/', (req, res, next) => {
 //  var newventa = new Venta()
 //  newventa.comentario = req.body.comentario
 //  newventa.puntaje = req.body.puntaje
 //  newventa.user = req.body.user
 //  newventa.prenda = req.body.prenda
-//  newventa.save(function (err, savedVenta) {
+//  newventa.save((err, savedVenta) => {
 //    if (err) {
 //      console.log(err)
 //      return res.status(500).send()

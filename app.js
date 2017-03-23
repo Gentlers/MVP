@@ -39,7 +39,7 @@ app.use('/', landing)
 app.use('/api', api)
 
 // Manejador del 404 y render del error.jade
-app.use(function (req, res, next) {
+app.use((req, res, next) => {
   var err = new Error('Not Found')
   err.status = 404
   next(err)
@@ -53,7 +53,7 @@ db.on('error', console.error.bind(console, 'connection error:'))
 // Manejador en Entorno de Desarrollo
 // will print stacktrace
 if (app.get('env') === 'development') {
-  app.use(function (err, req, res, next) {
+  app.use((err, req, res, next) => {
     res.status(err.status || 500)
     res.render('error', {
       message: err.message,
@@ -64,7 +64,7 @@ if (app.get('env') === 'development') {
 
 // Manejador en Entorno de Produccion
 // no stacktraces leaked to user
-app.use(function (err, req, res, next) {
+app.use((err, req, res, next) => {
   res.status(err.status || 500)
   res.render('error', {
     message: err.message,
