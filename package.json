@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node ./bin/www",
+    "lint": "standard -verbose | snazzy"
   },
   "dependencies": {
     "body-parser": "~1.15.1",
@@ -22,5 +23,14 @@
     "requestify": "^0.2.5",
     "serve-favicon": "~2.3.0",
     "stylus": "0.54.5"
+  },
+  "devDependencies": {
+    "snazzy": "^6.0.0",
+    "standard": "^9.0.2"
+  },
+  "standard": {
+    "ignore": [
+      "/public/"
+    ]
   }
 }

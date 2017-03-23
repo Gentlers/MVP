@@ -2,72 +2,78 @@
 var Prenda = require('../models').Prenda
 var Marca = require('../models').Marca
 var User = require('../models').User
+
 // Dependencias
 var nodemailer = require('nodemailer')
 var requestify = require('requestify')
-//Middlewares
-var no_session_middleware = require('../middlewares/no-session')
-var session_middleware = require('../middlewares/session')
-var admin_middleware = require('../middlewares/admin')
-//Express
+
+// Middlewares
+var noSessionMiddleware = require('../middlewares/no-session')
+var sessionMiddleware = require('../middlewares/session')
+var adminMiddleware = require('../middlewares/admin')
+
+// Express
 var express = require('express')
 var router = express.Router()
 
 // Utilitarios
-var logged = function(session) {
+var logged = function (session) {
   var band = {
     valor: 0
   }
-  if(session.user_id != null) band.valor = 1
+  if (session.user_id != null) band.valor = 1
   return band
 }
 
-router.get('/', function(req, res, next) {
-  res.render('index', { title: "Inicio", bol: logged(req.session) })
+router.get('/', function (req, res, next) {
+  res.render('index', { title: 'Inicio', bol: logged(req.session) })
 })
 
-router.get('/registro', no_session_middleware, function(req, res) {
+router.get('/registro', noSessionMiddleware, function (req, res) {
   res.render('pronto', { title: 'Entrar en GENTO', bol: logged(req.session) })
 })
 
-router.get('/pronto', no_session_middleware, function(req, res, next) {  
+router.get('/pronto', noSessionMiddleware, function (req, res, next) {
   res.redirect('/registro')
 })
 
-router.get('/ganadores', function(req, res) {
-  res.render('ganadores', { title: "Ganadores del Sorteo" })
+router.get('/ganadores', function (req, res) {
+  res.render('ganadores', { title: 'Ganadores del Sorteo' })
 })
 
-router.get('/explorar', session_middleware, function(req, res, next) {    
-  User.findOne({ _id: req.session.user_id }, function(err, user) {
+router.get('/explorar', sessionMiddleware, function (req, res, next) {
+  User.findOne({ _id: req.session.user_id }, function (err, user) {
+    if (err) throw err
     var style = user.estilo
     var url = 'https://fierce-atoll-99852.herokuapp.com/api_clothes/?style=[' + style + ']&type=list'
-    requestify.get(url).then(function(response) {
+    requestify.get(url).then(function (response) {
       // Creación del JSON de IDs en bruto a partir del response del API en categorias
       var recos = []
       recos = recos.concat(response.getBody().clothes)
       // Creacion del JSON de prendas completo buscando por IDs
       var resultados = []
-      if(recos.length==0) {
-        res.render('explorar-session', {data:resultados, bol: logged(req.session) })
-      }
-      else {
+      if (recos.length === 0) {
+        res.render('explorar-session', { data: resultados, bol: logged(req.session) })
+      } else {
         console.log('Entramos porque length = ' + recos.length)
-        for (var i = 0 ; i < recos.length; i++) {
+        for (var i = 0; i < recos.length; i++) {
           // Logica cuando estamos recorriendo todos menos el ultimo
-          if(i!=recos.length -1){
-            Prenda.findOne({ _id: recos[i] }, function(err, prendas) {
-              Marca.populate(prendas, {path: "marca"}, function(err, prendas){
+          if (i !== recos.length - 1) {
+            Prenda.findOne({ _id: recos[i] }, function (err, prendas) {
+              if (err) return res.status(500).send(err)
+              Marca.populate(prendas, {path: 'marca'}, function (err, prendas) {
+                if (err) return res.status(500).send(err)
                 resultados = resultados.concat(prendas)
-                })
-            })  
-          }
-          // Logica para la ultima prenda, por asincronía se usa esta forma
-          else {
-            Prenda.findOne({ _id: recos[i] }, function(err, prendas) {
-              Marca.populate(prendas, {path: "marca"}, function(err, prendas){
+              })
+            })
+          } else {
+            // Logica para la ultima prenda, por asincronía se usa esta forma
+            Prenda.findOne({ _id: recos[i] }, function (err, prendas) {
+              if (err) return res.status(500).send(err)
+              Marca.populate(prendas, {path: 'marca'}, function (err, prendas) {
+                if (err) return res.status(500).send(err)
                 resultados = resultados.concat(prendas)
-                res.render('explorar-session', {data:resultados, bol: logged(req.session) })
+                res.render('explorar-session', { data: resultados, bol: logged(req.session) })
               })
             })
           }
@@ -77,57 +83,58 @@ router.get('/explorar', session_middleware, function(req, res, next) {
   })
 })
 
-router.get('/comprar/:id', session_middleware, function(req, res) {
-  Prenda.find({_id: req.params.id}, function(err, prenda) {
-    Marca.populate(prenda, {path: "marca"}, function(err, prenda){
-      Prenda.find(function(err, todasprendas) {
-        res.render('comprar', { data: prenda, bol: logged(req.session), otros: todasprendas })  
+router.get('/comprar/:id', sessionMiddleware, function (req, res) {
+  Prenda.find({_id: req.params.id}, function (err, prenda) {
+    if (err) return res.status(500).send(err)
+    Marca.populate(prenda, {path: 'marca'}, function (err, prenda) {
+      if (err) return res.status(500).send(err)
+      Prenda.find(function (err, todasprendas) {
+        if (err) return res.status(500).send(err)
+        res.render('comprar', { data: prenda, bol: logged(req.session), otros: todasprendas })
       })
     })
   })
 })
 
-router.get('/v-registro', admin_middleware, function(req, res, next) {
+router.get('/v-registro', adminMiddleware, function (req, res, next) {
   res.render('registro', { title: 'Registro', bol: logged(req.session) })
 })
 
 // Registro de Nuevo Usuario
-router.post('/register', function(req, res, next) {
+router.post('/register', function (req, res, next) {
   // Validacion
-  User.findOne({ email: req.body.email }, function(err, user) {
-    if(user) {
-      return res.send("El usuario ya existe")
-    }
-    else {
+  User.findOne({ email: req.body.email }, function (err, user) {
+    if (err) return res.status(500).send(err)
+    if (user) {
+      return res.send('El usuario ya existe')
+    } else {
       var newUser = new User()
       newUser.username = req.body.nombre
       newUser.password = req.body.password
       newUser.email = req.body.email
       newUser.celular = req.body.phone
       newUser.estilo = [
-        Number(req.body.estilo_formal), 
-        Number(req.body.estilo_casual), 
-        Number(req.body.estilo_urbano), 
-        Number(req.body.estilo_hipster), 
+        Number(req.body.estilo_formal),
+        Number(req.body.estilo_casual),
+        Number(req.body.estilo_urbano),
+        Number(req.body.estilo_hipster),
         Number(req.body.estilo_tendencia)
       ]
       newUser.tallas = []
       newUser.entalle = []
-      newUser.save(function(err, savedUser) {
-        if(err) {
+      newUser.save(function (err, savedUser) {
+        if (err) {
           console.log(err)
           return res.status(500).send()
-        }
-        else{
+        } else {
           req.session.user_id = savedUser._id
           res.redirect('/perfil')
         }
       })
     }
   })
-  
 })
-router.post('/registro', function(req, res, next) {
+router.post('/registro', function (req, res, next) {
   var newUser = new User()
   newUser.username = req.body.nombre
   newUser.password = req.body.password
@@ -136,43 +143,41 @@ router.post('/registro', function(req, res, next) {
   newUser.password = req.body.password
   newUser.celular = Number(req.body.phone)
   newUser.estilo = [
-    Number(req.body.estilo_formal), 
-    Number(req.body.estilo_casual), 
-    Number(req.body.estilo_urbano), 
-    Number(req.body.estilo_hipster), 
+    Number(req.body.estilo_formal),
+    Number(req.body.estilo_casual),
+    Number(req.body.estilo_urbano),
+    Number(req.body.estilo_hipster),
     Number(req.body.estilo_tendencia)
   ]
   newUser.tallas = [
-    req.body.talla_camisa, 
-    Number(req.body.talla_pantalon), 
-    req.body.talla_polo, 
+    req.body.talla_camisa,
+    Number(req.body.talla_pantalon),
+    req.body.talla_polo,
     Number(req.body.talla_zapato)
   ]
   newUser.entalle = [
-    req.body.entalle_camisa, 
+    req.body.entalle_camisa,
     req.body.entalle_pantalon,
     req.body.entalle_polo
   ]
-  newUser.save(function(err, savedUser) {
-    if(err) {
-      console.log(err)
-      return res.status(500).send()
-    }
-    else{
+  newUser.save(function (err, savedUser) {
+    if (err) return res.status(500).send(err)
+    else {
       res.redirect('/perfil')
     }
   })
 })
 
 // Actualizacion de Usuario
-router.post('/update', session_middleware, function(req, res) {
-  User.findById(req.session.user_id, function(err, user) {
+router.post('/update', sessionMiddleware, function (req, res) {
+  User.findById(req.session.user_id, function (err, user) {
+    if (err) return res.status(500).send(err)
     user.tallas = [
       req.body.talla_camisa,
       Number(req.body.talla_pantalon),
       req.body.talla_polo,
       Number(req.body.talla_zapato)
-      ]
+    ]
     user.estilo = [
       Number(req.body.estilo_formal),
       Number(req.body.estilo_casual),
@@ -185,12 +190,11 @@ router.post('/update', session_middleware, function(req, res) {
       req.body.entalle_pantalon,
       req.body.entalle_polo
     ]
-    user.save(function(err, savedUser) {
-      if(err) {
+    user.save(function (err, savedUser) {
+      if (err) {
         console.log(err)
         return res.status(500).send()
-      }
-      else{
+      } else {
         req.session.user_id = savedUser._id
         res.redirect('/explorar')
       }
@@ -198,43 +202,40 @@ router.post('/update', session_middleware, function(req, res) {
   })
 })
 
-router.get('/perfil', session_middleware, function(req, res, next) {
+router.get('/perfil', sessionMiddleware, function (req, res, next) {
   res.render('perfil', { title: 'Dashboard', bol: logged(req.session) })
 })
 
-router.get('/login', no_session_middleware, function(req, res, next) {
+router.get('/login', noSessionMiddleware, function (req, res, next) {
   res.render('login', { title: 'Login' })
 })
 
-router.post('/logout', function(req, res, next) {
+router.post('/logout', function (req, res, next) {
   req.session = null
   res.redirect('/')
 })
 
 // Ruta para la creacion de la Cookie Session
-router.post('/session', function(req, res) {
-  User.findOne({ email: req.body.email, password: req.body.password }, "", function(err, user) {
-    if(err) {
-      res.send(err)
-    }
-    else if(user!=null) {
+router.post('/session', function (req, res) {
+  User.findOne({ email: req.body.email, password: req.body.password }, '', function (err, user) {
+    if (err) return res.status(500).send(err)
+    else if (user != null) {
       req.session.user_id = user._id
       res.redirect('/perfil')
-    }
-    else {
+    } else {
       res.send('Ingresa un usuario valido')
     }
   })
 })
 
 // Ruta para el Pre-Registro en la vista de /pronto
-router.post('/pre', function(req, res) {
-  var mensaje = "Usuario: " + req.body.nombre + "\nTelefono: " + req.body.telefono + "\nEmail: " + req.body.email
+router.post('/pre', function (req, res) {
+  var mensaje = 'Usuario: ' + req.body.nombre + '\nTelefono: ' + req.body.telefono + '\nEmail: ' + req.body.email
   var transporter = nodemailer.createTransport({
     service: 'Gmail',
     auth: {
-       user: 'gentoapp@gmail.com',
-       pass: 'gentoapp!'
+      user: 'gentoapp@gmail.com',
+      pass: 'gentoapp!'
     }
   })
   var mailOptions = {
@@ -243,23 +244,21 @@ router.post('/pre', function(req, res) {
     subject: 'Pre-registro',
     text: mensaje
   }
-  transporter.sendMail(mailOptions, function(error, info){
-    if (error){
-      console.log(error)
-      res.send(500, err.message)
-    } else {
+  transporter.sendMail(mailOptions, function (error, info) {
+    if (error) return res.status(500).send(error)
+    else {
       res.status(200).jsonp(req.body)
     }
   })
 })
  // Ruta para el envio de mail para cada venta
-router.post('/venta', function(req, res) {
-  var mensaje = "Cliente: " + req.body.cliente + "\nCorreo: " + req.body.correo + "\nTelefono: "+req.body.phone + "\nPrenda: " + req.body.prenda + "\nMarca: " + req.body.marca + "\nPrecio Venta:" + req.body.pventa + "\nPrecio Normal: " + req.body.precio + "\nEntrega: " + req.body.tipo_pedido + "\nTallas: " + req.body.tallas
+router.post('/venta', function (req, res) {
+  var mensaje = 'Cliente: ' + req.body.cliente + '\nCorreo: ' + req.body.correo + '\nTelefono: ' + req.body.phone + '\nPrenda: ' + req.body.prenda + '\nMarca: ' + req.body.marca + '\nPrecio Venta:' + req.body.pventa + '\nPrecio Normal: ' + req.body.precio + '\nEntrega: ' + req.body.tipo_pedido + '\nTallas: ' + req.body.tallas
   var transporter = nodemailer.createTransport({
     service: 'Gmail',
     auth: {
-       user: 'gentoapp@gmail.com',
-       pass: 'gentoapp!'
+      user: 'gentoapp@gmail.com',
+      pass: 'gentoapp!'
     }
   })
   var mailOptions = {
@@ -268,24 +267,23 @@ router.post('/venta', function(req, res) {
     subject: 'Venta Realizada',
     text: mensaje
   }
-  transporter.sendMail(mailOptions, function(error, info){
-    if (error){
-      console.log(error)
-      res.send(500, err.message)
-    } else {
-      console.log("Correo enviado papu")
+  transporter.sendMail(mailOptions, function (err, info) {
+    if (err) return res.status(500).send(err)
+    else {
+      console.log('Correo enviado papu')
       res.status(200).jsonp(req.body)
     }
-  });
+  })
 })
 
-router.get('/prenda', admin_middleware, function(req, res) {
-  Marca.find(function(err,marcas) {
+router.get('/prenda', adminMiddleware, function (req, res) {
+  Marca.find(function (err, marcas) {
+    if (err) return res.status(500).send(err)
     res.render('newPrenda', { data: marcas })
   })
 })
 
-router.post('/prenda', admin_middleware, function(req, res) {
+router.post('/prenda', adminMiddleware, function (req, res) {
   var newPrenda = new Prenda()
   newPrenda.nombre = req.body.nombre
   newPrenda.colores = [req.body.colores]
@@ -294,10 +292,10 @@ router.post('/prenda', admin_middleware, function(req, res) {
   newPrenda.precio = req.body.precio
   newPrenda.pventa = req.body.pventa
   newPrenda.estilo = [
-    Number(req.body.estilo_formal), 
-    Number(req.body.estilo_urbano), 
-    Number(req.body.estilo_casual), 
-    Number(req.body.estilo_hipster), 
+    Number(req.body.estilo_formal),
+    Number(req.body.estilo_urbano),
+    Number(req.body.estilo_casual),
+    Number(req.body.estilo_hipster),
     Number(req.body.estilo_tendencia)
   ]
   newPrenda.mainImg = req.body.mainImg
@@ -319,15 +317,12 @@ router.post('/prenda', admin_middleware, function(req, res) {
   console.log(req.body)
   console.log('LO QUE VAMOS A GUARDAR:')
   console.log(newPrenda)
-  newPrenda.save(function(err, savedPrenda) {
-    if(err) {
-      console.log(err)
-      return res.status(500).send()
-    }
-    else{
+  newPrenda.save(function (err, savedPrenda) {
+    if (err) return res.status(500).send(err)
+    else {
       res.redirect('/explorar')
     }
   })
 })
 
-module.exports = router;
+module.exports = router
