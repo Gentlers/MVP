@@ -30,9 +30,7 @@
   },
   "standard": {
     "ignore": [
-      "/public/js/jQuery-3.1.1.js",
-      "/public/js/materialize.js",
-      "/public/js/materialize.min.js"
+      "/public/js/*"
     ]
   }
 }
