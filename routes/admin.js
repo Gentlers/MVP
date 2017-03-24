@@ -1,7 +1,5 @@
 var express = require('express')
-var User = require('../models').User
 var Marca = require('../models').Marca
-var Prenda = require('../models').Prenda
 
 var router = express.Router()
 

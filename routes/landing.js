@@ -11,7 +11,6 @@ var express = require('express')
 // Middlewares
 var noSessionMiddleware = require('../middlewares/no-session')
 var sessionMiddleware = require('../middlewares/session')
-var adminMiddleware = require('../middlewares/admin')
 
 // Router
 var router = express.Router()
@@ -130,9 +129,5 @@ router.post('/venta', (req, res) => {
     }
   })
 })
-
-
-
-
 
 module.exports = router
