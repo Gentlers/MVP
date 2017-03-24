@@ -7,36 +7,34 @@ var cookieParser = require('cookie-parser')
 var bodyParser = require('body-parser')
 var cookieSession = require('cookie-session')
 var mongoose = require('mongoose')
+var cors = require('cors')
 
 // Routers
+var app = express()
 var landing = require('./routes/landing')
 var api = require('./routes/api')
-var cors = require('cors')
-var app = express()
+var auth = require('./routes/auth')
+var admin = require('./routes/admin')
 
-// view engine setup
-app.set('views', path.join(__dirname, 'views'))
-app.set('view engine', 'jade')
-app.use(cors())
-
-// uncomment after placing your favicon in /public
+// Middlewares
 app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')))
 app.use(logger('dev'))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(cookieParser())
-app.use(require('stylus').middleware(path.join(__dirname, 'public')))
+app.use(cookieSession({name: 'session', keys: ['llave-1', 'llave-2']}))
 app.use(express.static(path.join(__dirname, 'public')))
+app.use(cors())
 
-// Middleware para sesiones con Cookies
-app.use(cookieSession({
-  name: 'session',
-  keys: ['llave-1', 'llave-2']
-}))
+// Motor de Vistas
+app.set('views', path.join(__dirname, 'views'))
+app.set('view engine', 'jade')
 
 // Rutas
 app.use('/', landing)
 app.use('/api', api)
+app.use('/auth', auth)
+app.use('/admin', admin)
 
 // Manejador del 404 y render del error.jade
 app.use((req, res, next) => {
@@ -53,6 +51,7 @@ db.on('error', console.error.bind(console, 'connection error:'))
 // Manejador en Entorno de Desarrollo
 // will print stacktrace
 if (app.get('env') === 'development') {
+  console.log('Entorno de Desarrollo')
   app.use((err, req, res, next) => {
     res.status(err.status || 500)
     res.render('error', {

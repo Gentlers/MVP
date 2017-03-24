@@ -7,8 +7,8 @@ html(lang='es')
     link(href='http://fonts.googleapis.com/icon?family=Material+Icons', rel='stylesheet')
     link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css')
     // Compiled and minified CSS
-    link(rel='stylesheet', href='css/materialize.min.css')
-    link(rel='stylesheet', href='css/registro.css')
+    link(rel='stylesheet', href='/css/materialize.min.css')
+    link(rel='stylesheet', href='/css/registro.css')
     // Let browser know website is optimized for mobile
     meta(name='viewport', content='width=device-width, initial-scale=1.0')
     script.
@@ -29,7 +29,7 @@ html(lang='es')
         nav.black
           .nav-wrapper
             a.brand-logo(href='#!')
-              img(src='img/inicio/header/logo.png', alt='')
+              img(src='/img/inicio/header/logo.png', alt='')
             a.button-collapse.icono-button(href='#', data-activates='mobile-demo', onclick='buttonChange()')
               i.material-icons.icono menu
             ul.right.hide-on-med-and-down
@@ -38,7 +38,9 @@ html(lang='es')
               li
                 a(href='/explorar') EXPLORAR
               li
-                a(href='/v-registro') REGISTRARSE
+                a(href='/admin/registro') + USUARIO
+              li
+                a(href='/admin/prenda') + PRENDA
               li
                 a(href='/perfil') PERFIL
             ul#mobile-demo.side-nav.side-nav-content(style="max-width:100vw;min-width:100vw")
@@ -47,7 +49,9 @@ html(lang='es')
               li
                 a(href='/explorar') EXPLORAR
               li
-                a(href='/v-registro') REGISTRAR
+                a(href='/admin/registro') + USUARIO
+              li
+                a(href='/admin/prenda') + PRENDA
               li
                 a(href='/perfil') PERFIL
     main
@@ -61,7 +65,7 @@ html(lang='es')
             p DE VESTIR
       // NOTE: WE WANT KNOW ABOUT YOU
       .container.center
-        form(action='/registro', method='POST')
+        form(action='/admin/registro', method='POST')
           .row.registro-date
             .registro-date-text.center
               h3 Queremos conocerte
@@ -111,19 +115,19 @@ html(lang='es')
                         p
                           input#test-camisa-1(name='entalle_camisa', type='radio', value='recto')
                           label(for='test-camisa-1')
-                            img(src='img/registro/entalle/camisa/recto.png', alt='')
+                            img(src='/img/registro/entalle/camisa/recto.png', alt='')
                           br
                           span Camisa - Recto
                         p
                           input#test2-camisa-2(name='entalle_camisa', type='radio', value='moderno')
                           label(for='test2-camisa-2')
-                            img(src='img/registro/entalle/camisa/modern.png', alt='')
+                            img(src='/img/registro/entalle/camisa/modern.png', alt='')
                           br
                           span Camisa - Moderno
                         p
                           input#test-camisa-3(name='entalle_camisa', type='radio', value='slim')
                           label(for='test-camisa-3')
-                            img(src='img/registro/entalle/camisa/slim.png', alt='')
+                            img(src='/img/registro/entalle/camisa/slim.png', alt='')
                           br
                           span Camisa - Slim
                 // NOTE: ITEM POLOS
@@ -148,19 +152,19 @@ html(lang='es')
                         p
                           input#test-polo-1(name='entalle_polo', type='radio', value='recto')
                           label(for='test-polo-1')
-                            img(src='img/registro/entalle/01.jpg', alt='')
+                            img(src='/img/registro/entalle/01.jpg', alt='')
                           br
                           span Polo - Recto
                         p
                           input#test-polo-2(name='entalle_polo', type='radio', value='moderno')
                           label(for='test-polo-2')
-                            img(src='img/registro/entalle/01.jpg', alt='')
+                            img(src='/img/registro/entalle/01.jpg', alt='')
                           br
                           span Polo - Moderno
                         p
                           input#test-polo-3(name='entalle_polo', type='radio', value='slim')
                           label(for='test-polo-3')
-                            img(src='img/registro/entalle/01.jpg', alt='')
+                            img(src='/img/registro/entalle/01.jpg', alt='')
                           br
                           span Polo - Slim
                 // NOTE: ITEM PANTALONES
@@ -186,19 +190,19 @@ html(lang='es')
                         p
                           input#test-pantalon-1(name='entalle_pantalon', type='radio', value='recto')
                           label(for='test-pantalon-1')
-                            img(src='img/registro/entalle/pantalon/recto.png', alt='')
+                            img(src='/img/registro/entalle/pantalon/recto.png', alt='')
                           br
                           span Pantalón - Recto
                         p
                           input#test-pantalon-2(name='entalle_pantalon', type='radio', value='slim')
                           label(for='test-pantalon-2')
-                            img(src='img/registro/entalle/pantalon/slim.png', alt='')
+                            img(src='/img/registro/entalle/pantalon/slim.png', alt='')
                           br
                           span Pantalón - Slim
                         p
                           input#test-pantalon-3(name='entalle_pantalon', type='radio', value='skinny')
                           label(for='test-pantalon-3')
-                            img(src='img/registro/entalle/pantalon/skinny.png', alt='')
+                            img(src='/img/registro/entalle/pantalon/skinny.png', alt='')
                           br
                           span Pantalón - Skinny
                 // NOTE: ITEM ZAPATOS
@@ -314,7 +318,7 @@ html(lang='es')
       ga('create', 'UA-85217882-6', 'auto');
       ga('send', 'pageview');
     // Import jQuery before materialize.js
-    script(type='text/javascript', src='js/jQuery-3.1.1.js')
-    script(type='text/javascript', src='js/materialize.min.js')
-    script(src='js/headroom.min.js')
-    script(src='js/registro.js')
+    script(type='text/javascript', src='/js/jQuery-3.1.1.js')
+    script(type='text/javascript', src='/js/materialize.min.js')
+    script(src='/js/headroom.min.js')
+    script(src='/js/registro.js')

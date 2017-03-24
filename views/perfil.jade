@@ -87,14 +87,14 @@ html(lang='es')
           hr
       .row.container.preferencias
         .botones
-          form(action='/logout', method='POST')
+          form(action='/auth/logout', method='POST')
             .row.top-space
               .col-xs-12.col-md-6
                 input.btn.btn-info.btn-close(type='submit', value='Cerrar Sesion')
           button.btn.btn-edicion Editar Estilos y Tallas
         #edicion
           h4.heletica3 Preferencias
-          form(action='/update', method='POST')
+          form(action='/auth/update', method='POST')
             .row
               .col.l3.m4.s12
                 .preferencias-prenda
