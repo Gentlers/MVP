@@ -18,6 +18,7 @@ var router = express.Router()
 var logged = require('../utils/isLogged')
 var mailVenta = require('../utils/sendMail').venta
 var mailPre = require('../utils/sendMail').pre
+var gmailKey = require('../utils/keys').gmail
 
 router.get('/', (req, res, next) => {
   res.render('index', { title: 'Inicio', bol: logged(req.session) })
@@ -99,8 +100,8 @@ router.post('/pre', (req, res) => {
   var transporter = nodemailer.createTransport({
     service: 'Gmail',
     auth: {
-      user: 'gentoapp@gmail.com',
-      pass: 'gentoapp!'
+      user: gmailKey.mail,
+      pass: gmailKey.password
     }
   })
   var mailOptions = mailPre(req)
@@ -116,8 +117,8 @@ router.post('/venta', (req, res) => {
   var transporter = nodemailer.createTransport({
     service: 'Gmail',
     auth: {
-      user: 'gentoapp@gmail.com',
-      pass: 'gentoapp!'
+      user: gmailKey.mail,
+      pass: gmailKey.password
     }
   })
   var mailOptions = mailVenta(req)
