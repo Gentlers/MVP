@@ -1,3 +1,5 @@
+// Verificamos con un band si hay login
+// Esto se puede manejar con boolean, o usando directamente el req.session
 module.exports = (session) => {
   var band = {
     valor: 0

@@ -1,5 +1,7 @@
+// Modelo
 var User = require('../models').User
 
+// Ordenamos segun el Schema lo recibido del req
 module.exports.total = (req) => {
   var newUser = new User()
   newUser.username = req.body.nombre
@@ -29,6 +31,7 @@ module.exports.total = (req) => {
   return newUser
 }
 
+// Ordenamos el form parcial del req
 module.exports.partial = (req) => {
   var newUser = new User()
   newUser.username = req.body.nombre
@@ -47,6 +50,7 @@ module.exports.partial = (req) => {
   return newUser
 }
 
+// Ordenamos el req para el JSON del update
 module.exports.update = (user, req) => {
   user.tallas = [
     req.body.talla_camisa,

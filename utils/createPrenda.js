@@ -1,5 +1,7 @@
+// Modelo
 var Prenda = require('../models').Prenda
 
+// Ordena en un JSON lo recibido del form
 module.exports = (req) => {
   var newPrenda = new Prenda()
   newPrenda.nombre = req.body.nombre

@@ -1,20 +1,19 @@
 *****PARA HACER*****
-====Agregar vista de Registro
-Agregar validacion de datos completos al registrarse
-Agregar validacion de datos correctos al registrarse
-Agregar validacion de email ya registrado al registrarse.
 Enviar error de login por AJAX
-Enviar error de registor por AJAX
+Enviar error de registro por AJAX
 Mejorar el mensaje AJAX de compra
-Arreglar el JSON que se envía al comprar
 Poner el url fuente de los scrappeados en el modelo
 Arreglar el Zoom de la imagen al comprar.
-Agregar Caso para cuando no tengamos nada que recomendarle, pero puede ver la seleccion entera
 Agregar boton para ver la coleccion completa de prendas.
+Agregar Caso para cuando no tengamos nada que recomendarle, pero puede ver la seleccion entera
 Arreglar el SEO
 Arreglar Redireccionamiento para SEO
 
-
+====Arreglar el JSON que se envía al comprar
+====Agregar vista de Registro
+====Agregar validacion de datos completos al registrarse
+====Agregar validacion de datos correctos al registrarse
+====Agregar validacion de email ya registrado al registrarse.
 ====Arreglar Responsive Menu
 ====Arreglar Color Responsive Menu
 ====Arreglar Explorar slider Responsive

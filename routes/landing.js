@@ -1,24 +1,24 @@
-// Modelos
-var Prenda = require('../models').Prenda
-var Marca = require('../models').Marca
-var User = require('../models').User
-
 // Dependencias
 var nodemailer = require('nodemailer')
 var requestify = require('requestify')
 var express = require('express')
 
+// Modelos
+var Prenda = require('../models').Prenda
+var Marca = require('../models').Marca
+var User = require('../models').User
+
 // Middlewares
 var noSessionMiddleware = require('../middlewares/no-session')
 var sessionMiddleware = require('../middlewares/session')
 
-// Router
-var router = express.Router()
-
+// Utils
 var logged = require('../utils/isLogged')
 var mailVenta = require('../utils/sendMail').venta
 var mailPre = require('../utils/sendMail').pre
 var gmailKey = require('../utils/keys').gmail
+
+var router = express.Router()
 
 router.get('/', (req, res, next) => {
   res.render('index', { title: 'Inicio', bol: logged(req.session) })
@@ -36,6 +36,61 @@ router.get('/ganadores', (req, res) => {
   res.render('ganadores', { title: 'Ganadores del Sorteo' })
 })
 
+router.get('/perfil', sessionMiddleware, (req, res, next) => {
+  res.render('perfil', { title: 'Dashboard', bol: logged(req.session) })
+})
+
+router.get('/comprar/:id', sessionMiddleware, (req, res) => {
+  Prenda.find({_id: req.params.id}, (err, prenda) => {
+    if (err) return res.status(500).send(err)
+    Marca.populate(prenda, {path: 'marca'}, (err, prenda) => {
+      if (err) return res.status(500).send(err)
+      Prenda.find((err, todasprendas) => {
+        if (err) return res.status(500).send(err)
+        res.render('comprar', { data: prenda, bol: logged(req.session), otros: todasprendas })
+      })
+    })
+  })
+})
+
+// Ruta para el Pre-Registro en la vista de /pronto
+router.post('/pre', (req, res) => {
+  var transporter = nodemailer.createTransport({
+    service: 'Gmail',
+    auth: {
+      user: gmailKey.mail,
+      pass: gmailKey.password
+    }
+  })
+  var mailOptions = mailPre(req)
+  transporter.sendMail(mailOptions, (error, info) => {
+    if (error) return res.status(500).send(error)
+    else {
+      res.status(200).jsonp(req.body)
+    }
+  })
+})
+
+// Ruta para el envio de mail para cada venta
+router.post('/venta', (req, res) => {
+  var transporter = nodemailer.createTransport({
+    service: 'Gmail',
+    auth: {
+      user: gmailKey.mail,
+      pass: gmailKey.password
+    }
+  })
+  var mailOptions = mailVenta(req)
+  transporter.sendMail(mailOptions, (err, info) => {
+    if (err) return res.status(500).send(err)
+    else {
+      console.log('Correo enviado papu')
+      res.status(200).jsonp(req.body)
+    }
+  })
+})
+
+// Falta Refactorizar Esto
 router.get('/explorar', sessionMiddleware, (req, res, next) => {
   User.findOne({ _id: req.session.user_id }, (err, user) => {
     if (err) throw err
@@ -75,59 +130,6 @@ router.get('/explorar', sessionMiddleware, (req, res, next) => {
         }
       }
     })
-  })
-})
-
-router.get('/comprar/:id', sessionMiddleware, (req, res) => {
-  Prenda.find({_id: req.params.id}, (err, prenda) => {
-    if (err) return res.status(500).send(err)
-    Marca.populate(prenda, {path: 'marca'}, (err, prenda) => {
-      if (err) return res.status(500).send(err)
-      Prenda.find((err, todasprendas) => {
-        if (err) return res.status(500).send(err)
-        res.render('comprar', { data: prenda, bol: logged(req.session), otros: todasprendas })
-      })
-    })
-  })
-})
-
-router.get('/perfil', sessionMiddleware, (req, res, next) => {
-  res.render('perfil', { title: 'Dashboard', bol: logged(req.session) })
-})
-
-// Ruta para el Pre-Registro en la vista de /pronto
-router.post('/pre', (req, res) => {
-  var transporter = nodemailer.createTransport({
-    service: 'Gmail',
-    auth: {
-      user: gmailKey.mail,
-      pass: gmailKey.password
-    }
-  })
-  var mailOptions = mailPre(req)
-  transporter.sendMail(mailOptions, (error, info) => {
-    if (error) return res.status(500).send(error)
-    else {
-      res.status(200).jsonp(req.body)
-    }
-  })
-})
-// Ruta para el envio de mail para cada venta
-router.post('/venta', (req, res) => {
-  var transporter = nodemailer.createTransport({
-    service: 'Gmail',
-    auth: {
-      user: gmailKey.mail,
-      pass: gmailKey.password
-    }
-  })
-  var mailOptions = mailVenta(req)
-  transporter.sendMail(mailOptions, (err, info) => {
-    if (err) return res.status(500).send(err)
-    else {
-      console.log('Correo enviado papu')
-      res.status(200).jsonp(req.body)
-    }
   })
 })
 

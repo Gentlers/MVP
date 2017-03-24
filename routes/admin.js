@@ -1,13 +1,18 @@
+// Dependencias
 var express = require('express')
+
+// Modelos
 var Marca = require('../models').Marca
 
-var router = express.Router()
-
+// Middlewares
 var adminMiddleware = require('../middlewares/admin')
 
+// Utils
 var logged = require('../utils/isLogged')
 var createPrenda = require('../utils/createPrenda')
 var createUserComplete = require('../utils/createUser').total
+
+var router = express.Router()
 
 router.get('/registro', adminMiddleware, (req, res, next) => {
   res.render('registro', { title: 'Registro', bol: logged(req.session) })

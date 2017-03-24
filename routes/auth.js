@@ -1,12 +1,22 @@
+// Dependencias
 var express = require('express')
-var User = require('../models').User
-var router = express.Router()
 
+// Modelos
+var User = require('../models').User
+
+// Middlewares
 var noSessionMiddleware = require('../middlewares/no-session')
 var sessionMiddleware = require('../middlewares/session')
 
+// Utils
 var createUserPartial = require('../utils/createUser').partial
 var updateUser = require('../utils/createUser').update
+
+router.get('/', noSessionMiddleware, (req, res, next) => {
+  res.render('login', { title: 'Login' })
+})
+
+var router = express.Router()
 
 // Ruta para la creacion de la Cookie Session
 router.post('/session', (req, res) => {
@@ -21,10 +31,7 @@ router.post('/session', (req, res) => {
   })
 })
 
-router.get('/', noSessionMiddleware, (req, res, next) => {
-  res.render('login', { title: 'Login' })
-})
-
+// Ruta de Cierre de Sesion
 router.post('/logout', (req, res, next) => {
   req.session = null
   res.redirect('/')
